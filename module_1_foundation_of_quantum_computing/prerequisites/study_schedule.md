@@ -9,8 +9,7 @@ Run this **in parallel with starting Week 1** — do not wait until you finish a
 | 3 | 3B1B linear algebra: videos 9–12 (dot products, change of basis, eigenvectors intro) | ~45 min | Week 2 full |
 | 4 | 3B1B linear algebra: videos 13–16 (eigenvalues, abstract vector spaces, wrap-up) | ~45 min | Week 2 full |
 | 5 | Complex numbers: Khan Academy arithmetic + 3B1B Euler's formula video | ~90 min | Week 2 |
-| 6 | Trig refresher: unit circle, radians, sin/cos identities (Khan Academy, 45 min) | ~45 min | Week 2 |
-| 6 | Probability distributions: Khan Academy basic probability + expected value | ~45 min | Week 1 |
+| 6 | Trig refresher: unit circle + radians (Khan Academy, 45 min) AND probability distributions: basic probability + expected value (Khan Academy, 45 min) | ~90 min | Week 1, Week 2 |
 | 7 | Stochastic matrices: Khan Academy Markov chains intro or textbook section 1.3 | ~60 min | Week 1 |
 | 8 | Re-read Week 1 PDF (section 1.3 randomised computation) with prerequisites in place | ~60 min | Week 1 complete |
 | 9 | Re-read Week 2 PDF (sections 2.1–2.2) with linear algebra + complex numbers in place | ~90 min | Week 2 partial |
