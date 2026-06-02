@@ -112,11 +112,11 @@ def teleport_verify(alpha, beta):
         else:
             bob_state = np.array(bob_probs)
 
-        # Apply classical correction: X if q=1, Z if a=1
+        # Apply classical correction: X if a=1 (from qubit a), Z if q=1 (from qubit q)
         corrected = bob_state.copy()
-        if q:
-            corrected = X @ corrected
         if a:
+            corrected = X @ corrected
+        if q:
             corrected = Z @ corrected
 
         results[(q, a)] = (prob, corrected)
@@ -130,17 +130,12 @@ psi_target = alpha * ket_0 + beta * ket_1
 
 results = teleport_verify(alpha, beta)
 print(f"  Teleporting |ψ⟩ = |+⟩ = {np.round(psi_target, 3)}")
-success_count = 0
-for (q, a), (prob, corrected) in results.items():
-    # After correction, Bob's state must match the original (up to global phase)
+for (x, z), (prob, corrected) in results.items():
     overlap = abs(np.conj(psi_target) @ corrected)
-    # For the computational basis measurement, not all outcomes require the same correction.
-    # Verify that at least one outcome succeeds (the first one always does for |+⟩).
-    if np.isclose(overlap, 1.0, atol=1e-6):
-        success_count += 1
-    print(f"  Outcome (q={q},a={a}): P={prob:.3f}, overlap={overlap:.4f}")
+    assert np.isclose(overlap, 1.0, atol=1e-6), \
+        f"4.2: Teleportation failed for outcome (x={x},z={z}): overlap={overlap:.4f}"
+    print(f"  Outcome (x={x},z={z}): P={prob:.3f}, Bob after correction = {np.round(corrected,3)} ✓")
 
-assert success_count > 0, "4.2: No successful teleportation outcomes"
 print("Exercise 4.2 passed.\n")
 
 # ---------------------------------------------------------------------------

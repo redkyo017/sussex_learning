@@ -20,7 +20,7 @@
 2. Alice applies `H` to `q`
 3. Alice measures `q` and `a` in the computational basis → gets classical bits `x` and `z`
 4. Alice sends `x` and `z` to Bob over a classical channel
-5. Bob applies `X` to `b` if `x = 1`, and `Z` to `b` if `z = 1`
+5. Bob applies `X` to `b` if `z = 1`, and `Z` to `b` if `x = 1`
 6. Bob's qubit `b` is now in state `|α⟩`
 
 **Why it works (the algebra):**
@@ -32,8 +32,8 @@ Each Bell measurement outcome leaves Bob's qubit in a version of `|α⟩` that c
 
 **Bell states as measurement basis:**
 - `|Φ+⟩ → 00`: Bob does nothing
-- `|Φ−⟩ → 01`: Bob applies Z
-- `|Ψ+⟩ → 10`: Bob applies X
+- `|Φ−⟩ → 01`: Bob applies X
+- `|Ψ+⟩ → 10`: Bob applies Z
 - `|Ψ−⟩ → 11`: Bob applies X then Z
 
 ### 4.2 Hadamard Operations and Phase Estimation
