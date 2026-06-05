@@ -270,5 +270,149 @@ As a $4\times4$ matrix (control qubit in the first register):
   \end{pmatrix}}
 \]
 
+% ---------------------------------------------------------------
+\section*{Question 8}
+
+The four Bell states form an orthonormal basis. We compute the probability of each
+outcome when measuring the state $\ket{+i,+i}$ in the Bell basis,
+where $\ket{+i}=\tfrac{1}{\sqrt{2}}(\ket{0}+i\ket{1})$.
+
+\medskip
+\textbf{Step 1 --- Expand $\ket{+i,+i}$ into the computational basis:}
+\begin{align*}
+\ket{+i,+i}
+  &= \frac{1}{\sqrt{2}}\bigl(\ket{0}+i\ket{1}\bigr)
+     \otimes
+     \frac{1}{\sqrt{2}}\bigl(\ket{0}+i\ket{1}\bigr) \\
+  &= \frac{1}{2}\bigl(\ket{00}+i\ket{01}+i\ket{10}+i^2\ket{11}\bigr) \\
+  &= \frac{1}{2}\bigl(\ket{00}+i\ket{01}+i\ket{10}-\ket{11}\bigr)
+\end{align*}
+
+\textbf{Step 2 --- Compute $P(B_k)=|\braket{B_k|+i,+i}|^2$ for each Bell state:}
+
+\begin{align*}
+\braket{\Phi^+|+i,+i}
+  &= \frac{1}{\sqrt{2}}(\bra{00}+\bra{11})
+     \cdot\frac{1}{2}(\ket{00}+i\ket{01}+i\ket{10}-\ket{11}) \\
+  &= \frac{1}{2\sqrt{2}}(1+(-1)) = 0
+\end{align*}
+
+\begin{align*}
+\braket{\Phi^-|+i,+i}
+  &= \frac{1}{\sqrt{2}}(\bra{00}-\bra{11})
+     \cdot\frac{1}{2}(\ket{00}+i\ket{01}+i\ket{10}-\ket{11}) \\
+  &= \frac{1}{2\sqrt{2}}\bigl(1-(-1)\bigr) = \frac{1}{\sqrt{2}}
+\end{align*}
+
+\begin{align*}
+\braket{\Psi^+|+i,+i}
+  &= \frac{1}{\sqrt{2}}(\bra{01}+\bra{10})
+     \cdot\frac{1}{2}(\ket{00}+i\ket{01}+i\ket{10}-\ket{11}) \\
+  &= \frac{1}{2\sqrt{2}}(i+i) = \frac{i}{\sqrt{2}}
+\end{align*}
+
+\begin{align*}
+\braket{\Psi^-|+i,+i}
+  &= \frac{1}{\sqrt{2}}(\bra{01}-\bra{10})
+     \cdot\frac{1}{2}(\ket{00}+i\ket{01}+i\ket{10}-\ket{11}) \\
+  &= \frac{1}{2\sqrt{2}}(i-i) = 0
+\end{align*}
+
+\textbf{Step 3 --- Probability distribution:}
+
+\[
+  \boxed{
+    P(\ket{\Phi^+})=0,\quad
+    P(\ket{\Phi^-})=\left|\frac{1}{\sqrt{2}}\right|^2=\frac{1}{2},\quad
+    P(\ket{\Psi^+})=\left|\frac{i}{\sqrt{2}}\right|^2=\frac{1}{2},\quad
+    P(\ket{\Psi^-})=0
+  }
+\]
+
+Check: $0+\tfrac{1}{2}+\tfrac{1}{2}+0=1$ \checkmark
+
+% ---------------------------------------------------------------
+\section*{Question 9}
+
+The CCX (Toffoli) gate flips the third qubit only when both the first and second
+qubits are $\ket{1}$: $\mathrm{CCX}\ket{a,b,t}=\ket{a,b,\,t\oplus(a\wedge b)}$.
+
+\medskip
+\textbf{Step 1 --- Expand $\ket{+,+,0}$:}
+\begin{align*}
+\ket{+,+,0}
+  &= \frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\otimes\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\otimes\ket{0} \\
+  &= \frac{1}{2}(\ket{000}+\ket{010}+\ket{100}+\ket{110})
+\end{align*}
+
+\textbf{Step 2 --- Apply CCX term by term:}
+\begin{align*}
+\mathrm{CCX}\ket{000}&=\ket{000}, &
+\mathrm{CCX}\ket{010}&=\ket{010}, \\
+\mathrm{CCX}\ket{100}&=\ket{100}, &
+\mathrm{CCX}\ket{110}&=\ket{111}
+\end{align*}
+
+\[
+  \ket{\psi_0}=\mathrm{CCX}\ket{+,+,0}
+  =\frac{1}{2}\bigl(\ket{000}+\ket{010}+\ket{100}+\ket{111}\bigr)
+\]
+
+\textbf{Step 3 --- Measure the third qubit; find $P(\ket{0})$:}
+
+The terms with third qubit $=\ket{0}$ are $\ket{000}$, $\ket{010}$, $\ket{100}$,
+each with amplitude $\tfrac{1}{2}$:
+
+\[
+  P(\text{third qubit}=\ket{0})
+  = \left|\tfrac{1}{2}\right|^2+\left|\tfrac{1}{2}\right|^2+\left|\tfrac{1}{2}\right|^2
+  = \frac{3}{4}
+\]
+
+\[
+  \boxed{P(\text{third qubit}=\ket{0})=\frac{3}{4}}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 10}
+
+We use the same state
+$\ket{\psi_0}=\tfrac{1}{2}(\ket{000}+\ket{010}+\ket{100}+\ket{111})$
+from Question 9, with $P(\text{qubit 3}=\ket{0})=\tfrac{3}{4}$.
+
+\medskip
+\textbf{Step 1 --- Post-measurement state conditioned on qubit 3 $=\ket{0}$:}
+
+Retain only the terms where the third qubit is $\ket{0}$:
+$\ket{000}$, $\ket{010}$, $\ket{100}$, each with amplitude $\tfrac{1}{2}$.
+Normalising by dividing by $\sqrt{3/4}=\tfrac{\sqrt{3}}{2}$:
+
+\[
+  \ket{\psi\,|\,\text{qubit 3}=0}
+  = \frac{1}{\sqrt{3}}\bigl(\ket{000}+\ket{010}+\ket{100}\bigr)
+\]
+
+\textbf{Step 2 --- Measure the first two qubits; find $P(\ket{10})$:}
+
+The amplitude of $\ket{10}\otimes\ket{0}$ in the normalised state is
+$\tfrac{1}{\sqrt{3}}$, so:
+
+\[
+  P(\ket{10})=\left|\frac{1}{\sqrt{3}}\right|^2=\frac{1}{3}
+\]
+
+\textit{Equivalently, using conditional probability directly:}
+\[
+  P\!\left(\ket{10}\,\Big|\,\text{qubit 3}=\ket{0}\right)
+  =\frac{P(\ket{10,0})}{P(\text{qubit 3}=\ket{0})}
+  =\frac{1/4}{3/4}=\frac{1}{3}
+\]
+
+\[
+  \boxed{P\!\left(\text{first two qubits}=\ket{10}\;\middle|\;\text{qubit 3}=\ket{0}\right)
+         =\frac{1}{3}}
+\]
+
 \end{document}
+
 
