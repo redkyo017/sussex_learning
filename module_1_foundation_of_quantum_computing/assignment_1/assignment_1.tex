@@ -127,4 +127,148 @@ $\ket{0}_1\otimes\ket{1}_2$, so the state of the second qubit is:
   \boxed{\ket{1}}
 \]
 
+% ---------------------------------------------------------------
+\section*{Question 4}
+
+Consider $\ket{\Psi^-}=\dfrac{1}{\sqrt{2}}\ket{0,1}-\dfrac{1}{\sqrt{2}}\ket{1,0}$.
+We measure the first qubit in the $\{\ket{+},\ket{-}\}$ basis and obtain $\ket{-}$.
+
+\medskip
+We extract the (unnormalised) state of qubit 2 by computing
+${}_{1}\!\bra{-}\ket{\Psi^-}$.
+Using $\braket{-|0}=\tfrac{1}{\sqrt{2}}$ and $\braket{-|1}=-\tfrac{1}{\sqrt{2}}$:
+
+\begin{align*}
+{}_{1}\!\bra{-}\ket{\Psi^-}
+  &= \frac{1}{\sqrt{2}}\braket{-|0}_1\ket{1}_2
+   - \frac{1}{\sqrt{2}}\braket{-|1}_1\ket{0}_2 \\
+  &= \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}\,\ket{1}_2
+   - \frac{1}{\sqrt{2}}\cdot\!\left(-\frac{1}{\sqrt{2}}\right)\ket{0}_2 \\
+  &= \frac{1}{2}\ket{1}_2 + \frac{1}{2}\ket{0}_2
+   = \frac{1}{2}\bigl(\ket{0}+\ket{1}\bigr)_2
+\end{align*}
+
+The norm of this unnormalised state is
+$\sqrt{(1/2)^2+(1/2)^2}=\dfrac{1}{\sqrt{2}}$.
+Normalising:
+
+\[
+  \frac{\tfrac{1}{2}\bigl(\ket{0}+\ket{1}\bigr)}{\tfrac{1}{\sqrt{2}}}
+  = \frac{1}{\sqrt{2}}\bigl(\ket{0}+\ket{1}\bigr)
+  = \ket{+}
+\]
+
+\[
+  \boxed{\ket{+}}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 5}
+
+Consider the same state $\ket{\Psi^-}$. We measure the first qubit in the
+$\{\ket{+i},\ket{-i}\}$ basis and obtain $\ket{+i}$, where
+$\ket{+i}=\tfrac{1}{\sqrt{2}}(\ket{0}+i\ket{1})$.
+
+\medskip
+The corresponding bra is $\bra{+i}=\tfrac{1}{\sqrt{2}}(\bra{0}-i\bra{1})$
+(conjugate of the ket). Therefore
+$\braket{+i|0}=\tfrac{1}{\sqrt{2}}$ and $\braket{+i|1}=\tfrac{-i}{\sqrt{2}}$.
+
+\begin{align*}
+{}_{1}\!\bra{+i}\ket{\Psi^-}
+  &= \frac{1}{\sqrt{2}}\braket{+i|0}_1\ket{1}_2
+   - \frac{1}{\sqrt{2}}\braket{+i|1}_1\ket{0}_2 \\
+  &= \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}\,\ket{1}_2
+   - \frac{1}{\sqrt{2}}\cdot\!\left(-\frac{i}{\sqrt{2}}\right)\ket{0}_2 \\
+  &= \frac{1}{2}\ket{1}_2 + \frac{i}{2}\ket{0}_2
+   = \frac{1}{2}\bigl(i\ket{0}+\ket{1}\bigr)_2
+\end{align*}
+
+The norm is $\sqrt{|i/2|^2+|1/2|^2}=\sqrt{1/4+1/4}=\dfrac{1}{\sqrt{2}}$.
+Normalising:
+
+\[
+  \frac{\tfrac{1}{2}(i\ket{0}+\ket{1})}{\tfrac{1}{\sqrt{2}}}
+  = \frac{1}{\sqrt{2}}(i\ket{0}+\ket{1})
+  = i\cdot\frac{1}{\sqrt{2}}(\ket{0}-i\ket{1})
+  = i\ket{-i}
+\]
+
+Since a global phase factor ($i$) has no physical effect, the state of the second qubit is:
+
+\[
+  \boxed{\ket{-i}}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 6}
+
+We compute the $2\times2$ matrix for
+$U(\theta,\phi)=R_z(-\phi)\,R_y(\theta)\,R_z(\phi)$, where
+
+\[
+  R_y(\theta)=e^{i\theta/2}
+  \begin{pmatrix}\cos\tfrac{\theta}{2}&-\sin\tfrac{\theta}{2}\\[4pt]
+                  \sin\tfrac{\theta}{2}& \cos\tfrac{\theta}{2}\end{pmatrix},
+  \qquad
+  R_z(\phi)=\begin{pmatrix}1&0\\0&e^{i\phi}\end{pmatrix}
+\]
+
+Let $c=\cos(\theta/2)$ and $s=\sin(\theta/2)$.
+
+\medskip
+\textbf{Step 1 --- Compute $R_y(\theta)\,R_z(\phi)$:}
+\begin{align*}
+R_y(\theta)\,R_z(\phi)
+  &= e^{i\theta/2}\begin{pmatrix}c&-s\\s&c\end{pmatrix}
+     \begin{pmatrix}1&0\\0&e^{i\phi}\end{pmatrix}
+   = e^{i\theta/2}\begin{pmatrix}c & -se^{i\phi}\\[4pt]s & ce^{i\phi}\end{pmatrix}
+\end{align*}
+
+\textbf{Step 2 --- Pre-multiply by $R_z(-\phi)$:}
+\begin{align*}
+U(\theta,\phi)
+  &= \begin{pmatrix}1&0\\0&e^{-i\phi}\end{pmatrix}
+     \cdot e^{i\theta/2}\begin{pmatrix}c & -se^{i\phi}\\[4pt]s & ce^{i\phi}\end{pmatrix} \\[8pt]
+  &= e^{i\theta/2}
+     \begin{pmatrix}c & -se^{i\phi}\\[4pt]se^{-i\phi} & c\end{pmatrix}
+\end{align*}
+
+\[
+  \boxed{U(\theta,\phi)=e^{i\theta/2}
+    \begin{pmatrix}
+      \cos\tfrac{\theta}{2} & -e^{i\phi}\sin\tfrac{\theta}{2}\\[6pt]
+      e^{-i\phi}\sin\tfrac{\theta}{2} & \cos\tfrac{\theta}{2}
+    \end{pmatrix}}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 7}
+
+Let $V=U(1,1)$. Substituting $\theta=1$, $\phi=1$ into the result of Question 6:
+
+\[
+  V = e^{i/2}
+      \begin{pmatrix}
+        \cos\tfrac{1}{2} & -e^{i}\sin\tfrac{1}{2}\\[6pt]
+        e^{-i}\sin\tfrac{1}{2} & \cos\tfrac{1}{2}
+      \end{pmatrix}
+\]
+
+The controlled-$V$ gate acts as $CV=\ket{0}\!\bra{0}\otimes I+\ket{1}\!\bra{1}\otimes V$.
+When the control qubit is $\ket{0}$, the identity is applied to the target;
+when the control is $\ket{1}$, $V$ is applied.
+As a $4\times4$ matrix (control qubit in the first register):
+
+\[
+  \boxed{CV =
+  \begin{pmatrix}
+    1 & 0 & 0 & 0 \\[4pt]
+    0 & 1 & 0 & 0 \\[4pt]
+    0 & 0 & e^{i/2}\cos\tfrac{1}{2}  & -e^{3i/2}\sin\tfrac{1}{2} \\[4pt]
+    0 & 0 & e^{-i/2}\sin\tfrac{1}{2} &  e^{i/2}\cos\tfrac{1}{2}
+  \end{pmatrix}}
+\]
+
 \end{document}
+
