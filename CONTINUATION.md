@@ -22,12 +22,15 @@ Pull the repo, open this file, paste the resume prompt below into Claude Code.
 | `module_1_foundation_of_quantum_computing/week_4/exercises.py` | ✅ Done | Exercises 4.1–4.3 |
 | `docs/superpowers/specs/2026-06-02-quantum-learning-system-design.md` | ✅ Done | Design spec |
 | `docs/superpowers/plans/2026-06-02-quantum-learning-system-plan.md` | ✅ Done | Implementation plan |
+| `module_1_foundation_of_quantum_computing/assignment_1/assignment_1.tex` | ✅ Done | Full LaTeX solution for all 10 assignment questions |
+| `module_1_foundation_of_quantum_computing/assignment_1/assignment_1_study_guide.md` | ✅ Done | Study guide with recipes and explanations for all 10 questions |
 
 ---
 
 ## What Comes Next
 
 - **Weeks 5–8:** When the Sussex portal releases PDFs for weeks 5–8, add `week_5/` through `week_8/` following the same pattern: `study_notes.md` + `exercises.py`. Update `roadmap.md` to fill in the `[TBD — study materials pending]` sections.
+- **Assignment 1:** `assignment_1.tex` is complete. Open it in your editor, compile with your LaTeX plugin to produce `assignment_1.pdf`, review all 10 solutions, then upload to Canvas.
 - **Midterm assignment:** Due after week 4. See `roadmap.md` → Midterm Checklist.
 
 ---
