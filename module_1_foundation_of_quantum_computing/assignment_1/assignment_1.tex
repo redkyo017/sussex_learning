@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{\textbf{Foundations of Quantum Computing}\\[0.5em]
+       \large Assignment 1}
+\author{Duc Hung Le}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+% ---------------------------------------------------------------
+\section*{Question 1}
+
+Consider the single-qubit unitary transformations $Z$, $H$, and $\mathrm{CX}$ as defined
+in the question. We compute $Z_1\,Z_2\,\mathrm{CX}_{2,1}\,\mathrm{CX}_{2,3}\,H_2\ket{0,0,0}$
+by applying gates right-to-left.
+
+\medskip
+\textbf{Step 1 --- Apply $H_2$:}
+\begin{align*}
+H_2\ket{0,0,0}
+  &= \ket{0}_1 \otimes H\ket{0}_2 \otimes \ket{0}_3 \\
+  &= \ket{0} \otimes \frac{1}{\sqrt{2}}\!\left(\ket{0}+\ket{1}\right) \otimes \ket{0} \\
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{0,1,0}\right)
+\end{align*}
+
+\textbf{Step 2 --- Apply $\mathrm{CX}_{2,3}$ (control = qubit 2, target = qubit 3):}
+
+$\mathrm{CX}_{2,3}\ket{q_1,q_2,q_3}=\ket{q_1,q_2,q_2\oplus q_3}$
+
+\begin{align*}
+\mathrm{CX}_{2,3}\cdot\frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{0,1,0}\right)
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0\oplus 0}+\ket{0,1,1\oplus 0}\right) \\
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{0,1,1}\right)
+\end{align*}
+
+\textbf{Step 3 --- Apply $\mathrm{CX}_{2,1}$ (control = qubit 2, target = qubit 1):}
+
+$\mathrm{CX}_{2,1}\ket{q_1,q_2,q_3}=\ket{q_2\oplus q_1,\,q_2,\,q_3}$
+
+\begin{align*}
+\mathrm{CX}_{2,1}\cdot\frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{0,1,1}\right)
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0\oplus 0,0,0}+\ket{1\oplus 0,1,1}\right) \\
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{1,1,1}\right)
+\end{align*}
+
+\textbf{Step 4 --- Apply $Z_2$:}
+
+$Z\ket{0}=\ket{0}$, $Z\ket{1}=-\ket{1}$, so $Z_2$ negates any term where qubit 2 is $\ket{1}$:
+\begin{align*}
+Z_2\cdot\frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{1,1,1}\right)
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}-\ket{1,1,1}\right)
+\end{align*}
+
+\textbf{Step 5 --- Apply $Z_1$:}
+
+$Z_1$ negates any term where qubit 1 is $\ket{1}$:
+\begin{align*}
+Z_1\cdot\frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}-\ket{1,1,1}\right)
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}-(-1)\ket{1,1,1}\right) \\
+  &= \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{1,1,1}\right)
+\end{align*}
+
+\[
+  \boxed{Z_1\,Z_2\,\mathrm{CX}_{2,1}\,\mathrm{CX}_{2,3}\,H_2\ket{0,0,0}
+         = \frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}+\ket{1,1,1}\right)}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 2}
+
+We compute $H_2\!\left(\tfrac{1}{2}\ket{\Phi^+}+\tfrac{1}{2}\ket{\Phi^-}
++\tfrac{1}{2}\ket{\Psi^+}+\tfrac{1}{2}\ket{\Psi^-}\right)$.
+
+\medskip
+\textbf{Step 1 --- Expand the Bell-state mixture into the computational basis:}
+\begin{align*}
+&\tfrac{1}{2}\ket{\Phi^+}+\tfrac{1}{2}\ket{\Phi^-}+\tfrac{1}{2}\ket{\Psi^+}+\tfrac{1}{2}\ket{\Psi^-} \\
+&= \frac{1}{2\sqrt{2}}\Bigl[
+   \bigl(\ket{00}+\ket{11}\bigr)
+  +\bigl(\ket{00}-\ket{11}\bigr)
+  +\bigl(\ket{01}+\ket{10}\bigr)
+  +\bigl(\ket{01}-\ket{10}\bigr)\Bigr] \\
+&= \frac{1}{2\sqrt{2}}\Bigl[2\ket{00}+2\ket{01}\Bigr]
+ = \frac{1}{\sqrt{2}}\bigl(\ket{0,0}+\ket{0,1}\bigr) \\
+&= \ket{0}_1 \otimes \underbrace{\frac{1}{\sqrt{2}}\bigl(\ket{0}+\ket{1}\bigr)}_{=\,\ket{+}}
+ = \ket{0}\otimes\ket{+}
+\end{align*}
+
+\textbf{Step 2 --- Apply $H_2$:}
+\begin{align*}
+H_2\bigl(\ket{0}\otimes\ket{+}\bigr)
+  &= \ket{0}\otimes H\ket{+} \\
+  &= \ket{0}\otimes H\!\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right) \\
+  &= \ket{0}\otimes\frac{1}{\sqrt{2}}\!\left(H\ket{0}+H\ket{1}\right) \\
+  &= \ket{0}\otimes\frac{1}{\sqrt{2}}\!\left(
+       \frac{\ket{0}+\ket{1}}{\sqrt{2}}+\frac{\ket{0}-\ket{1}}{\sqrt{2}}\right) \\
+  &= \ket{0}\otimes\ket{0}
+\end{align*}
+
+\[
+  \boxed{H_2\!\left(\tfrac{1}{2}\ket{\Phi^+}+\tfrac{1}{2}\ket{\Phi^-}
+         +\tfrac{1}{2}\ket{\Psi^+}+\tfrac{1}{2}\ket{\Psi^-}\right) = \ket{0,0}}
+\]
+
+% ---------------------------------------------------------------
+\section*{Question 3}
+
+Consider $\ket{\Psi^-}=\dfrac{1}{\sqrt{2}}\ket{0,1}-\dfrac{1}{\sqrt{2}}\ket{1,0}$.
+We measure the first qubit in the $\{\ket{0},\ket{1}\}$ basis and obtain $\ket{0}$.
+
+\medskip
+Only the terms where the first qubit is $\ket{0}$ survive the measurement.
+From the expansion, the sole surviving term is $\dfrac{1}{\sqrt{2}}\ket{0}_1\ket{1}_2$.
+
+The probability of this outcome is $\left|\dfrac{1}{\sqrt{2}}\right|^{\!2}=\dfrac{1}{2}$.
+
+After normalising (dividing by $\dfrac{1}{\sqrt{2}}$), the joint state collapses to
+$\ket{0}_1\otimes\ket{1}_2$, so the state of the second qubit is:
+
+\[
+  \boxed{\ket{1}}
+\]
+
+\end{document}
