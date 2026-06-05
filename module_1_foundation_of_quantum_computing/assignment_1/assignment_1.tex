@@ -17,8 +17,8 @@
 \section*{Question 1}
 
 Consider the single-qubit unitary transformations $Z$, $H$, and $\mathrm{CX}$ as defined
-in the question. We compute $Z_1\,Z_2\,\mathrm{CX}_{2,1}\,\mathrm{CX}_{2,3}\,H_2\ket{0,0,0}$
-by applying gates right-to-left.
+in the question. I compute $Z_1\,Z_2\,\mathrm{CX}_{2,1}\,\mathrm{CX}_{2,3}\,H_2\ket{0,0,0}$
+by applying the gates right-to-left, one at a time.
 
 \medskip
 \textbf{Step 1 --- Apply $H_2$:}
@@ -74,8 +74,9 @@ Z_1\cdot\frac{1}{\sqrt{2}}\!\left(\ket{0,0,0}-\ket{1,1,1}\right)
 % ---------------------------------------------------------------
 \section*{Question 2}
 
-We compute $H_2\!\left(\tfrac{1}{2}\ket{\Phi^+}+\tfrac{1}{2}\ket{\Phi^-}
-+\tfrac{1}{2}\ket{\Psi^+}+\tfrac{1}{2}\ket{\Psi^-}\right)$.
+I compute $H_2\!\left(\tfrac{1}{2}\ket{\Phi^+}+\tfrac{1}{2}\ket{\Phi^-}
++\tfrac{1}{2}\ket{\Psi^+}+\tfrac{1}{2}\ket{\Psi^-}\right)$
+by first simplifying the Bell-state mixture, then applying $H_2$.
 
 \medskip
 \textbf{Step 1 --- Expand the Bell-state mixture into the computational basis:}
@@ -112,7 +113,7 @@ H_2\bigl(\ket{0}\otimes\ket{+}\bigr)
 \section*{Question 3}
 
 Consider $\ket{\Psi^-}=\dfrac{1}{\sqrt{2}}\ket{0,1}-\dfrac{1}{\sqrt{2}}\ket{1,0}$.
-We measure the first qubit in the $\{\ket{0},\ket{1}\}$ basis and obtain $\ket{0}$.
+The first qubit is measured in the $\{\ket{0},\ket{1}\}$ basis and the outcome $\ket{0}$ is obtained.
 
 \medskip
 Only the terms where the first qubit is $\ket{0}$ survive the measurement.
@@ -131,10 +132,10 @@ $\ket{0}_1\otimes\ket{1}_2$, so the state of the second qubit is:
 \section*{Question 4}
 
 Consider $\ket{\Psi^-}=\dfrac{1}{\sqrt{2}}\ket{0,1}-\dfrac{1}{\sqrt{2}}\ket{1,0}$.
-We measure the first qubit in the $\{\ket{+},\ket{-}\}$ basis and obtain $\ket{-}$.
+The first qubit is measured in the $\{\ket{+},\ket{-}\}$ basis and the outcome $\ket{-}$ is obtained.
 
 \medskip
-We extract the (unnormalised) state of qubit 2 by computing
+I extract the (unnormalised) state of qubit 2 by computing
 ${}_{1}\!\bra{-}\ket{\Psi^-}$.
 Using $\braket{-|0}=\tfrac{1}{\sqrt{2}}$ and $\braket{-|1}=-\tfrac{1}{\sqrt{2}}$:
 
@@ -165,8 +166,8 @@ Normalising:
 % ---------------------------------------------------------------
 \section*{Question 5}
 
-Consider the same state $\ket{\Psi^-}$. We measure the first qubit in the
-$\{\ket{+i},\ket{-i}\}$ basis and obtain $\ket{+i}$, where
+Consider the same state $\ket{\Psi^-}$. The first qubit is now measured in the
+$\{\ket{+i},\ket{-i}\}$ basis and the outcome $\ket{+i}$ is obtained, where
 $\ket{+i}=\tfrac{1}{\sqrt{2}}(\ket{0}+i\ket{1})$.
 
 \medskip
@@ -203,8 +204,9 @@ Since a global phase factor ($i$) has no physical effect, the state of the secon
 % ---------------------------------------------------------------
 \section*{Question 6}
 
-We compute the $2\times2$ matrix for
-$U(\theta,\phi)=R_z(-\phi)\,R_y(\theta)\,R_z(\phi)$, where
+I compute the $2\times2$ matrix for
+$U(\theta,\phi)=R_z(-\phi)\,R_y(\theta)\,R_z(\phi)$ by multiplying the three matrices
+in right-to-left order. The given definitions are:
 
 \[
   R_y(\theta)=e^{i\theta/2}
@@ -273,8 +275,8 @@ As a $4\times4$ matrix (control qubit in the first register):
 % ---------------------------------------------------------------
 \section*{Question 8}
 
-The four Bell states form an orthonormal basis. We compute the probability of each
-outcome when measuring the state $\ket{+i,+i}$ in the Bell basis,
+The four Bell states form an orthonormal basis. I compute the probability of each
+outcome when measuring $\ket{+i,+i}$ in this Bell basis,
 where $\ket{+i}=\tfrac{1}{\sqrt{2}}(\ket{0}+i\ket{1})$.
 
 \medskip
@@ -376,9 +378,9 @@ each with amplitude $\tfrac{1}{2}$:
 % ---------------------------------------------------------------
 \section*{Question 10}
 
-We use the same state
-$\ket{\psi_0}=\tfrac{1}{2}(\ket{000}+\ket{010}+\ket{100}+\ket{111})$
-from Question 9, with $P(\text{qubit 3}=\ket{0})=\tfrac{3}{4}$.
+I use the state computed in Question~9:
+$\ket{\psi_0}=\tfrac{1}{2}(\ket{000}+\ket{010}+\ket{100}+\ket{111})$,
+and the result that $P(\text{qubit 3}=\ket{0})=\tfrac{3}{4}$.
 
 \medskip
 \textbf{Step 1 --- Post-measurement state conditioned on qubit 3 $=\ket{0}$:}
