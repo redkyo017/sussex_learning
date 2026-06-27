@@ -24,14 +24,23 @@ Pull the repo, open this file, paste the resume prompt below into Claude Code.
 | `docs/superpowers/plans/2026-06-02-quantum-learning-system-plan.md` | ✅ Done | Implementation plan |
 | `module_1_foundation_of_quantum_computing/assignment_1/assignment_1.tex` | ✅ Done | Full LaTeX solution for all 10 assignment questions |
 | `module_1_foundation_of_quantum_computing/assignment_1/assignment_1_study_guide.md` | ✅ Done | Study guide with recipes and explanations for all 10 questions |
+| `module_1_foundation_of_quantum_computing/week_5/study_notes.md` | ✅ Done | Grover's algorithm, amplitude amplification, oracle model |
+| `module_1_foundation_of_quantum_computing/week_5/exercises.py` | ✅ Done | Exercises 5.1–5.3 (oracle, Grover iterator, optimal iterations) |
+| `module_1_foundation_of_quantum_computing/week_6/study_notes.md` | ✅ Done | Shor's algorithm: RSA, order finding, QFT |
+| `module_1_foundation_of_quantum_computing/week_6/exercises.py` | ✅ Done | Exercises 6.1–6.3 (order finding, QFT matrix, continued fractions) |
+| `module_1_foundation_of_quantum_computing/week_7/study_notes.md` | ✅ Done | Hamiltonians, adiabatic algorithm, Trotterisation, QAOA (not in portfolio) |
+| `module_1_foundation_of_quantum_computing/week_7/exercises.py` | ✅ Done | Exercises 7.1–7.2 (matrix exponential, Trotterisation) |
+| `docs/superpowers/specs/2026-06-27-weeks-5-7-extension-design.md` | ✅ Done | Design spec for weeks 5–7 extension |
+| `docs/superpowers/plans/2026-06-27-weeks-5-7-extension-plan.md` | ✅ Done | Implementation plan for weeks 5–7 extension |
 
 ---
 
 ## What Comes Next
 
-- **Weeks 5–8:** When the Sussex portal releases PDFs for weeks 5–8, add `week_5/` through `week_8/` following the same pattern: `study_notes.md` + `exercises.py`. Update `roadmap.md` to fill in the `[TBD — study materials pending]` sections.
-- **Assignment 1:** `assignment_1.tex` is complete. Open it in your editor, compile with your LaTeX plugin to produce `assignment_1.pdf`, review all 10 solutions, then upload to Canvas.
-- **Midterm assignment:** Due after week 4. See `roadmap.md` → Midterm Checklist.
+- **Assignment 1:** Complete — scored 98/100. Feedback: add closing sentences to Q1, Q2, Q4, Q8, Q9 for the portfolio.
+- **Weeks 1–7:** All study notes and exercises complete. Week 8 is a revision week (no PDF, no new files).
+- **Assignment 2 / Portfolio:** Next major task. Requirements being collected. Will cover Weeks 1–6 content (Week 7 explicitly excluded from portfolio assessment).
+- **Revision (Week 8):** Use `week_1/` through `week_6/` exercises for revision. Run `python exercises.py` in each folder.
 
 ---
 
@@ -43,21 +52,20 @@ Paste this into a new Claude Code session after pulling the repo:
 
 > I'm continuing my quantum computing learning system for my Sussex MSc (Quantum Technology Applications and Management). The project is in `module_1_foundation_of_quantum_computing/`.
 >
-> The design spec is at: `docs/superpowers/specs/2026-06-02-quantum-learning-system-design.md`
-> The implementation plan is at: `docs/superpowers/plans/2026-06-02-quantum-learning-system-plan.md`
+> Study notes and exercises are complete for weeks 1–7. Assignment 1 is done (98/100). Week 8 is a revision week with no new files.
 >
-> All tasks in the implementation plan are complete for weeks 1–4. The immediate next steps are:
-> 1. When week 5–8 PDFs arrive, read them and add `week_N/study_notes.md` + `week_N/exercises.py` following the same pattern as weeks 1–4 (see any existing week folder as a template).
-> 2. Update `module_1_foundation_of_quantum_computing/roadmap.md` to replace the `[TBD — study materials pending]` sections with real content.
-> 3. Update the "What Has Been Built" table in `CONTINUATION.md`.
+> The next task is **Assignment 2 / Portfolio** (covers weeks 1–6; week 7 is explicitly excluded). Please read `CONTINUATION.md` and the design specs in `docs/superpowers/specs/` for context, then help me work on the portfolio.
 >
-> Please read the spec and plan files first, then ask me what I'd like to work on.
+> Key specs:
+> - Original system design: `docs/superpowers/specs/2026-06-02-quantum-learning-system-design.md`
+> - Weeks 5–7 extension design: `docs/superpowers/specs/2026-06-27-weeks-5-7-extension-design.md`
 
 ---
 
 ## Notes
 
 - All exercises verified runnable with `python exercises.py` in each week folder
-- Requires: `pip install numpy`
-- Week 4 exercises require no additional packages beyond numpy
-- Future weeks (5–8) will likely require `pip install qiskit` for circuit simulation
+- Weeks 1–6 require: `pip install numpy`
+- Week 7 additionally requires: `pip install scipy` (for `scipy.linalg.expm`)
+- No qiskit required — all exercises use numpy/scipy only
+- Week 7 topics are NOT assessed in the portfolio (per course PDF)
