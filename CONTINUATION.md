@@ -32,6 +32,8 @@ Pull the repo, open this file, paste the resume prompt below into Claude Code.
 | `module_1_foundation_of_quantum_computing/week_7/exercises.py` | ✅ Done | Exercises 7.1–7.2 (matrix exponential, Trotterisation) |
 | `docs/superpowers/specs/2026-06-27-weeks-5-7-extension-design.md` | ✅ Done | Design spec for weeks 5–7 extension |
 | `docs/superpowers/plans/2026-06-27-weeks-5-7-extension-plan.md` | ✅ Done | Implementation plan for weeks 5–7 extension |
+| `docs/superpowers/specs/2026-06-27-portfolio-design.md` | ✅ Done | Design spec for Assignment 2 portfolio |
+| `module_1_foundation_of_quantum_computing/assignment_2_portfolio/portfolio.tex` | ✅ Done | Full LaTeX portfolio — all 5 weeks (Wks 2–6), 100 marks |
 
 ---
 
@@ -39,7 +41,7 @@ Pull the repo, open this file, paste the resume prompt below into Claude Code.
 
 - **Assignment 1:** Complete — scored 98/100. Feedback: add closing sentences to Q1, Q2, Q4, Q8, Q9 for the portfolio.
 - **Weeks 1–7:** All study notes and exercises complete. Week 8 is a revision week (no PDF, no new files).
-- **Assignment 2 / Portfolio:** Next major task. Requirements being collected. Will cover Weeks 1–6 content (Week 7 explicitly excluded from portfolio assessment).
+- **Assignment 2 / Portfolio:** Complete — `portfolio.tex` covers all five weeks (2–6), 100 marks total. Compile with `pdflatex portfolio.tex` and submit the PDF.
 - **Revision (Week 8):** Use `week_1/` through `week_6/` exercises for revision. Run `python exercises.py` in each folder.
 
 ---
