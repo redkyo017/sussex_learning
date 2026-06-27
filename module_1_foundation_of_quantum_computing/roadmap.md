@@ -12,12 +12,10 @@
 | 2 | 2D algebra, Complex numbers, Eigenvectors/eigenvalues, Single-qubit states | **Linear algebra**, **complex numbers**, trig |
 | 3 | Single-qubit unitaries, Bloch sphere, Multi-qubit states & transformations | Linear algebra (matrices, unitary), trig |
 | 4 | Quantum teleportation, Bell states, Hadamard, Phase estimation | Everything from weeks 1–3 |
-| 5 | Quantum algorithms intro (Deutsch-Jozsa, Bernstein-Vazirani) | Weeks 1–4 complete |
-| 6 | Quantum Fourier Transform | Week 5 |
-| 7 | Grover's search algorithm | Week 6 |
-| 8 | Shor's algorithm overview / error correction intro | Week 7 |
-
-> Weeks 5–8: [TBD — study materials pending]
+| 5 | Grover's algorithm, amplitude amplification, oracle model | Weeks 1–4 complete |
+| 6 | Shor's algorithm, RSA cryptosystem, order finding, QFT | Week 5 |
+| 7 | Hamiltonians, adiabatic algorithm, Trotterisation, QAOA | Week 6 |
+| 8 | Revision week (no new material) | Weeks 1–7 |
 
 ---
 
@@ -61,14 +59,25 @@ MIDTERM PREP:         3 days: work problems by hand, then verify with code
 ## Tools
 
 ```bash
-pip install numpy scipy matplotlib qiskit
+pip install numpy scipy
 ```
 
-Qiskit provides a local quantum circuit simulator that mirrors the QAAL notation used in the course PDFs.
+All exercises (weeks 1–7) require only numpy and scipy. No circuit simulator required.
 
 ---
 
-## Resources for Weeks 5–8 (Pre-Study)
+## Weeks 5–7 Content Summary
 
-- **IBM Qiskit Textbook** — free at learning.qiskit.org; chapters on Deutsch-Jozsa, Grover, QFT map directly to this course
-- **Quantum Country** — quantumcountry.com; spaced-repetition quantum textbook by Andy Matuschak, excellent for retention
+| Week | Title | Portfolio? | Notes |
+|------|-------|-----------|-------|
+| 5 | Grover's algorithm + amplitude amplification | ✅ Yes | Oracle model, 2D geometry, t_opt = floor(π/(4θ)) |
+| 6 | Shor's algorithm (RSA, order finding, QFT) | ✅ Yes | Most technical week; "not expected in fine detail" |
+| 7 | Hamiltonians, adiabatic, Trotterisation, QAOA | ❌ No | Explicitly excluded from portfolio assessment |
+
+---
+
+## Resources for Weeks 5–7 (Additional Reading)
+
+- **Nielsen & Chuang Chapter 6** — Grover's algorithm with full mathematical treatment
+- **Quantum Country** — quantumcountry.com; spaced-repetition quantum textbook, excellent for Grover/Shor retention
+- **Scott Aaronson's lecture notes** — Shor's algorithm explained clearly with number theory background
