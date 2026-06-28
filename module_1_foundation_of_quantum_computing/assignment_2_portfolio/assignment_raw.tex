@@ -14,7 +14,7 @@
 \thispagestyle{empty}
 
 % ---------------------------------------------------------------
-\section*{Week 2 --- Properties of the Operator $H$}
+\section*{Week 2 --- Properties of the Operator $H$ [10 marks]}
 
 Consider the operator
 \[
@@ -23,7 +23,10 @@ Consider the operator
 
 % --- Part (a) ---
 \medskip
-\noindent\textbf{(a)}\enspace To show that $H$ acts as a reflection on 2D vectors with real-valued coefficients, I compute $H^2$ directly:
+\textbf{Part (a) --- Algebraic argument that $H$ is a reflection [2 marks]}
+
+\medskip
+To show that $H$ acts as a reflection on 2D vectors with real-valued coefficients, I compute $H^2$ directly:
 \begin{align*}
 H^2
   &= \frac{1}{\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
@@ -37,7 +40,10 @@ Since $H^2 = I$ and $H\neq I$, applying $H$ twice returns every real-valued 2D v
 
 % --- Part (b) ---
 \medskip
-\noindent\textbf{(b)}\enspace Applying $H$ to $\ket{0}$ gives
+\textbf{Part (b) --- Geometric argument for the axis of reflection [2 marks]}
+
+\medskip
+Applying $H$ to $\ket{0}$ gives
 \[
   H\ket{0} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
            = \frac{1}{\sqrt{2}}\bigl(\ket{0}+\ket{1}\bigr),
@@ -52,7 +58,10 @@ from the $\ket{0}$ axis.
 
 % --- Part (c) ---
 \medskip
-\noindent\textbf{(c)}\enspace I identify the eigenvalues and eigenvectors using the results of parts (a) and (b).
+\textbf{Part (c) --- Eigendecomposition of $H$ in ket notation [6 marks]}
+
+\medskip
+I identify the eigenvalues and eigenvectors using the results of parts (a) and (b).
 
 \textit{Eigenvalues.} Since $H^2 = I$, every eigenvalue $\lambda$ satisfies $\lambda^2 = 1$, so the eigenvalues are $+1$ and $-1$.
 
@@ -76,7 +85,7 @@ $\ket{e_-} = -\sin\tfrac{\pi}{8}\,\ket{0}+\cos\tfrac{\pi}{8}\,\ket{1}$.
 Thus $H$ decomposes into a projection onto its $+1$ eigenspace minus a projection onto its $-1$ eigenspace, which is the spectral representation of a reflection.
 
 % ---------------------------------------------------------------
-\section*{Week 3 --- The SWAP Gate}
+\section*{Week 3 --- The SWAP Gate [15 marks]}
 
 Consider the operator
 \[
@@ -87,7 +96,10 @@ which acts on two-qubit states as $\mathrm{SWAP}\ket{a,b}=\ket{b,a}$.
 
 % --- Part (a) ---
 \medskip
-\noindent\textbf{(a)}\enspace I determine the inverse of $\mathrm{SWAP}$ by considering its action on product states.
+\textbf{Part (a) --- Inverse of SWAP and eigenvalues $\pm1$ [3 marks]}
+
+\medskip
+I determine the inverse of $\mathrm{SWAP}$ by considering its action on product states.
 Applying $\mathrm{SWAP}$ twice gives
 \[
   \mathrm{SWAP}^2\ket{a,b} = \mathrm{SWAP}\ket{b,a} = \ket{a,b},
@@ -99,7 +111,10 @@ Since $\mathrm{SWAP}^2 = I$, every eigenvalue $\lambda$ satisfies $\lambda^2 = 1
 
 % --- Part (b) ---
 \medskip
-\noindent\textbf{(b)}\enspace I seek a normalised state $\ket{\psi}=u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ satisfying $\mathrm{SWAP}\ket{\psi}=-\ket{\psi}$.
+\textbf{Part (b) --- A $(-1)$-eigenvector of SWAP [3 marks]}
+
+\medskip
+I seek a normalised state $\ket{\psi}=u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ satisfying $\mathrm{SWAP}\ket{\psi}=-\ket{\psi}$.
 
 Applying SWAP term by term:
 \[
@@ -119,7 +134,10 @@ This state has $u_{00}=u_{11}=0$ and $u_{01}=-u_{10}=\tfrac{1}{\sqrt{2}}$, which
 
 % --- Part (c) ---
 \medskip
-\noindent\textbf{(c)}\enspace Since $\mathrm{SWAP}$ is Hermitian with eigenvalues $\pm1$, it can be treated as an observable.
+\textbf{Part (c) --- SWAP measurement on $\ket{01}$: probability of outcome $-1$ and post-measurement state [6 marks]}
+
+\medskip
+Since $\mathrm{SWAP}$ is Hermitian with eigenvalues $\pm1$, it can be treated as an observable.
 To find the probability of the outcome $-1$, I decompose $\ket{01}$ in the SWAP eigenbasis.
 
 The $+1$ eigenspace is spanned by the symmetric states: $\ket{00}$, $\ket{11}$, and $\tfrac{1}{\sqrt{2}}(\ket{01}+\ket{10})$.
@@ -147,7 +165,10 @@ Thus, a SWAP measurement on $\ket{01}$ yields outcome $-1$ with probability $\tf
 
 % --- Part (d) ---
 \medskip
-\noindent\textbf{(d)}\enspace The coherently controlled-SWAP (CSWAP) gate acts on three qubits: a control qubit $c$ and two target qubits.
+\textbf{Part (d) --- Matrix and algebraic representation of CSWAP [3 marks]}
+
+\medskip
+The coherently controlled-SWAP (CSWAP) gate acts on three qubits: a control qubit $c$ and two target qubits.
 It applies SWAP to the targets when $c=\ket{1}$ and acts as the identity otherwise, in direct analogy with the $CU$ construction.
 
 As an $8\times8$ matrix (ordering $\ket{000},\ket{001},\ket{010},\ket{011},\ket{100},\ket{101},\ket{110},\ket{111}$):
@@ -173,7 +194,7 @@ where $I_4$ is the $4\times4$ identity acting on the two target qubits.
 This mirrors the general $CU$ form $\ket{0}\!\bra{0}\otimes I+\ket{1}\!\bra{1}\otimes U$, here with $U=\mathrm{SWAP}$.
 
 % ---------------------------------------------------------------
-\section*{Week 4 --- Quantum Teleportation}
+\section*{Week 4 --- Quantum Teleportation [25 marks]}
 
 Suppose Alice holds qubits $\mathsf{p}$ and $\mathsf{a}$, Bob holds qubits $\mathsf{b}$ and $\mathsf{q}$,
 with $\mathsf{a}$ and $\mathsf{b}$ pre-shared in the Bell state
@@ -183,7 +204,10 @@ $\ket{\psi}=u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}\in\mathb
 
 % --- Part (a) ---
 \medskip
-\noindent\textbf{(a)}\enspace The four-qubit state, written with qubits in the order $\mathsf{p,a,b,q}$, is the tensor product
+\textbf{Part (a) --- Joint state of p, a, b, q [5 marks]}
+
+\medskip
+The four-qubit state, written with qubits in the order $\mathsf{p,a,b,q}$, is the tensor product
 $\ket{\psi}_{pq}\otimes\ket{\Phi^+}_{ab}$ reordered to interleave the $\mathsf{a}$ and $\mathsf{b}$ registers:
 \begin{align*}
 \ket{\Psi}_{pabq}
@@ -199,7 +223,7 @@ This is the starting state of the teleportation protocol; qubit ordering is $\ma
 
 % --- Part (b) ---
 \medskip
-\noindent\textbf{(b)}\enspace I trace each operation in sequence, presenting all possible measurement outcomes together.
+\textbf{Part (b) --- Sequence of states and measurement outcomes [15 marks]}
 
 \medskip
 \textit{Operation 1: $\mathrm{CX}_{\mathsf{p},\mathsf{a}}$ (Alice applies CNOT, control $\mathsf{p}$, target $\mathsf{a}$).}
@@ -278,7 +302,10 @@ Thus Alice's measurement $r$ and Bob's measurement $s$ together determine which 
 
 % --- Part (c) ---
 \medskip
-\noindent\textbf{(c)}\enspace Applying $\mathrm{CX}_{\mathsf{p,q}}$ to $\ket{\psi}$ (control $\mathsf{p}$, target $\mathsf{q}$) gives the target state:
+\textbf{Part (c) --- Computing $\ket{\psi'}=\mathrm{CX}\ket{\psi}$ and required corrections [2 marks]}
+
+\medskip
+Applying $\mathrm{CX}_{\mathsf{p,q}}$ to $\ket{\psi}$ (control $\mathsf{p}$, target $\mathsf{q}$) gives the target state:
 \[
   \ket{\psi'} = \mathrm{CX}\ket{\psi}
   = u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{11}+u_{11}\ket{10}.
@@ -295,7 +322,10 @@ and Bob must send $s$ (1 classical bit) to Alice.
 
 % --- Part (d) ---
 \medskip
-\noindent\textbf{(d)}\enspace The protocol achieves something remarkable: Alice and Bob together apply the entangling gate
+\textbf{Part (d) --- Significance [3 marks]}
+
+\medskip
+The protocol achieves something remarkable: Alice and Bob together apply the entangling gate
 $\mathrm{CX}$ to a two-qubit state $\ket{\psi}$ they do not know, even though qubit $\mathsf{p}$ is
 held by Alice and qubit $\mathsf{q}$ is held by Bob with no direct quantum channel between them.
 The entangled resource $\ket{\Phi^+}$ plays the role of a quantum ``wire'': by consuming it together
@@ -305,7 +335,7 @@ entanglement can substitute for direct quantum interaction — a central insight
 quantum computing and quantum networks.
 
 % ---------------------------------------------------------------
-\section*{Week 5 --- Grover's Algorithm}
+\section*{Week 5 --- Grover's Algorithm [25 marks]}
 
 Let $f:\{0,1\}^2\to\{0,1\}$ satisfy $f(x)=1$ iff $x=01$, with oracle
 $\mathtt{O\_f}\ket{x_1 x_2,t}=\ket{x_1 x_2,\,t\oplus f(x_1 x_2)}$.
@@ -398,14 +428,17 @@ finds it in $O(\sqrt{N})=O(2)$ queries — here reduced to a single query that s
 This quadratic speedup is the central achievement of Grover's algorithm.
 
 % ---------------------------------------------------------------
-\section*{Week 6 --- Shor's Algorithm}
+\section*{Week 6 --- Shor's Algorithm: Factorising $N=323$ [25 marks]}
 
 I factorise $N=323$ using $a=2$, with phase-estimation samples
 $x_1=7/24$ and $x_2=5/18$.
 
 % --- Part (a) ---
 \medskip
-\noindent\textbf{(a)}\enspace The eigenvalues of $U_a$ are $e^{2\pi i k/s}$ for $k=0,\ldots,s-1$,
+\textbf{Part (a) --- Finding the order $s$ [6 marks]}
+
+\medskip
+The eigenvalues of $U_a$ are $e^{2\pi i k/s}$ for $k=0,\ldots,s-1$,
 so each sample $x_j$ is close to some $k_j/s$.
 I apply the continued-fraction algorithm to find the best rational approximation to each sample.
 
@@ -433,7 +466,10 @@ respectively, so $\mathrm{ord}_{323}(2)=\mathrm{lcm}(8,18)=72$~\checkmark
 
 % --- Part (b) ---
 \medskip
-\noindent\textbf{(b)}\enspace For the order $s$ to be useful in factorising $N$, two conditions must hold:
+\textbf{Part (b) --- Properties $s$ must satisfy to be useful [3 marks]}
+
+\medskip
+For the order $s$ to be useful in factorising $N$, two conditions must hold:
 \begin{enumerate}
   \item $s$ must be \textbf{even}, so that $a^{s/2}$ is a well-defined integer.
   \item $a^{s/2}\not\equiv\pm1\pmod{N}$, so that the square root of unity $a^{s/2}\bmod N$
@@ -444,7 +480,10 @@ Here $s=72$ is even, and we will confirm that $2^{36}\not\equiv\pm1\pmod{323}$ i
 
 % --- Part (c) ---
 \medskip
-\noindent\textbf{(c)}\enspace I set $u=a^{s/2}\bmod N = 2^{36}\bmod 323$ and compute this via the Chinese Remainder Theorem,
+\textbf{Part (c) --- Finding $u$ with $u^2\equiv1\pmod{N}$ [10 marks]}
+
+\medskip
+I set $u=a^{s/2}\bmod N = 2^{36}\bmod 323$ and compute this via the Chinese Remainder Theorem,
 since $323=17\times19$.
 
 \textit{Step 1 --- $2^{36}\bmod 17$.}
@@ -482,7 +521,10 @@ $305\not\equiv\pm1\pmod{323}$ (since $305\neq1$ and $305\neq322$)~\checkmark
 
 % --- Part (d) ---
 \medskip
-\noindent\textbf{(d)}\enspace Since $u^2\equiv1\pmod{N}$, we have $N\mid(u^2-1)=(u-1)(u+1)$,
+\textbf{Part (d) --- Computing the factors of $N$ [6 marks]}
+
+\medskip
+Since $u^2\equiv1\pmod{N}$, we have $N\mid(u^2-1)=(u-1)(u+1)$,
 but $N\nmid(u-1)$ and $N\nmid(u+1)$ (because $u\not\equiv\pm1$).
 A common divisor of $(u\pm1)$ and $N$ must therefore be a non-trivial factor. I compute:
 
