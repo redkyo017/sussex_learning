@@ -41,7 +41,7 @@ Pull the repo, open this file, paste the resume prompt below into Claude Code.
 
 - **Assignment 1:** Complete — scored 98/100. Feedback: add closing sentences to Q1, Q2, Q4, Q8, Q9 for the portfolio.
 - **Weeks 1–7:** All study notes and exercises complete. Week 8 is a revision week (no PDF, no new files).
-- **Assignment 2 / Portfolio:** Complete — `portfolio.tex` covers all five weeks (2–6), 100 marks total. Compile with `pdflatex portfolio.tex` and submit the PDF.
+- **Assignment 2 / Portfolio:** Submitted 2026-06-27. Turnitin returned 6% similarity — all matches were mathematical notation and problem-given constants, not prose. No risk; awaiting grade.
 - **Revision (Week 8):** Use `week_1/` through `week_6/` exercises for revision. Run `python exercises.py` in each folder.
 
 ---
@@ -61,6 +61,26 @@ Paste this into a new Claude Code session after pulling the repo:
 > Key specs:
 > - Original system design: `docs/superpowers/specs/2026-06-02-quantum-learning-system-design.md`
 > - Weeks 5–7 extension design: `docs/superpowers/specs/2026-06-27-weeks-5-7-extension-design.md`
+
+---
+
+## Lessons Learned
+
+### Turnitin similarity in STEM/maths assignments (2026-06-29)
+
+**Context:** Assignment 2 portfolio returned 6% overall similarity.
+
+**Finding:** For maths-heavy assignments, Turnitin will always flag some similarity — but nearly all of it will be false positives:
+- Mathematical notation (`cos(π/8)|0⟩`, ket notation, tensor products) cannot be rephrased — Turnitin flags it anyway.
+- Problem parameters given in the question sheet (N=323, a=2, specific function definitions) will appear identically in every student's submission — that is expected and not misconduct.
+- Standard textbook derivations (phase kickback, Shor's `(u−1)(u+1)` argument) are shared across the field.
+
+**Rule of thumb:**
+- Under 10% with all matches on notation/formulae: safe, no action needed.
+- Over 15%: check whether matches are prose or notation. Only prose matches to student papers require attention.
+- Do NOT try to rephrase mathematical notation to reduce the score — it makes the work look unnatural and does not help.
+
+**What matters to the professor:** Is the expository prose original? In this portfolio, every explanation and closing sentence was original — that is the only thing that counts.
 
 ---
 

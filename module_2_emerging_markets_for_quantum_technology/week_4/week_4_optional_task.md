@@ -1,0 +1,5 @@
+Optional Task
+
+Reflect on our Week 2 discussion on hype in innovation and consider whether there is exaggerated messaging around risks. Make some notes in either text or mind map form, using a document in MS Word or a Quarto document in Rstudio. The focus will be on responsible research and innovation (RRI) and its underlying assumptions. The notes should apply to technology in general, but refer specifically to quantum technology (QT) and emerging technologies, focusing on their uncertainty and potential impact.
+
+Notes should include explanations of why we need RRI, what ideas support the use of RRI frameworks, the main features of the AREA frameworkLinks to an external site. and the ideas developed in this week’s reading. You might also want to reflect on whether you consider RRI frameworks to be effective or sufficient, and critically engage with them.
