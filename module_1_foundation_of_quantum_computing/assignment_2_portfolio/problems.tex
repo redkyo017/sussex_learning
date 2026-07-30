@@ -1,0 +1,251 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+
+\lstdefinestyle{pseudocode}{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{red!70!black},
+  commentstyle=\itshape\color{red!70!black},
+  morecomment=[l]{\#},
+  frame=single,
+  backgroundcolor=\color{gray!8},
+  xleftmargin=1.5em,
+  xrightmargin=1.5em,
+  columns=flexible,
+  keepspaces=true,
+}
+
+\title{\textbf{Foundations of Quantum Computing}\\[0.5em]
+       \large Portfolio Problems}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+% ---------------------------------------------------------------
+\section*{Week 2 --- Portfolio Problem \hfill [10 marks]}
+
+Consider the operator
+\[
+  H = \begin{pmatrix} 1/\sqrt{2} & 1/\sqrt{2} \\ 1/\sqrt{2} & -1/\sqrt{2} \end{pmatrix}.
+\]
+
+\medskip
+\textbf{a.}
+Provide a simple \textbf{algebraic} argument that $H$ is a \textbf{reflection} when acting on 2D
+vectors with real-valued coefficients.
+\hfill\textbf{[2 marks]}
+
+\smallskip
+\textit{Hint}: consider some appropriate matrix product, or the effect of $H$ on certain
+single-qubit states.
+
+\medskip
+\textbf{b.}
+Provide a simple \textbf{geometric} argument, referring to angles between lines in a 2D diagram,
+to determine the angle made by the axis of reflection, relative to the $\ket{0}$ axis.
+\hfill\textbf{[2 marks]}
+
+\smallskip
+\textit{Hint}: what angle does $H\ket{0}$ make with $\ket{0}$?
+
+\medskip
+\textbf{c.}
+Use the above to identify two orthogonal unit eigenvectors of $H$, and use this to write an
+eigendecomposition of $H$ in ket-notation (i.e., in the form described in the Study Notes).
+\hfill\textbf{[6 marks]}
+
+% ---------------------------------------------------------------
+\section*{Week 3 --- Portfolio Problems \hfill [15 marks]}
+
+Consider the operator
+\[
+  \mathrm{SWAP} =
+  \begin{pmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix}
+\]
+discussed in the Week 3 Study materials.
+
+\medskip
+\textbf{a.}
+What is the inverse operation for $\mathrm{SWAP}$? From this, explain how you can infer that it
+has eigenvalues $\pm 1$.
+\hfill\textbf{[3 marks]}
+
+\smallskip
+\textit{Hint}: what it does to product states (e.g., computational basis states)?
+
+\medskip
+\textbf{b.}
+Suppose that $\ket{\psi} = u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ is a
+$(-1)$-eigenvector of $\mathrm{SWAP}$. Express $\ket{\psi}$ explicitly as a linear combination of
+computational basis states, in ket notation and with at least one positive real-valued coefficient.
+Give a justification for the coefficients presented.
+\hfill\textbf{[3 marks]}
+
+\smallskip
+\textit{Hint}: what constraints does being a $(-1)$-eigenvector of $\mathrm{SWAP}$ impose on the
+coefficients?
+
+\medskip
+\textbf{c.}
+Because $\mathrm{SWAP}$ has eigenvalues $\pm 1$, it is also Hermitian --- and can be treated as a
+measurement observable. If you were to perform a $\mathrm{SWAP}$-measurement on the state
+$\ket{01}$, what would be the probability of the outcome $-1$? What is the post-measurement state
+in this case?
+\hfill\textbf{[6 marks]}
+
+\medskip
+\textbf{d.}
+Simply write a matrix for a three-qubit coherently controlled operation, $\mathrm{CSWAP}$, in
+analogy to the operators $CU$ on two qubits. Then, write a more-condensed algebraic representation
+for $\mathrm{CSWAP}$, using projectors and ket-notation.
+\hfill\textbf{[3 marks]}
+
+% ---------------------------------------------------------------
+\section*{Week 4 --- Portfolio Problems \hfill [25 marks]}
+
+Suppose that Alice and Bob share two qubits $a$ and $b$ in the Bell state $\ket{\Phi^+}$. Suppose
+also that Alice has a qubit $\mathsf{p}$ and Bob has a qubit $\mathsf{q}$, which are in a joint
+state
+\[
+  \ket{\psi} = u_{00}\ket{0,0}+u_{01}\ket{0,1}+u_{10}\ket{1,0}+u_{11}\ket{1,1}\in\mathbb{C}^4
+\]
+that Alice and Bob don't precisely know --- and which may even be entangled.
+
+\medskip
+\textbf{a.}
+Simply write, in ket notation, the state-vector for the joint state of $\mathsf{p}$, $\mathsf{a}$,
+$\mathsf{b}$, $\mathsf{q}$ --- and with the qubits in \textit{that specific order}.
+\hfill\textbf{[5 marks]}
+
+\medskip
+\textbf{b.}
+Suppose that Alice and Bob perform the \textbf{following} operations on their qubits, initially in
+the state $\ket{\psi}$:
+
+\begin{lstlisting}[style=pseudocode]
+# Alice and Bob each prepare some classical memory
+# to store measurement outcomes
+bit r       # for Alice
+bit s       # for Bob
+
+# What Alice does
+CX p, a
+Mz a -> r
+
+# What Bob does
+CX b, q
+Mx b -> s
+\end{lstlisting}
+
+Describe the sequence of states produced by performing these operations, in the given order, on an
+initial state of $\ket{\psi}$. In your answer, describe all of the possible outcomes of the
+measurements performed, grouped together for each measurement (i.e., presenting all possible
+outcomes together in your analysis).
+\hfill\textbf{[15 marks]}
+
+\medskip
+\textbf{c.}
+Compute the state $\ket{\psi'} = \mathrm{CX}\ket{\psi}$. What information must Alice and Bob send
+each other, and what operations must they do to the qubits $\mathsf{p}$, $\mathsf{q}$, to
+transform the possible states they could obtain in part~(b) to instead get $\ket{\psi'}$ for all
+outcomes?
+\hfill\textbf{[2 marks]}
+
+\medskip
+\textbf{d.}
+Summarise, in your own words, what the significance is of the fact that Alice and Bob could manage
+to compute the state $\mathrm{CX}\ket{\psi}$ in this way.
+\hfill\textbf{[3 marks]}
+
+% ---------------------------------------------------------------
+\section*{Week 5 --- Portfolio Problem \hfill [25 marks]}
+
+Let $f:\{0,1\}^2\to\{0,1\}$ be a function such that $f(x)=1$ if and only if $x=01$, and $f(x)=0$
+otherwise. Let $\mathtt{O\_f}$ be a unitary oracle on three qubits, computing
+\[
+  \mathtt{O\_f}\ket{x_1 x_2,\,t} = \ket{x_1 x_2,\;t\oplus f(x_1 x_2)}.
+\]
+
+Motivated by Grover's algorithm (as described on page 10 of the Week 5 Study notes), consider the
+following procedure:
+
+\begin{lstlisting}[style=pseudocode]
+register a: 2 bits      # a classical output register
+register q: 2 qubits    # a two-qubit register
+qubit t                 # an auxiliary 'target' qubit
+
+MxReset q               # initialise q to |+,+>
+MxReset t               # initialise
+Z t                     # t to |->
+
+O_f q[0], q[1], t       # oracle query
+R_u q                   # reflect q about the |+,+> state
+
+Mz q -> a               # measure the output
+\end{lstlisting}
+
+where we define the subroutine \texttt{R\_u} by the following operations:
+
+\begin{lstlisting}[style=pseudocode]
+define R_u q
+    # Reflect a two-qubit state about the |+,+> state
+    operand register q: 2 qubits
+
+    H q             # Change of basis
+    CZ q[0], q[1]   # Apply phase to two-qubit state
+    H q             # Undo change of basis
+    X q             # Interchange |0> <-> |1>
+    stop
+\end{lstlisting}
+
+Using ket notation, compute the effects of the procedure above, describing the effect of the
+operations in sequence. Describe the significance of the output in your own words.
+\hfill\textbf{[25 marks]}
+
+% ---------------------------------------------------------------
+\section*{Week 6 --- Portfolio Problem \hfill [25 marks]}
+
+Factorise $N=323$, using the reduction from integer factorisation to order finding, and the
+reduction from order finding to phase estimation --- but using the following data to avoid having
+to access a quantum computer.
+
+In the following, take $a=2$ as the number to find the order of (rather than selecting $a$ at
+random). Suppose that for this value of $a$, you performed phase estimation with the unitary
+operator $U_a$, obtaining the following two samples of values of $x$ (representing eigenvalues
+$e^{2\pi ix}$ of the unitary $U_a$):
+\[
+  x_1 = 7/24, \qquad x_2 = 5/18.
+\]
+
+Perform the following steps, showing your workings:
+
+\medskip
+\textbf{a.}
+From the samples $x_1$ and $x_2$, compute a candidate for the order $1<s<N$, of $a$ modulo $N$,
+describing the way in which you obtain it.
+\hfill\textbf{[6 marks]}
+
+\medskip
+\textbf{b.}
+What properties does $s$ have to have, to be of use in factorising $N$?
+\hfill\textbf{[3 marks]}
+
+\medskip
+\textbf{c.}
+From this value of $s$, find an integer $1<u<N$ such that $u^2\equiv 1\pmod{N}$, describing how
+you obtain it.
+\hfill\textbf{[10 marks]}
+
+\medskip
+\textbf{d.}
+From this value of $u$, compute the factors of $N$, describing how you obtain them.
+\hfill\textbf{[6 marks]}
+
+\end{document}

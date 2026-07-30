@@ -1,0 +1,549 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{\textbf{Foundations of Quantum Computing}\\[0.5em]
+       \large Portfolio Assessment}
+\author{Hung Han}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+% ---------------------------------------------------------------
+\section*{Week 2 --- Properties of the Operator $H$ [10 marks]}
+
+Consider the operator
+\[
+  H = \begin{pmatrix} 1/\sqrt{2} & 1/\sqrt{2} \\ 1/\sqrt{2} & -1/\sqrt{2} \end{pmatrix}.
+\]
+
+% --- Part (a) ---
+\medskip
+\textbf{Part (a) --- Algebraic argument that $H$ is a reflection [2 marks]}
+
+\medskip
+To show that $H$ acts as a reflection on 2D vectors with real-valued coefficients, I compute $H^2$ directly:
+\begin{align*}
+H^2
+  &= \frac{1}{\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+     \cdot\frac{1}{\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix} \\[4pt]
+  &= \frac{1}{2}\begin{pmatrix}1{\cdot}1+1{\cdot}1 & 1{\cdot}1+1{\cdot}(-1)\\
+                               1{\cdot}1+(-1){\cdot}1 & 1{\cdot}1+(-1)(-1)\end{pmatrix}
+   = \frac{1}{2}\begin{pmatrix}2&0\\0&2\end{pmatrix}
+   = I.
+\end{align*}
+Since $H^2 = I$ and $H\neq I$, applying $H$ twice returns every real-valued 2D vector to itself. A non-identity linear map on $\mathbb{R}^2$ that satisfies $M^2 = I$ is, by definition, a reflection. Therefore $H$ is a reflection.
+
+% --- Part (b) ---
+\medskip
+\textbf{Part (b) --- Geometric argument for the axis of reflection [2 marks]}
+
+\medskip
+Applying $H$ to $\ket{0}$ gives
+\[
+  H\ket{0} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
+           = \frac{1}{\sqrt{2}}\bigl(\ket{0}+\ket{1}\bigr),
+\]
+which makes an angle of $45^\circ$ with the $\ket{0}$ axis in the real plane.
+For a reflection, the axis of reflection bisects the angle between any vector and its image.
+Since $\ket{0}$ (at $0^\circ$) is mapped to $\tfrac{1}{\sqrt{2}}(\ket{0}+\ket{1})$ (at $45^\circ$), the axis lies exactly halfway between them, at
+\[
+  \frac{0^\circ + 45^\circ}{2} = 22.5^\circ = \frac{\pi}{8}
+\]
+from the $\ket{0}$ axis.
+
+% --- Part (c) ---
+\medskip
+\textbf{Part (c) --- Eigendecomposition of $H$ in ket notation [6 marks]}
+
+\medskip
+I identify the eigenvalues and eigenvectors using the results of parts (a) and (b).
+
+\textit{Eigenvalues.} Since $H^2 = I$, every eigenvalue $\lambda$ satisfies $\lambda^2 = 1$, so the eigenvalues are $+1$ and $-1$.
+
+\textit{Eigenvectors.} A reflection preserves vectors lying along its axis (eigenvalue $+1$) and negates vectors perpendicular to it (eigenvalue $-1$). From part (b), the axis is at angle $\pi/8$, so the two orthonormal eigenvectors are:
+\begin{align*}
+\ket{e_+} &= \cos\tfrac{\pi}{8}\,\ket{0} + \sin\tfrac{\pi}{8}\,\ket{1},
+  \qquad \text{eigenvalue }+1, \\
+\ket{e_-} &= {-}\sin\tfrac{\pi}{8}\,\ket{0} + \cos\tfrac{\pi}{8}\,\ket{1},
+  \qquad \text{eigenvalue }-1.
+\end{align*}
+These are orthogonal ($\braket{e_+|e_-} = -\cos\tfrac{\pi}{8}\sin\tfrac{\pi}{8}+\sin\tfrac{\pi}{8}\cos\tfrac{\pi}{8} = 0$) and each is unit-normalised by $\cos^2\!\tfrac{\pi}{8}+\sin^2\!\tfrac{\pi}{8}=1$.
+
+\textit{Eigendecomposition.} Writing $H$ as a sum of rank-1 outer products weighted by eigenvalues:
+\[
+  \boxed{H = \ket{e_+}\!\bra{e_+} - \ket{e_-}\!\bra{e_-}}
+\]
+where
+$\ket{e_+} = \cos\tfrac{\pi}{8}\,\ket{0}+\sin\tfrac{\pi}{8}\,\ket{1}$
+and
+$\ket{e_-} = -\sin\tfrac{\pi}{8}\,\ket{0}+\cos\tfrac{\pi}{8}\,\ket{1}$.
+Thus $H$ decomposes into a projection onto its $+1$ eigenspace minus a projection onto its $-1$ eigenspace, which is the spectral representation of a reflection.
+
+% ---------------------------------------------------------------
+\section*{Week 3 --- The SWAP Gate [15 marks]}
+
+Consider the operator
+\[
+  \mathrm{SWAP} =
+  \begin{pmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix},
+\]
+which acts on two-qubit states as $\mathrm{SWAP}\ket{a,b}=\ket{b,a}$.
+
+% --- Part (a) ---
+\medskip
+\textbf{Part (a) --- Inverse of SWAP and eigenvalues $\pm1$ [3 marks]}
+
+\medskip
+I determine the inverse of $\mathrm{SWAP}$ by considering its action on product states.
+Applying $\mathrm{SWAP}$ twice gives
+\[
+  \mathrm{SWAP}^2\ket{a,b} = \mathrm{SWAP}\ket{b,a} = \ket{a,b},
+\]
+so $\mathrm{SWAP}^2 = I$, which means $\mathrm{SWAP}^{-1} = \mathrm{SWAP}$.
+In other words, the SWAP gate is its own inverse.
+
+Since $\mathrm{SWAP}^2 = I$, every eigenvalue $\lambda$ satisfies $\lambda^2 = 1$, and therefore the eigenvalues of $\mathrm{SWAP}$ are $+1$ and $-1$.
+
+% --- Part (b) ---
+\medskip
+\textbf{Part (b) --- A $(-1)$-eigenvector of SWAP [3 marks]}
+
+\medskip
+I seek a normalised state $\ket{\psi}=u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ satisfying $\mathrm{SWAP}\ket{\psi}=-\ket{\psi}$.
+
+Applying SWAP term by term:
+\[
+  \mathrm{SWAP}\ket{\psi}
+  = u_{00}\ket{00}+u_{01}\ket{10}+u_{10}\ket{01}+u_{11}\ket{11}.
+\]
+Setting this equal to $-\ket{\psi}$ gives the constraints:
+$u_{00}=-u_{00}$ (so $u_{00}=0$),
+$u_{11}=-u_{11}$ (so $u_{11}=0$),
+and $u_{01}=-u_{10}$.
+
+Choosing $u_{01}=\tfrac{1}{\sqrt{2}}$ (positive real) and $u_{10}=-\tfrac{1}{\sqrt{2}}$, and normalising, the $(-1)$-eigenvector is:
+\[
+  \boxed{\ket{\psi} = \frac{1}{\sqrt{2}}\bigl(\ket{01}-\ket{10}\bigr)}
+\]
+This state has $u_{00}=u_{11}=0$ and $u_{01}=-u_{10}=\tfrac{1}{\sqrt{2}}$, which is exactly the antisymmetric Bell-like state $\ket{\Psi^-}$.
+
+% --- Part (c) ---
+\medskip
+\textbf{Part (c) --- SWAP measurement on $\ket{01}$: probability of outcome $-1$ and post-measurement state [6 marks]}
+
+\medskip
+Since $\mathrm{SWAP}$ is Hermitian with eigenvalues $\pm1$, it can be treated as an observable.
+To find the probability of the outcome $-1$, I decompose $\ket{01}$ in the SWAP eigenbasis.
+
+The $+1$ eigenspace is spanned by the symmetric states: $\ket{00}$, $\ket{11}$, and $\tfrac{1}{\sqrt{2}}(\ket{01}+\ket{10})$.
+The $-1$ eigenspace is spanned by $\ket{\psi^-} = \tfrac{1}{\sqrt{2}}(\ket{01}-\ket{10})$.
+
+I write $\ket{01}$ as a superposition of symmetric and antisymmetric parts:
+\[
+  \ket{01} = \frac{1}{\sqrt{2}}\cdot\frac{\ket{01}+\ket{10}}{\sqrt{2}}
+           + \frac{1}{\sqrt{2}}\cdot\frac{\ket{01}-\ket{10}}{\sqrt{2}}
+\]
+so $\ket{01} = \tfrac{1}{\sqrt{2}}\ket{\psi^+}+\tfrac{1}{\sqrt{2}}\ket{\psi^-}$ where $\ket{\psi^\pm}=\tfrac{1}{\sqrt{2}}(\ket{01}\pm\ket{10})$.
+
+The probability of the $-1$ outcome is the squared amplitude of the $\ket{\psi^-}$ component:
+\[
+  P(-1) = \left|\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{2}.
+\]
+
+After obtaining the outcome $-1$, the state is projected onto the $-1$ eigenspace and normalised.
+The post-measurement state is therefore:
+\[
+  \boxed{P(-1) = \tfrac{1}{2}, \qquad
+  \text{post-measurement state: }\frac{1}{\sqrt{2}}\bigl(\ket{01}-\ket{10}\bigr)}
+\]
+Thus, a SWAP measurement on $\ket{01}$ yields outcome $-1$ with probability $\tfrac{1}{2}$, leaving the system in the antisymmetric superposition $\ket{\Psi^-}$.
+
+% --- Part (d) ---
+\medskip
+\textbf{Part (d) --- Matrix and algebraic representation of CSWAP [3 marks]}
+
+\medskip
+The coherently controlled-SWAP (CSWAP) gate acts on three qubits: a control qubit $c$ and two target qubits.
+It applies SWAP to the targets when $c=\ket{1}$ and acts as the identity otherwise, in direct analogy with the $CU$ construction.
+
+As an $8\times8$ matrix (ordering $\ket{000},\ket{001},\ket{010},\ket{011},\ket{100},\ket{101},\ket{110},\ket{111}$):
+\[
+  \mathrm{CSWAP} =
+  \begin{pmatrix}
+    1&0&0&0&0&0&0&0\\
+    0&1&0&0&0&0&0&0\\
+    0&0&1&0&0&0&0&0\\
+    0&0&0&1&0&0&0&0\\
+    0&0&0&0&1&0&0&0\\
+    0&0&0&0&0&0&1&0\\
+    0&0&0&0&0&1&0&0\\
+    0&0&0&0&0&0&0&1
+  \end{pmatrix}
+\]
+
+In the more compact algebraic (projector) notation:
+\[
+  \boxed{\mathrm{CSWAP} = \ket{0}\!\bra{0}\otimes I_4 + \ket{1}\!\bra{1}\otimes \mathrm{SWAP}}
+\]
+where $I_4$ is the $4\times4$ identity acting on the two target qubits.
+This mirrors the general $CU$ form $\ket{0}\!\bra{0}\otimes I+\ket{1}\!\bra{1}\otimes U$, here with $U=\mathrm{SWAP}$.
+
+% ---------------------------------------------------------------
+\section*{Week 4 --- Quantum Teleportation [25 marks]}
+
+Suppose Alice holds qubits $\mathsf{p}$ and $\mathsf{a}$, Bob holds qubits $\mathsf{b}$ and $\mathsf{q}$,
+with $\mathsf{a}$ and $\mathsf{b}$ pre-shared in the Bell state
+$\ket{\Phi^+}_{ab}=\tfrac{1}{\sqrt{2}}(\ket{00}+\ket{11})_{ab}$,
+and $\mathsf{p}$, $\mathsf{q}$ in the unknown joint state
+$\ket{\psi}=u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}\in\mathbb{C}^4$.
+
+% --- Part (a) ---
+\medskip
+\textbf{Part (a) --- Joint state of p, a, b, q [5 marks]}
+
+\medskip
+The four-qubit state, written with qubits in the order $\mathsf{p,a,b,q}$, is the tensor product
+$\ket{\psi}_{pq}\otimes\ket{\Phi^+}_{ab}$ reordered to interleave the $\mathsf{a}$ and $\mathsf{b}$ registers:
+\begin{align*}
+\ket{\Psi}_{pabq}
+  &= \frac{1}{\sqrt{2}}\sum_{i,j\in\{0,1\}}u_{ij}\,\ket{i}_{p}\bigl(\ket{00}+\ket{11}\bigr)_{ab}\ket{j}_{q} \\
+  &= \frac{1}{\sqrt{2}}\sum_{i,j}u_{ij}\bigl(\ket{i,0,0,j}+\ket{i,1,1,j}\bigr) \\[4pt]
+  &= \frac{1}{\sqrt{2}}\Bigl[
+      u_{00}\ket{0000}+u_{01}\ket{0001}+u_{10}\ket{1000}+u_{11}\ket{1001} \\
+  &\qquad\qquad
+     +u_{00}\ket{0110}+u_{01}\ket{0111}+u_{10}\ket{1110}+u_{11}\ket{1111}
+     \Bigr]
+\end{align*}
+This is the starting state of the teleportation protocol; qubit ordering is $\mathsf{p,a,b,q}$ throughout.
+
+% --- Part (b) ---
+\medskip
+\textbf{Part (b) --- Sequence of states and measurement outcomes [15 marks]}
+
+\medskip
+\textit{Operation 1: $\mathrm{CX}_{\mathsf{p},\mathsf{a}}$ (Alice applies CNOT, control $\mathsf{p}$, target $\mathsf{a}$).}
+
+The gate acts as $\ket{i,k,b,j}\mapsto\ket{i,\,i\oplus k,\,b,\,j}$.
+Applying to each term of $\ket{\Psi}$:
+
+\[
+  \ket{\Psi_1}
+  = \frac{1}{\sqrt{2}}\sum_{i,j}u_{ij}\bigl(\ket{i,i,0,j}+\ket{i,\bar{i},1,j}\bigr)
+\]
+where $\bar{i}=1\oplus i$. Grouping by the value of qubit $\mathsf{a}$:
+\begin{align*}
+\ket{\Psi_1}
+  &= \frac{1}{\sqrt{2}}\Bigl[
+      \underbrace{u_{00}\ket{0,0,0,0}+u_{01}\ket{0,0,0,1}
+                 +u_{10}\ket{1,0,1,0}+u_{11}\ket{1,0,1,1}}_{\mathsf{a}=0}\\
+  &\qquad\quad
+     +\underbrace{u_{10}\ket{1,1,0,0}+u_{11}\ket{1,1,0,1}
+                 +u_{00}\ket{0,1,1,0}+u_{01}\ket{0,1,1,1}}_{\mathsf{a}=1}
+     \Bigr]
+\end{align*}
+
+\medskip
+\textit{Operation 2: $\mathrm{Mz}\;\mathsf{a}\to r$ (Alice measures $\mathsf{a}$ in the computational basis).}
+
+Both outcomes $r\in\{0,1\}$ occur with probability $\tfrac{1}{2}$.
+
+\textbf{If $r=0$:} the $\mathsf{a}=0$ branch survives and normalises to
+\[
+  u_{00}\ket{0,0,0,0}+u_{01}\ket{0,0,0,1}+u_{10}\ket{1,0,1,0}+u_{11}\ket{1,0,1,1}.
+\]
+
+\textbf{If $r=1$:} the $\mathsf{a}=1$ branch survives and normalises to
+\[
+  u_{10}\ket{1,1,0,0}+u_{11}\ket{1,1,0,1}+u_{00}\ket{0,1,1,0}+u_{01}\ket{0,1,1,1}.
+\]
+
+\medskip
+\textit{Operation 3: $\mathrm{CX}_{\mathsf{b},\mathsf{q}}$ (Bob applies CNOT, control $\mathsf{b}$, target $\mathsf{q}$).}
+
+The gate flips $\mathsf{q}$ when $\mathsf{b}=1$. Applying separately to each branch:
+
+\textbf{Branch $r=0$} (the $\mathsf{b}$ values are $0,0,1,1$):
+\[
+  u_{00}\ket{0,0,0,0}+u_{01}\ket{0,0,0,1}+u_{10}\ket{1,0,1,1}+u_{11}\ket{1,0,1,0}
+\]
+
+\textbf{Branch $r=1$} (the $\mathsf{b}$ values are $0,0,1,1$):
+\[
+  u_{10}\ket{1,1,0,0}+u_{11}\ket{1,1,0,1}+u_{00}\ket{0,1,1,1}+u_{01}\ket{0,1,1,0}
+\]
+
+\medskip
+\textit{Operation 4: $\mathrm{Mx}\;\mathsf{b}\to s$ (Bob measures $\mathsf{b}$ in the $X$-basis).}
+
+Writing $\ket{0}_{\mathsf{b}}=\tfrac{1}{\sqrt{2}}(\ket{+}+\ket{-})$ and
+$\ket{1}_{\mathsf{b}}=\tfrac{1}{\sqrt{2}}(\ket{+}-\ket{-})$,
+expanding each branch yields four equiprobable outcomes (each with overall probability $\tfrac{1}{4}$).
+The normalised state of $\mathsf{p,q}$ for each combined outcome is:
+
+\begin{center}
+\begin{tabular}{ccl}
+\hline
+$r$ & $s$ & State of $\mathsf{p,q}$ after both measurements \\
+\hline
+0 & 0 & $u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{11}+u_{11}\ket{10}$ \\
+0 & 1 & $u_{00}\ket{00}+u_{01}\ket{01}-u_{10}\ket{11}-u_{11}\ket{10}$ \\
+1 & 0 & $u_{01}\ket{00}+u_{00}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ \\
+1 & 1 & $-u_{01}\ket{00}-u_{00}\ket{01}+u_{10}\ket{10}+u_{11}\ket{11}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Thus Alice's measurement $r$ and Bob's measurement $s$ together determine which of these four states the qubits $\mathsf{p,q}$ are left in.
+
+% --- Part (c) ---
+\medskip
+\textbf{Part (c) --- Computing $\ket{\psi'}=\mathrm{CX}\ket{\psi}$ and required corrections [2 marks]}
+
+\medskip
+Applying $\mathrm{CX}_{\mathsf{p,q}}$ to $\ket{\psi}$ (control $\mathsf{p}$, target $\mathsf{q}$) gives the target state:
+\[
+  \ket{\psi'} = \mathrm{CX}\ket{\psi}
+  = u_{00}\ket{00}+u_{01}\ket{01}+u_{10}\ket{11}+u_{11}\ket{10}.
+\]
+Comparing this with the table above, the required local corrections are:
+\begin{itemize}
+  \item $r=0,\;s=0$: no operation needed — the state is already $\ket{\psi'}$.
+  \item $r=0,\;s=1$: Alice applies $Z_{\mathsf{p}}$ (negates the $\ket{1}_{\mathsf{p}}$ amplitude).
+  \item $r=1,\;s=0$: Bob applies $X_{\mathsf{q}}$ (swaps $\ket{0}_{\mathsf{q}}\leftrightarrow\ket{1}_{\mathsf{q}}$).
+  \item $r=1,\;s=1$: Alice applies $Z_{\mathsf{p}}$ and Bob applies $X_{\mathsf{q}}$.
+\end{itemize}
+To apply these corrections, Alice must send $r$ (1 classical bit) to Bob,
+and Bob must send $s$ (1 classical bit) to Alice.
+
+% --- Part (d) ---
+\medskip
+\textbf{Part (d) --- Significance [3 marks]}
+
+\medskip
+The protocol achieves something remarkable: Alice and Bob together apply the entangling gate
+$\mathrm{CX}$ to a two-qubit state $\ket{\psi}$ they do not know, even though qubit $\mathsf{p}$ is
+held by Alice and qubit $\mathsf{q}$ is held by Bob with no direct quantum channel between them.
+The entangled resource $\ket{\Phi^+}$ plays the role of a quantum ``wire'': by consuming it together
+with two classical bits of communication, the parties can perform a non-local gate as if they were
+co-located. This is an instance of \emph{gate teleportation}, and it demonstrates that shared
+entanglement can substitute for direct quantum interaction — a central insight for distributed
+quantum computing and quantum networks.
+
+% ---------------------------------------------------------------
+\section*{Week 5 --- Grover's Algorithm [25 marks]}
+
+Let $f:\{0,1\}^2\to\{0,1\}$ satisfy $f(x)=1$ iff $x=01$, with oracle
+$\mathtt{O\_f}\ket{x_1 x_2,t}=\ket{x_1 x_2,\,t\oplus f(x_1 x_2)}$.
+I trace the following procedure step by step, tracking the quantum state at each stage.
+
+\medskip
+\textbf{Initialisation: MxReset q and MxReset t, then Z t}
+
+\medskip
+The two-qubit register $\mathsf{q}$ is set to $\ket{+,+}$ and the auxiliary qubit $\mathsf{t}$
+is set to $\ket{+}$; applying $Z$ then gives $Z\ket{+}=\ket{-}$.
+The joint initial state is:
+\[
+  \ket{\phi_0} = \ket{+,+}_{\mathsf{q}}\otimes\ket{-}_{\mathsf{t}}
+  = \frac{1}{2}\bigl(\ket{00}+\ket{01}+\ket{10}+\ket{11}\bigr)_{\mathsf{q}}\otimes\ket{-}_{\mathsf{t}}
+\]
+
+\medskip
+\textbf{Oracle query: $\mathtt{O\_f}\;q[0],q[1],t$}
+
+\medskip
+For the target qubit in state $\ket{-}$, the oracle produces the phase-kickback effect:
+\[
+  \mathtt{O\_f}\ket{x}\ket{-} = (-1)^{f(x)}\ket{x}\ket{-}.
+\]
+Since $f(01)=1$ and $f(x)=0$ for all other $x$, the oracle negates only the $\ket{01}$ amplitude:
+\[
+  \ket{\phi_1}
+  = \frac{1}{2}\bigl(\ket{00}-\ket{01}+\ket{10}+\ket{11}\bigr)_{\mathsf{q}}\otimes\ket{-}_{\mathsf{t}}
+\]
+The target qubit $\ket{-}$ is unchanged; from here I focus on the $\mathsf{q}$ register.
+
+\medskip
+\textbf{Diffusion step: $\mathtt{R\_u}\;q$}
+
+\medskip
+The subroutine $\mathtt{R\_u}$ reflects $\mathsf{q}$ about $\ket{+,+}$.
+I apply each gate in sequence.
+
+\textit{Sub-step 1 --- $H\,q$ (Hadamard on each qubit):}
+
+Using $H\ket{0}=\ket{+}$ and $H\ket{1}=\ket{-}$, I compute $(H\otimes H)$ applied to
+$\tfrac{1}{2}(\ket{00}-\ket{01}+\ket{10}+\ket{11})$:
+
+\begin{align*}
+(H{\otimes}H)\ket{\phi_1}_{\mathsf{q}}
+  &= \frac{1}{2}\bigl(\ket{+}\ket{+}-\ket{+}\ket{-}+\ket{-}\ket{+}+\ket{-}\ket{-}\bigr) \\
+  &= \frac{1}{4}\bigl[(1{-}1{+}1{+}1)\ket{00}+(1{+}1{+}1{-}1)\ket{01}
+     +(1{-}1{-}1{-}1)\ket{10}+(1{+}1{-}1{+}1)\ket{11}\bigr] \\
+  &= \frac{1}{2}\bigl(\ket{00}+\ket{01}-\ket{10}+\ket{11}\bigr)
+\end{align*}
+
+\textit{Sub-step 2 --- $\mathrm{CZ}\;q[0],q[1]$ (phase $-1$ on $\ket{11}$):}
+\[
+  \frac{1}{2}\bigl(\ket{00}+\ket{01}-\ket{10}-\ket{11}\bigr)
+\]
+
+\textit{Sub-step 3 --- $H\,q$ (Hadamard again):}
+
+\begin{align*}
+(H{\otimes}H)\tfrac{1}{2}(\ket{00}+\ket{01}-\ket{10}-\ket{11})
+  &= \frac{1}{4}\bigl[(1{+}1{-}1{-}1)\ket{00}+(1{-}1{-}1{+}1)\ket{01}
+     +(1{+}1{+}1{+}1)\ket{10}+(1{-}1{+}1{-}1)\ket{11}\bigr] \\
+  &= \ket{10}
+\end{align*}
+
+\textit{Sub-step 4 --- $X\,q$ (bit-flip on each qubit):}
+\[
+  X{\otimes}X\,\ket{10} = \ket{01}
+\]
+
+After $\mathtt{R\_u}$, the register is in the pure state $\ket{01}_{\mathsf{q}}$.
+
+\medskip
+\textbf{Measurement: $\mathrm{Mz}\;q\to a$}
+
+\medskip
+Measuring $\mathsf{q}$ in the computational basis yields outcome $a=01$ with probability $1$.
+The measurement is deterministic: the algorithm has found the unique marked input with certainty.
+
+\medskip
+\textbf{Significance}
+
+\medskip
+This demonstrates Grover's algorithm completing a successful search after a single Grover iterate.
+For a 2-bit search space ($N=4$) with one marked item, the optimal number of iterations is
+$\lfloor(\pi/4)\sqrt{N}\rfloor = \lfloor\pi/2\rfloor = 1$, which is exactly what was performed.
+Classically, finding the marked input requires up to $N=4$ queries on average; the quantum algorithm
+finds it in $O(\sqrt{N})=O(2)$ queries — here reduced to a single query that succeeds with probability 1.
+This quadratic speedup is the central achievement of Grover's algorithm.
+
+% ---------------------------------------------------------------
+\section*{Week 6 --- Shor's Algorithm: Factorising $N=323$ [25 marks]}
+
+I factorise $N=323$ using $a=2$, with phase-estimation samples
+$x_1=7/24$ and $x_2=5/18$.
+
+% --- Part (a) ---
+\medskip
+\textbf{Part (a) --- Finding the order $s$ [6 marks]}
+
+\medskip
+The eigenvalues of $U_a$ are $e^{2\pi i k/s}$ for $k=0,\ldots,s-1$,
+so each sample $x_j$ is close to some $k_j/s$.
+I apply the continued-fraction algorithm to find the best rational approximation to each sample.
+
+\textit{Sample $x_1=7/24$.} The continued-fraction expansion is
+$7/24 = [0;\,3,\,2,\,3]$, whose last convergent is $7/24$ itself ($\gcd(7,24)=1$),
+giving candidate denominator $s_1=24$.
+
+\textit{Sample $x_2=5/18$.} The expansion is
+$5/18=[0;\,3,\,1,\,1,\,2]$, whose last convergent is $5/18$ itself ($\gcd(5,18)=1$),
+giving candidate denominator $s_2=18$.
+
+For the same order $s$ to be consistent with both samples, $s$ must be divisible by both $s_1$ and $s_2$:
+\[
+  s = \mathrm{lcm}(s_1,\,s_2) = \mathrm{lcm}(24,\,18).
+\]
+Since $24=2^3\cdot3$ and $18=2\cdot3^2$, we have $\mathrm{lcm}(24,18)=2^3\cdot3^2=72$.
+
+\textit{Verification.} $7/24=21/72$ and $5/18=20/72$, confirming both samples are multiples of $1/72$.
+We can verify directly: $323=17\times19$, and the orders of $2$ modulo $17$ and $19$ are $8$ and $18$
+respectively, so $\mathrm{ord}_{323}(2)=\mathrm{lcm}(8,18)=72$~\checkmark
+
+\[
+  \boxed{s = 72}
+\]
+
+% --- Part (b) ---
+\medskip
+\textbf{Part (b) --- Properties $s$ must satisfy to be useful [3 marks]}
+
+\medskip
+For the order $s$ to be useful in factorising $N$, two conditions must hold:
+\begin{enumerate}
+  \item $s$ must be \textbf{even}, so that $a^{s/2}$ is a well-defined integer.
+  \item $a^{s/2}\not\equiv\pm1\pmod{N}$, so that the square root of unity $a^{s/2}\bmod N$
+        is \emph{non-trivial} (i.e.\ not the trivial roots $\pm1$), which guarantees that
+        $\gcd(a^{s/2}\pm1,\,N)$ yields a non-trivial factor.
+\end{enumerate}
+Here $s=72$ is even, and we will confirm that $2^{36}\not\equiv\pm1\pmod{323}$ in part~(c).
+
+% --- Part (c) ---
+\medskip
+\textbf{Part (c) --- Finding $u$ with $u^2\equiv1\pmod{N}$ [10 marks]}
+
+\medskip
+I set $u=a^{s/2}\bmod N = 2^{36}\bmod 323$ and compute this via the Chinese Remainder Theorem,
+since $323=17\times19$.
+
+\textit{Step 1 --- $2^{36}\bmod 17$.}
+The order of $2$ modulo $17$ is $8$ (since $2^4\equiv16\equiv-1$ and $2^8\equiv1\pmod{17}$).
+Writing $36=8\times4+4$:
+\[
+  2^{36} \equiv 2^4 \equiv 16 \equiv -1 \pmod{17}.
+\]
+
+\textit{Step 2 --- $2^{36}\bmod 19$.}
+The order of $2$ modulo $19$ is $18$ (since $2^9\equiv512\equiv18\equiv-1$ and $2^{18}\equiv1\pmod{19}$).
+Writing $36=18\times2$:
+\[
+  2^{36} \equiv 1 \pmod{19}.
+\]
+
+\textit{Step 3 --- Combine via CRT.}
+I seek $u$ with $u\equiv-1\equiv16\pmod{17}$ and $u\equiv1\pmod{19}$.
+Writing $u=19k+1$ and substituting: $19k\equiv15\pmod{17}$.
+Since $19\equiv2\pmod{17}$ and $2^{-1}\equiv9\pmod{17}$, we get $k\equiv9\times15=135\equiv-1\equiv16\pmod{17}$,
+so $k=17m-1$ and $u=19(17m-1)+1=323m-18$.
+Taking $m=1$ to obtain $1<u<323$:
+\[
+  u = 305.
+\]
+
+\textit{Verification.}
+$305\equiv16\equiv-1\pmod{17}$ and $305=16\times19+1\equiv1\pmod{19}$~\checkmark\;
+$305^2=(323-18)^2\equiv18^2=324=323+1\equiv1\pmod{323}$~\checkmark\;
+$305\not\equiv\pm1\pmod{323}$ (since $305\neq1$ and $305\neq322$)~\checkmark
+
+\[
+  \boxed{u=305,\qquad u^2 = 93025 = 288\times323+1\equiv1\pmod{323}}
+\]
+
+% --- Part (d) ---
+\medskip
+\textbf{Part (d) --- Computing the factors of $N$ [6 marks]}
+
+\medskip
+Since $u^2\equiv1\pmod{N}$, we have $N\mid(u^2-1)=(u-1)(u+1)$,
+but $N\nmid(u-1)$ and $N\nmid(u+1)$ (because $u\not\equiv\pm1$).
+A common divisor of $(u\pm1)$ and $N$ must therefore be a non-trivial factor. I compute:
+
+\begin{align*}
+u-1 &= 304 = 16\times19, & \gcd(304,\,323) &= \gcd(304,\,17\times19) = 19, \\
+u+1 &= 306 = 18\times17, & \gcd(306,\,323) &= \gcd(306,\,17\times19) = 17.
+\end{align*}
+
+(Alternatively, $\gcd(304,323)$: Euclidean algorithm gives $323=1\times304+19$, $304=16\times19$,
+so $\gcd=19$. Then $323/19=17$.)
+
+The prime factorisation of $N$ is therefore:
+\[
+  \boxed{323 = 17\times19}
+\]
+Thus Shor's algorithm successfully factors $323$ into the primes $17$ and $19$ using two phase-estimation
+samples, continued-fraction approximation, and a single modular-arithmetic computation.
+
+\end{document}
+
+
+
