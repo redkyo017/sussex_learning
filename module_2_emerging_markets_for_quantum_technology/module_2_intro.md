@@ -1,0 +1,4 @@
+## Emerging Markets for Quantum Technology
+
+Welcome to the ‘Emerging Markets for Quantum Technology’ module!
+Throughout this course, we’ll delve into the captivating world of science and technology, exploring how innovation shapes our modern society. We’ll emphasise responsible innovation and its impact on the social context, while discussing how to search and identify opportunities for innovation in the quantum business environment. Additionally, we will consider implementation of a new product or service, giving special attention to a company’s capabilities and investment within the context of the particular market’s industrial dynamics.
