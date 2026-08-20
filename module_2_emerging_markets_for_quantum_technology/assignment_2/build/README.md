@@ -18,6 +18,7 @@ if it is unavailable.
     python fill_bmc.py      # -> ../BMC_filled.docx
     python merge.py         # -> ../Assessment2_Quantum_Portfolio.docx  (adds title block + references)
     python verify.py        # checks every box filled and exactly one tick per criterion group
+    python wordcount.py     # counts only inserted prose, excluding template text and references
 
 Set `OUTDIR` to build somewhere else without touching the submitted file — useful for
 checking a change before overwriting:
