@@ -12,7 +12,8 @@ Rules:
   - a paragraph of the form "<template label>: <our text>" counts only our text
   - a paragraph with no template counterpart counts in full (rationales, notes,
     title block)
-  - the References section is excluded, per normal academic convention
+  - the References section and the title block are excluded, per normal academic
+    convention (title pages and reference lists do not count toward a word limit)
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,7 +44,9 @@ def main():
 
     section, counts, samples = "Item 1 (MON)", {}, {}
     total = 0
-    for para in paragraphs(BUILT):
+    for i, para in enumerate(paragraphs(BUILT)):
+        if i < 2:
+            continue                       # title + subtitle: not assessed prose
         if para == "Value Proposition Canvas":
             section = "Item 2 (VPC)"
         elif para == "Business Model Canvas":

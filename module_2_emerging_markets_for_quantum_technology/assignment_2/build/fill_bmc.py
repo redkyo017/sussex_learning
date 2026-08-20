@@ -13,14 +13,14 @@ OUT = f"{OUT_DIR}/BMC_filled.docx"
 
 BOXES = {
     'Key Partners': T(
-        "A university physics group for the licence and continued absorptive "
-        "capacity; laser, vacuum and shielding suppliers whose lead times become ours; "
-        "a survey firm as channel; the Geospatial Commission through NUAR; Innovate UK "
-        "and the National Quantum Technologies Programme. This is the triple helix in "
-        "practice rather than in theory (Etzkowitz and Leydesdorff, 2000): the venture "
-        "exists only where university, industry and state overlap. Engaging the HSE and "
-        "the unions early costs little and shapes the product while it is still "
-        "shapeable."),
+        ('A university physics group for the licence and continued absorptive '
+            'capacity; laser, vacuum and shielding suppliers whose lead times become '
+            'ours; a survey firm as channel; the Geospatial Commission through NUAR; '
+            'Innovate UK and the National Quantum Technologies Programme. This is the'
+            ' triple helix in practice rather than in theory (Etzkowitz and '
+            'Leydesdorff, 2000): the venture exists only where university, industry '
+            'and state overlap. Engaging the HSE and unions early costs little and '
+            'shapes the product while it is still shapeable.')),
     'Key Activities': T(
         "Paid field trials with lead users, on their worst sites rather than our best "
         "ones (von Hippel, 1986). Inversion software. Standards work with BSI so that "
@@ -51,12 +51,12 @@ BOXES = {
         "beneath critical infrastructure is worth stealing, so access control is "
         "designed in from the first survey."),
     'Channels': T(
-        "Direct technical selling into a handful of asset owners for the first paid "
-        "trials, then framework agreements. Alongside that, a partnership with an "
-        "established PAS 128 survey firm that already holds the accreditation, the "
-        "customer relationships and the field logistics we lack. Teece (1986) explains "
-        "why: the channel is the complementary asset, and building one from nothing "
-        "would cost more than building the sensor did."),
+        ('Direct technical selling into a handful of asset owners for the first '
+            'paid trials, then framework agreements. Alongside that, a partnership '
+            'with an established PAS 128 survey firm that already holds the '
+            'accreditation, the customer relationships and the field logistics we '
+            'lack. Teece (1986) explains why: the channel is the complementary asset,'
+            ' and building one from nothing would cost more than the sensor did.')),
     'Cost Structure': T(
         "People first: physicists and field engineers are the largest, least "
         "compressible and scarcest cost. Then the instrument, its lasers, vacuum and "

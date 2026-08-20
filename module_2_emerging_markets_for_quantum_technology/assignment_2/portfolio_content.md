@@ -17,14 +17,10 @@ reference list are not counted.
 ## Part 1 — Market Opportunity Set
 
 ### Core Ability 1 — Differential cold-atom interferometry
-Description: Measures the difference in gravitational acceleration between two clouds of
-laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line
-of sight, no contact and no excavation.
+Description: Measures the gravitational difference between two clouds of laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line of sight, no contact and no excavation.
 
 ### Core Ability 2 — Rejection of real-world noise
-Description: Vibration is common to both atom clouds and cancels in the differential
-measurement; accelerometers and shielding handle the rest. This is what took the instrument
-off the optical bench and onto a street (Stray et al., 2022).
+Description: Vibration is common to both clouds and cancels differentially; accelerometers and shielding handle the rest. This is what took the instrument off the optical bench and onto a street (Stray et al., 2022).
 
 ### Core Ability 3 — Inference under uncertainty
 Description: Bayesian inversion turns sparse gradient readings into a three-dimensional
@@ -32,19 +28,15 @@ density estimate, and reports its confidence in position and depth rather than d
 certain line.
 
 ### Core Ability 4 — Field engineering of a laboratory instrument
-Description: Packaging lasers, vacuum and shielding into equipment a trained surveyor can
-run through a working day. Most of it is tacit knowledge held by people, which matters later
-for value capture.
+Description: Packaging lasers, vacuum and shielding into equipment a trained surveyor can run through a working day. Most of it is tacit knowledge held by people, which matters for value capture.
 
 ### Opportunity 1
 Application: Targeted pre-excavation survey of high-risk urban sites, finding buried assets,
 voids and abandoned structures that electromagnetic location and radar miss.
-Customer Group: UK water, gas, power and telecoms asset owners, the tier-1 contractors
-digging on their behalf, and highway and rail authorities.
+Customer Group: UK water, gas, power and telecoms asset owners, the tier-1 contractors digging for them, and highway and rail authorities.
 
 ### Opportunity 2
-Application: Density targeting for mineral exploration and geothermal assessment, narrowing
-down where to drill before anyone drills.
+Application: Density targeting for mineral exploration and geothermal assessment, narrowing where to drill before anyone drills.
 Customer Group: Exploration companies, geothermal developers, and the geophysical survey
 contractors who serve them.
 
@@ -63,17 +55,9 @@ Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: MEDIUM.
 Economic Viability: HIGH. Overall Potential: HIGH.
 Challenge — Implementation Obstacles: MEDIUM. Time to Revenue: MEDIUM.
 External Risks: HIGH. Overall Challenge: MEDIUM.
-Impact and potential: One hole in every 65 hits something: about 60,000 strikes a year,
-GBP 2.4bn of economic cost, and a true cost 29 times the repair bill (Utility Strike
-Avoidance Group, 2023). Workers are hurt. Contractors already buy PAS 128 surveys, so a
-budget line and a standard exist to sell against (British Standards Institution, 2022), and
-strike rates are reported nationally, so improvement can be shown rather than claimed.
-Challenge: The physics already works outdoors, so this is productisation, not discovery.
-Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and
-Delta.g, a Birmingham spin-out holding GBP 4.6m of seed funding, is ahead of us on the same
-road (The Quantum Insider, 2025).
-Opportunity Category: GOLD MINE — the highest potential and lowest challenge of the three,
-judged against each other rather than in the abstract.
+Impact and potential: One hole in every 65 hits something: about 60,000 strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, 2023). Workers are hurt. Contractors already buy PAS 128 surveys, so a budget line and a standard exist to sell against (British Standards Institution, 2022), and reported strike rates mean improvement can be shown rather than claimed.
+Challenge: The physics already works outdoors, so this is productisation, not discovery. Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and Delta.g, a Birmingham spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum Insider, 2025).
+Opportunity Category: GOLD MINE — highest potential, lowest challenge of the three — judged against each other, not in the abstract.
 
 ### Opportunity 2: Mineral and geothermal exploration
 Impact — Problem Severity: MEDIUM. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
@@ -82,12 +66,8 @@ Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: HIGH.
 Economic Viability: MEDIUM. Overall Potential: HIGH.
 Challenge — Implementation Obstacles: HIGH. Time to Revenue: HIGH. External Risks: MEDIUM.
 Overall Challenge: HIGH.
-Impact and potential: Better targeting means fewer speculative boreholes, though the harm
-avoided is diffuse next to a gas main struck in a city street. Global exploration budgets
-dwarf UK survey spend, and drilling costs enough that a better target is worth paying for.
-Challenge: Remote sites, power and calibration in harsh conditions sit beyond our packaging.
-Campaigns are seasonal, procurement slow, and airborne gradiometry already serves this
-market.
+Impact and potential: Better targeting means fewer speculative boreholes, though the harm avoided is diffuse next to a struck gas main. Global exploration budgets dwarf UK survey spend, and drilling costs enough that better targets are worth paying for.
+Challenge: Remote sites, power and calibration in harsh conditions sit beyond our packaging. Campaigns are seasonal, procurement slow, and airborne gradiometry already serves it.
 Opportunity Category: MOON SHOT.
 
 ### Opportunity 3: GPS-denied navigation
@@ -97,13 +77,8 @@ Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: MEDIUM.
 Economic Viability: MEDIUM. Overall Potential: HIGH.
 Challenge — Implementation Obstacles: VERY HIGH. Time to Revenue: VERY HIGH.
 External Risks: HIGH. Overall Challenge: VERY HIGH.
-Impact and potential: Satellite navigation is jammed and spoofed routinely, with
-consequences running from delayed shipping to lost life. The national mission targets quantum
-navigation on aircraft by 2030 (HM Government, 2023), so the state agrees the problem is
-severe even where no commercial market exists. Defence buyers pay well, but are few and slow.
-Challenge: A survey instrument may stand still; a navigator must work while moving, at a
-fraction of the size, weight and power. Export control applies, and the dual-use question
-becomes ours to answer rather than postpone.
+Impact and potential: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life. The national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023), so the state agrees the problem is severe even without a commercial market. Defence buyers pay well, but are few and slow.
+Challenge: A survey instrument may stand still; a navigator must work while moving, at a fraction of the size, weight and power. Export control applies, and the dual-use question becomes ours to answer.
 Opportunity Category: MOON SHOT.
 
 ## Part 3 — Agile Focus Strategy
@@ -117,15 +92,7 @@ Back-Up Option: YES. Growth Option: NO. Agile Strategy: KEEP OPEN.
 Opportunity 3 — Product Relatedness: MEDIUM. Market Relatedness: LOW.
 Back-Up Option: NO. Growth Option: YES. Agile Strategy: KEEP OPEN.
 
-Notes: The kernel is Rumelt's (2011). Our diagnosis is a laboratory-grade sensor with no
-route to a customer; the guiding policy is to earn revenue surveying the ground everyone
-else struggles with, so the instrument matures on a client's site rather than in our
-laboratory. Exploration is a genuine back-up, because its buyers and drivers are unrelated
-to UK construction: a stall in contractor adoption would not stop it. It is not a hedge
-against technical failure, since all three options need the same sensor to work, and
-pretending otherwise is the comfortable fiction this tool exists to prevent (Gruber and Tal,
-2017). Keeping both open costs design headroom and one data-sharing agreement, but no
-engineers.
+Notes: The kernel is Rumelt's (2011): our diagnosis is a laboratory-grade sensor with no route to a customer, so the guiding policy is to earn revenue surveying the ground everyone else struggles with, maturing the instrument on a client's site rather than in our own. Exploration is a genuine back-up, its buyers unrelated to UK construction, so a stall in contractor adoption would not stop it. It is not a hedge against technical failure: all three need the same sensor to work, and pretending otherwise is the fiction this tool exists to prevent (Gruber and Tal, 2017). Keeping both open costs design headroom and a data-sharing agreement, but no engineers.
 
 ---
 
@@ -161,16 +128,10 @@ a board. Data that stays useful after the job, through NUAR.
 Notes: We tell contractors what lies under the ground on the sites where radar gives up.
 Stated honestly: we are slower per metre and coarser in resolution than radar in good
 conditions, so we are the second pass on hard ground, not a replacement for the first.
-Claiming more would put crews at risk, which is the point at which responsible innovation
-stops being a seminar topic and starts being a design constraint (Stilgoe, Owen and
-Macnaghten, 2013).
+Claiming more would put crews at risk, which is where responsible innovation stops being a seminar topic and becomes a design constraint (Stilgoe, Owen and Macnaghten, 2013).
 
 ### Products and Features
-A survey service rather than an instrument sale: a trolley or vehicle-mounted quantum
-gravity gradiometer, run by our own crews as a targeted second pass on the sites the manager
-already worries about. The deliverable is a depth-resolved density map with stated
-uncertainty on position and depth, issued in GIS and BIM formats and cross-referenced to
-PAS 128 quality levels.
+A survey service rather than an instrument sale: a trolley or vehicle-mounted quantum gravity gradiometer, run by our own crews as a targeted second pass on the sites the manager already fears. The deliverable is a depth-resolved density map with stated uncertainty on position and depth, issued in GIS and BIM formats and cross-referenced to PAS 128 quality levels.
 
 ### Pain Relievers
 The sensor responds to density contrast, so wet clay and plastic pipes stop being the
@@ -180,8 +141,7 @@ traffic management around them. Because the output carries explicit uncertainty 
 al., 2022), the manager prices residual risk instead of discovering it with a digger.
 
 ### Gain Creators
-Priced by the day against the 29-times multiplier on a single strike, the arithmetic is
-one a buyer can run themselves. We report outcomes on surveyed sites against the published
+Priced by the day against the true cost of one strike, 29 times its repair bill (Utility Strike Avoidance Group, 2023), it is arithmetic a buyer can run themselves. We report outcomes on surveyed sites against the published
 national baseline, so the claim can be checked rather than believed, and data is returned
 NUAR-ready, which turns a survey cost into an asset the owner keeps.
 
@@ -204,8 +164,7 @@ buys physics.
 Direct technical selling into a handful of asset owners for the first paid trials, then
 framework agreements. Alongside that, a partnership with an established PAS 128 survey firm
 that already holds the accreditation, the customer relationships and the field logistics we
-lack. Teece (1986) explains why: the channel is the complementary asset, and building one
-from nothing would cost more than building the sensor did.
+lack. Teece (1986) explains why: the channel is the complementary asset, and building one from nothing would cost more than the sensor did.
 
 ### Customer Relationships
 Repeat rather than one-off, because difficult sites recur. A named crew per account, a data
@@ -239,8 +198,7 @@ and shielding suppliers whose lead times become ours; a survey firm as channel; 
 Geospatial Commission through NUAR; Innovate UK and the National Quantum Technologies
 Programme. This is the triple helix in practice rather than in theory (Etzkowitz and
 Leydesdorff, 2000): the venture exists only where university, industry and state overlap.
-Engaging the HSE and the unions early costs little and shapes the product while it is still
-shapeable.
+Engaging the HSE and unions early costs little and shapes the product while it is still shapeable.
 
 ### Cost Structure
 People first: physicists and field engineers are the largest, least compressible and

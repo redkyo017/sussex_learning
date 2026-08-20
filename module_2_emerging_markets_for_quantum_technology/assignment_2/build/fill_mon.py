@@ -17,18 +17,12 @@ T = lambda s: fix_typography(s)
 # ---------- content ----------
 
 CA = {
-    1: T("Measures the difference in gravitational acceleration between two clouds of "
-         "laser-cooled atoms falling in one apparatus. It reads density contrast, so it "
-         "needs no line of sight, no contact and no excavation."),
-    2: T("Vibration is common to both atom clouds and cancels in the differential "
-         "measurement; accelerometers and shielding handle the rest. This is what took "
-         "the instrument off the optical bench and onto a street (Stray et al., 2022)."),
+    1: T('Measures the gravitational difference between two clouds of laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line of sight, no contact and no excavation.'),
+    2: T('Vibration is common to both clouds and cancels differentially; accelerometers and shielding handle the rest. This is what took the instrument off the optical bench and onto a street (Stray et al., 2022).'),
     3: T("Bayesian inversion turns sparse gradient readings into a three-dimensional "
          "density estimate, and reports its confidence in position and depth rather than "
          "drawing one certain line."),
-    4: T("Packaging lasers, vacuum and shielding into equipment a trained surveyor can "
-         "run through a working day. Most of it is tacit knowledge held by people, which "
-         "matters later for value capture."),
+    4: T('Packaging lasers, vacuum and shielding into equipment a trained surveyor can run through a working day. Most of it is tacit knowledge held by people, which matters for value capture.'),
 }
 
 OPPS_PART1 = {
@@ -36,13 +30,10 @@ OPPS_PART1 = {
         application=T("Targeted pre-excavation survey of high-risk urban sites, finding "
                        "buried assets, voids and abandoned structures that electromagnetic "
                        "location and radar miss."),
-        customer_group=T("UK water, gas, power and telecoms asset owners, the tier-1 "
-                          "contractors digging on their behalf, and highway and rail "
-                          "authorities."),
+        customer_group=T('UK water, gas, power and telecoms asset owners, the tier-1 contractors digging for them, and highway and rail authorities.'),
     ),
     2: dict(
-        application=T("Density targeting for mineral exploration and geothermal "
-                       "assessment, narrowing down where to drill before anyone drills."),
+        application=T('Density targeting for mineral exploration and geothermal assessment, narrowing where to drill before anyone drills.'),
         customer_group=T("Exploration companies, geothermal developers, and the "
                           "geophysical survey contractors who serve them."),
     ),
@@ -66,23 +57,21 @@ OPPS_PART2 = {
             'External Risks': 'HIGH', 'Overall Challenge': 'MEDIUM',
         },
         impact_and_potential=T(
-            "Impact and potential: One hole in every 65 hits something: about 60,000 "
-            "strikes a year, GBP 2.4bn of economic cost, and a true cost 29 times the "
-            "repair bill (Utility Strike Avoidance Group, 2023). Workers are hurt. "
-            "Contractors already buy PAS 128 surveys, so a budget line and a standard "
-            "exist to sell against (British Standards Institution, 2022), and strike "
-            "rates are reported nationally, so improvement can be shown rather than "
-            "claimed."),
+            ('Impact and potential: One hole in every 65 hits something: about 60,000 '
+                'strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance '
+                'Group, 2023). Workers are hurt. Contractors already buy PAS 128 surveys,'
+                ' so a budget line and a standard exist to sell against (British '
+                'Standards Institution, 2022), and reported strike rates mean improvement'
+                ' can be shown rather than claimed.')),
         challenge=T(
-            "Challenge: The physics already works outdoors, so this is productisation, "
-            "not discovery. Two risks bite: PAS 128 recognises radar and electromagnetic "
-            "location, not gravity; and Delta.g, a Birmingham spin-out holding GBP 4.6m "
-            "of seed funding, is ahead of us on the same road (The Quantum Insider, "
-            "2025)."),
+            ('Challenge: The physics already works outdoors, so this is '
+                'productisation, not discovery. Two risks bite: PAS 128 recognises radar '
+                'and electromagnetic location, not gravity; and Delta.g, a Birmingham '
+                'spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum '
+                'Insider, 2025).')),
         category='GOLD MINE',
         category_trailing=T(
-            "the highest potential and lowest challenge of the three, judged against "
-            "each other rather than in the abstract."),
+            'highest potential, lowest challenge of the three — judged against each other, not in the abstract.'),
     ),
     2: dict(
         name="Opportunity 2: Mineral and geothermal exploration",
@@ -95,14 +84,14 @@ OPPS_PART2 = {
             'External Risks': 'MEDIUM', 'Overall Challenge': 'HIGH',
         },
         impact_and_potential=T(
-            "Impact and potential: Better targeting means fewer speculative boreholes, "
-            "though the harm avoided is diffuse next to a gas main struck in a city "
-            "street. Global exploration budgets dwarf UK survey spend, and drilling "
-            "costs enough that a better target is worth paying for."),
+            ('Impact and potential: Better targeting means fewer speculative '
+                'boreholes, though the harm avoided is diffuse next to a struck gas main.'
+                ' Global exploration budgets dwarf UK survey spend, and drilling costs '
+                'enough that better targets are worth paying for.')),
         challenge=T(
-            "Challenge: Remote sites, power and calibration in harsh conditions sit "
-            "beyond our packaging. Campaigns are seasonal, procurement slow, and "
-            "airborne gradiometry already serves this market."),
+            ('Challenge: Remote sites, power and calibration in harsh conditions sit '
+                'beyond our packaging. Campaigns are seasonal, procurement slow, and '
+                'airborne gradiometry already serves it.')),
         category='MOON SHOT',
         category_trailing=None,
     ),
@@ -117,16 +106,16 @@ OPPS_PART2 = {
             'External Risks': 'HIGH', 'Overall Challenge': 'VERY HIGH',
         },
         impact_and_potential=T(
-            "Impact and potential: Satellite navigation is jammed and spoofed "
-            "routinely, with consequences running from delayed shipping to lost life. "
-            "The national mission targets quantum navigation on aircraft by 2030 (HM "
-            "Government, 2023), so the state agrees the problem is severe even where no "
-            "commercial market exists. Defence buyers pay well, but are few and slow."),
+            ('Impact and potential: Satellite navigation is jammed and spoofed '
+                'routinely, with consequences from delayed shipping to lost life. The '
+                'national mission targets quantum navigation on aircraft by 2030 (HM '
+                'Government, 2023), so the state agrees the problem is severe even '
+                'without a commercial market. Defence buyers pay well, but are few and '
+                'slow.')),
         challenge=T(
-            "Challenge: A survey instrument may stand still; a navigator must work "
-            "while moving, at a fraction of the size, weight and power. Export control "
-            "applies, and the dual-use question becomes ours to answer rather than "
-            "postpone."),
+            ('Challenge: A survey instrument may stand still; a navigator must work '
+                'while moving, at a fraction of the size, weight and power. Export '
+                'control applies, and the dual-use question becomes ours to answer.')),
         category='MOON SHOT',
         category_trailing=None,
     ),
@@ -151,15 +140,16 @@ OPP_ASSESS = {
 }
 
 NOTES_TEXT = T(
-    "Notes: The kernel is Rumelt's (2011). Our diagnosis is a laboratory-grade sensor "
-    "with no route to a customer; the guiding policy is to earn revenue surveying the "
-    "ground everyone else struggles with, so the instrument matures on a client's site "
-    "rather than in our laboratory. Exploration is a genuine back-up, because its buyers "
-    "and drivers are unrelated to UK construction: a stall in contractor adoption would "
-    "not stop it. It is not a hedge against technical failure, since all three options "
-    "need the same sensor to work, and pretending otherwise is the comfortable fiction "
-    "this tool exists to prevent (Gruber and Tal, 2017). Keeping both open costs design "
-    "headroom and one data-sharing agreement, but no engineers.")
+    ("Notes: The kernel is Rumelt's (2011): our diagnosis is a laboratory-"
+        'grade sensor with no route to a customer, so the guiding policy is to '
+        'earn revenue surveying the ground everyone else struggles with, maturing'
+        " the instrument on a client's site rather than in our own. Exploration "
+        'is a genuine back-up, its buyers unrelated to UK construction, so a '
+        'stall in contractor adoption would not stop it. It is not a hedge '
+        'against technical failure: all three need the same sensor to work, and '
+        'pretending otherwise is the fiction this tool exists to prevent (Gruber '
+        'and Tal, 2017). Keeping both open costs design headroom and a data-'
+        'sharing agreement, but no engineers.'))
 
 # ---------- helper: generic checkbox-group scanner ----------
 

@@ -1,10 +1,10 @@
 # Runbook: Module 2 Assignment 2 portfolio
 
-Operational steps for working on this assignment from any machine. For *why* the
-portfolio says what it says, read the design spec first:
-`docs/superpowers/specs/2026-08-20-module2-assignment2-portfolio-design.md`.
+Operational steps for working on this assignment from any machine. Lives beside the work
+it operates. For *why* the portfolio says what it says, read the design spec first:
+`docs/superpowers/specs/2026-08-20-module2-assignment2-portfolio-design.md` (repo root).
 
-**What is submitted:** one file — `module_2_emerging_markets_for_quantum_technology/assignment_2/Assessment2_Quantum_Portfolio.docx`.
+**What is submitted:** one file — `Assessment2_Quantum_Portfolio.docx`, in this directory.
 Canvas takes a single upload, doc/docx/pdf, up to 40MB. Nothing else is uploaded.
 
 ---
@@ -47,7 +47,7 @@ Nothing else. No LaTeX, no pandoc.
     ./build/venv/bin/pip install python-docx docxcompose
 
     ./build/venv/bin/python build/verify.py      # expect: OVERALL: ALL CHECKS PASS
-    ./build/venv/bin/python build/wordcount.py   # expect: ~1691 words total
+    ./build/venv/bin/python build/wordcount.py   # expect: 1633 words total (+9%)
 
 If `verify.py` passes, the document is complete: every box filled, exactly one tick per
 criterion group, references present. If it fails, do not edit the .docx by hand — rebuild
@@ -59,7 +59,7 @@ criterion group, references present. If it fails, do not edit the .docx by hand 
 
 Start a session in the repo root and give it this:
 
-> Read `docs/runbooks/2026-08-21-module2-assignment2-runbook.md` and
+> Read `module_2_emerging_markets_for_quantum_technology/assignment_2/RUNBOOK.md` and
 > `docs/superpowers/specs/2026-08-20-module2-assignment2-portfolio-design.md`, then
 > `module_2_emerging_markets_for_quantum_technology/assignment_2/build/README.md`.
 > I'm continuing Module 2 Assignment 2. <what you want to change>

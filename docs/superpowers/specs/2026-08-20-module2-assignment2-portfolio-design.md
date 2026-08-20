@@ -64,12 +64,14 @@ Verified online on 2026-08-20 before drafting; do not re-cite these without the 
 
 ## Word budget
 
-Allowance 1500 (500 per item). Actual assessed prose ~1650 — MON ~636, VPC ~509, BMC ~510 — inside normal tolerance. Template prompt text, checkbox labels and the reference list are not counted. If a marker enforces strictly, trim the MON Part 2 rationales first; they are the most compressible.
+Allowance 1500 (500 per item). Measured by `build/wordcount.py`, which diffs the built document against the blank templates: **1633 words — MON 625, VPC 505, BMC 503 (+9%)**. Template prompt text, checkbox labels, the title block and the reference list are excluded.
+
+A phrasing-only trim was applied on 2026-08-21, taking it from 1691 (+13%) to 1633 (+9%) across 19 paragraphs without removing a single argument — the diff was reviewed word by word. Going below ~1600 would require deleting content, most likely the Part 3 "not a hedge against technical failure" point or one opportunity's challenge rationale, which are Critical Thinking marks. That trade was judged not worth making for a worksheet-based submission where no exact count is possible.
 
 ## Deliverable pipeline
 
 Source of truth for every word: `module_2_emerging_markets_for_quantum_technology/assignment_2/portfolio_content.md`.
-Build scripts: `assignment_2/build/` — see its README. Rebuild verified on 2026-08-21 to reproduce the submitted document's text exactly (473 paragraphs, identical).
+Build scripts: `assignment_2/build/` — see its README. Rebuild verified on 2026-08-21 to reproduce the submitted document's text exactly (473 paragraphs, identical). Operational steps live in `assignment_2/RUNBOOK.md`.
 Submission file: `assignment_2/Assessment2_Quantum_Portfolio.docx` (single upload; PDF export from Word is equally acceptable).
 
 **Known duplication:** the fill scripts hardcode the prose rather than parsing `portfolio_content.md`. Editing the markdown alone does not change the .docx. See the build README.
