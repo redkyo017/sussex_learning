@@ -47,7 +47,7 @@ OPPS_PART1 = {
 
 OPPS_PART2 = {
     1: dict(
-        name="Scorecard 1 of 3 — Opportunity 1: Pre-excavation subsurface survey",
+        name="Opportunity 1 — Pre-excavation subsurface survey",
         criteria={
             'Problem Severity': 'HIGH', 'Pertinent Solution': 'HIGH', 'Impact Reach': 'HIGH',
             'Overall Impact': 'HIGH',
@@ -79,7 +79,7 @@ OPPS_PART2 = {
         category='GOLD MINE',
     ),
     2: dict(
-        name="Scorecard 2 of 3 — Opportunity 2: Mineral and geothermal exploration",
+        name="Opportunity 2 — Mineral and geothermal exploration",
         criteria={
             'Problem Severity': 'MEDIUM', 'Pertinent Solution': 'MEDIUM', 'Impact Reach': 'MEDIUM',
             'Overall Impact': 'MEDIUM',
@@ -103,7 +103,7 @@ OPPS_PART2 = {
         category='MOON SHOT',
     ),
     3: dict(
-        name="Scorecard 3 of 3 — Opportunity 3: GPS-denied navigation",
+        name="Opportunity 3 — GPS-denied navigation",
         criteria={
             'Problem Severity': 'HIGH', 'Pertinent Solution': 'MEDIUM', 'Impact Reach': 'MEDIUM',
             'Overall Impact': 'MEDIUM',
