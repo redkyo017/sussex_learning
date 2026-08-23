@@ -21,7 +21,7 @@ except ImportError:
     HAVE_COMPOSER = False
 
 
-TITLE = "Assessment 2 Portfolio: Substrata Quantum Ltd"
+TITLE = "Assessment 2 Portfolio"
 SUBTITLE = ("A proposed UK venture commercialising cold-atom gravity gradiometry "
             "for subsurface survey.")
 
