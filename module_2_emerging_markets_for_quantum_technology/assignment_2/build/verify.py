@@ -43,7 +43,7 @@ required_snippets = [
     "The kernel is Rumelt’s (2011):",
     "The survey or HSE manager at a UK utility asset owner",
     "Interaction: commissioned per site",
-    "Barriers: records are often wrong",
+    "Barriers: some 4 million km of buried pipes and cables",
     "Measured by strike rate per thousand excavations",
     "We tell contractors what lies under the ground",
     "A survey service, not an instrument sale:",
@@ -176,6 +176,51 @@ else:
     words = re.findall(r"\S+", body_text)
     body_word_count = len(words)
     print(f"\nBody word count (excluding References section): {body_word_count}")
+
+# ---------- Check 6: every in-text citation has a reference entry, and vice versa ----------
+# Guards against a citation and its reference drifting apart when one is edited and the
+# other is not (e.g. a source swapped in references.py but not in the fill script, or a
+# string literal split across lines so a search-and-replace misses it).
+if ref_heading_idx is not None:
+    ref_text = [p.text.strip() for p in paras[ref_heading_idx + 1:] if p.text.strip()]
+    body_join = ' '.join(p.text for p in paras[:ref_heading_idx])
+
+    # in-text citations: "(Author ..., YYYY)" and narrative "Author (YYYY)"
+    cited = set()
+    for m in re.finditer(r"\(([^()]{2,90}?),\s*(\d{4})[a-z]?\)", body_join):
+        cited.add((m.group(1).strip(), m.group(2)))
+    for m in re.finditer(r"([A-Z][A-Za-z.'\u2019-]+(?:\s+(?:and|&)\s+[A-Z][A-Za-z.'\u2019-]+)?)\s*\((\d{4})\)", body_join):
+        cited.add((m.group(1).strip(), m.group(2)))
+
+    def surnames(author_str):
+        """First surname of a citation string, lowercased, for loose matching."""
+        a = author_str.replace(' et al.', '').replace(' and ', ', ').replace(' & ', ', ')
+        first = a.split(',')[0].strip().strip('\u2018\u2019\'"')
+        first = re.sub(r"[\u2019']s$", '', first)   # Rumelt's -> Rumelt
+        return first.lower()
+
+    ref_keys = set()
+    for r in ref_text:
+        m = re.match(r"(.+?)\s*\((\d{4})[a-z]?\)", r)
+        if m:
+            ref_keys.add((surnames(m.group(1)), m.group(2)))
+
+    orphan_citations = sorted(
+        f"{a} ({y})" for a, y in cited
+        if (surnames(a), y) not in ref_keys
+    )
+    check("Every in-text citation has a matching reference entry",
+          not orphan_citations, f"orphans: {orphan_citations}")
+
+    cited_keys = {(surnames(a), y) for a, y in cited}
+    unused = sorted(f"{k[0]} ({k[1]})" for k in ref_keys if k not in cited_keys)
+    check("Every reference entry is cited in the body", not unused, f"uncited: {unused}")
+
+    # reference list must stay alphabetical
+    lowered = [r.lower() for r in ref_text]
+    check("References in alphabetical order", lowered == sorted(lowered),
+          "out of order")
+
 
 print("\n" + "=" * 60)
 all_pass = all(ok for _, ok, _ in results)

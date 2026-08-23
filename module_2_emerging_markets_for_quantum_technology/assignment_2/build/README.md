@@ -34,7 +34,7 @@ scripts hardcode their own copy of it**. Editing the markdown alone changes noth
 - `fill_mon.py` — core ability descriptions, opportunity applications/customer groups,
   Part 2 scores and per-score `notes`, Part 3 notes
 - `fill_vpc.py` / `fill_bmc.py` — the `Notes:` body of each box
-- `references.py` — the reference list (alphabetical: Teece, The Quantum Insider, Tidd)
+- `references.py` — the reference list (alphabetical: Teece, Tidd, University of Birmingham)
 - `merge.py` — `TITLE` / `SUBTITLE` constants
 
 Then re-run the pipeline and `verify.py`.

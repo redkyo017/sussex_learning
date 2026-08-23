@@ -70,8 +70,8 @@ OPPS_PART2 = {
                 'Notes: The physics already works outdoors, so this is productisation. '
                 'Two risks bite: PAS 128 recognises radar and '
                 'electromagnetic location, not gravity; and Delta.g, a Birmingham '
-                'spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum '
-                'Insider, 2025).'),
+                'spin-out with GBP 4.6m of seed funding, is ahead of us '
+                '(University of Birmingham, 2025).'),
             'Opportunity Category': T(
                 'Notes: Gold Mine: highest potential, lowest challenge of the three, '
                 'judged against each other, not in the abstract.'),

@@ -48,12 +48,14 @@ REFERENCES = [
     R("Teece, D.J. (1986) 'Profiting from technological innovation: implications "
       "for integration, collaboration, licensing and public policy', *Research "
       "Policy*, 15(6), pp. 285-305."),
-    R("The Quantum Insider (2025) *University of Birmingham spin-out Delta.g raises "
-      "GBP 4.6 million in oversubscribed seed round*. Available at: "
-      "https://thequantuminsider.com (Accessed: 20 August 2026)."),
     R("Tidd, J. and Bessant, J. (2021) *Managing innovation: integrating "
       "technological, market and organizational change*. 7th edn. Chichester: "
       "Wiley."),
+    R("University of Birmingham (2025) *Delta.g secures GBP 4.6 million in "
+      "oversubscribed seed round to advance quantum sensing*. Available at: "
+      "https://www.birmingham.ac.uk/news/2025/delta.g-secures-4.6-million-in-"
+      "oversubscribed-seed-round-to-advance-quantum-sensing "
+      "(Accessed: 23 August 2026)."),
     R("Utility Strike Avoidance Group (2023) *Utility strike damage report*. "
       "Coventry: USAG."),
     R("von Hippel, E. (1986) 'Lead users: a source of novel product concepts', "

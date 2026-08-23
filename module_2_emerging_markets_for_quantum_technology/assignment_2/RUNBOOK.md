@@ -47,7 +47,7 @@ Nothing else. No LaTeX, no pandoc.
     ./build/venv/bin/pip install python-docx docxcompose
 
     ./build/venv/bin/python build/verify.py      # expect: OVERALL: ALL CHECKS PASS
-    ./build/venv/bin/python build/wordcount.py   # expect: 1723 words total (+15%)
+    ./build/venv/bin/python build/wordcount.py   # expect: 1747 words total (+16%)
 
 If `verify.py` passes, the document is complete: every box filled, exactly one tick per
 criterion group, references present. If it fails, do not edit the .docx by hand — rebuild
@@ -108,7 +108,7 @@ Read the diff against the current file, then rebuild in place (step 4A) once hap
     ./build/venv/bin/python build/wordcount.py
 
 Counts only inserted prose: template prompts, field labels, checkbox options and the
-reference list are excluded. Allowance is 1500 (500 per item); current build is 1723 (+15%), a deliberate
+reference list are excluded. Allowance is 1500 (500 per item); current build is 1747 (+16%), a deliberate
 trade recorded in the spec's Word budget section. Do not trim further without re-reading it —
 what is left is direct answers to printed prompts and the critical-thinking hooks.
 
@@ -166,5 +166,5 @@ inherits it. Then update the memory file if you are on the machine that holds it
    treating channel, crews and dataset as the co-specialised assets. These are where the
    Critical Thinking and Application marks come from. A tidy-up that deletes them costs
    marks.
-4. **References stay alphabetical**: Teece, The Quantum Insider, Tidd.
+4. **References stay alphabetical**: Teece, Tidd, University of Birmingham, Utility Strike Avoidance Group.
 5. **No fabricated figures.** Every number traces to a source named in the spec.

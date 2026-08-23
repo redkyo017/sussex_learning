@@ -7,7 +7,7 @@ gravity gradiometry for subsurface survey.
 opportunity -> VPC drills into one segment inside it -> BMC answers the value-capture
 question the MON raised (sell surveys and data, not instruments).
 
-**Word budget:** measured 1723 (MON 613, VPC 530, BMC 580), +15%; every worksheet prompt answered. Template prompt text and the
+**Word budget:** measured 1747 (MON 613, VPC 542, BMC 592), +16%; every worksheet prompt answered. Template prompt text and the
 reference list are not counted.
 
 ---
@@ -57,7 +57,7 @@ Economic Viability: HIGH. Overall Potential: HIGH.
 Notes: Contractors already buy PAS 128 surveys, so a budget line exists to sell against (British Standards Institution, 2022), and reported strike rates mean improvement can be shown, not claimed.
 Challenge — Implementation Obstacles: MEDIUM. Time to Revenue: MEDIUM.
 External Risks: HIGH. Overall Challenge: MEDIUM.
-Notes: The physics already works outdoors, so this is productisation. Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and Delta.g, a Birmingham spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum Insider, 2025).
+Notes: The physics already works outdoors, so this is productisation. Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and Delta.g, a Birmingham spin-out with GBP 4.6m of seed funding, is ahead of us (University of Birmingham, 2025).
 Opportunity Category: GOLD MINE.
 Notes: Gold Mine: highest potential, lowest challenge of the three, judged against each other, not in the abstract.
 
@@ -109,22 +109,22 @@ Notes: The survey or HSE manager at a UK utility asset owner, or the tier-1 cont
 Interaction: commissioned per site as a second pass beside a PAS 128 contract; they receive a map, not an instrument. Context: always to know what is under the ground before breaking it; on a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.
 
 ### Pains
-Barriers: records are often wrong across some 4 million km of buried pipes and cables, with a hole dug every seven seconds (Geospatial Commission, 2024); trial holes sample points only, at a cost in money and closures. Challenges: radar loses signal in wet, clay-rich ground and at depth; electromagnetic location cannot see plastic. Underperformance: surveys come back qualified B3 or B4 (British Standards Institution, 2022), handing the risk back to the manager. The worst outcome is not the invoice but the injury.
+Barriers: some 4 million km of buried pipes and cables, a hole dug every seven seconds (Geospatial Commission, 2024), and records that are often wrong; trial holes sample points only, at a cost in money and closures. Challenges: radar loses signal in wet, clay-rich ground and at depth; electromagnetic location cannot see plastic. Underperformance: surveys come back qualified B3 or B4 (British Standards Institution, 2022), handing the risk back to the manager. The worst outcome is not the invoice but the injury.
 
 ### Gains
 Measured by strike rate per thousand excavations, PAS 128 quality level, and days lost to stoppages. Time is the saving valued most: an emergency reinstatement closes a street for longer than the survey took. Socially: fewer injured workers, fewer disrupted streets, and data that stays useful through NUAR. They would pay most for a strike-rate improvement they can show an insurer and a board.
 
 ## Value Proposition
-Notes: We tell contractors what lies under the ground where radar gives up. Stated honestly: slower per metre and coarser than radar in good conditions, so we are the second pass on hard ground, not a replacement for the first. Claiming more would put crews at risk, which is where responsible innovation becomes a design constraint (Stilgoe, Owen and Macnaghten, 2013).
+Notes: We tell contractors what lies under the ground where radar gives up. Stated honestly: slower per metre and coarser than radar in good conditions, so the fit is second pass on hard ground, not replacement of the first (Osterwalder et al., 2014). Claiming more would put crews at risk, which is where responsible innovation becomes a design constraint (Stilgoe, Owen and Macnaghten, 2013).
 
 ### Products and Features
 A survey service, not an instrument sale: a trolley or vehicle-mounted quantum gravity gradiometer run by our own crews. One specific job, the risk sign-off on difficult ground, not a variety. Features tangible and digital: the field service, and a depth-resolved density map with stated uncertainty, issued in GIS and BIM formats and cross-referenced to PAS 128 quality levels.
 
 ### Pain Relievers
-Frustrations: the sensor reads density contrast, so wet clay and plastic pipes stop being the problem they are for radar and electromagnetic location. Improvement: voids, culverts and abandoned shafts become visible, and each survey removes several trial holes. Risk: the output carries explicit uncertainty (Stray et al., 2022), so the manager prices residual risk rather than discovering it with a digger. It mitigates rather than eliminates: PAS 128 does not yet recognise gravity.
+Frustrations: the sensor reads density contrast, so wet clay and plastic pipes stop being the problem they are for radar and electromagnetic location. Improvement: voids, culverts and abandoned shafts become visible, and each survey should remove several trial holes. Risk: the output carries explicit uncertainty (Stray et al., 2022), so the manager prices residual risk rather than discovering it with a digger. It mitigates rather than eliminates: PAS 128 mandates radar and electromagnetic location, admitting gravity only as a supplementary method.
 
 ### Gain Creators
-Savings: priced by the day against the true cost of one strike, 29 times its repair bill (Utility Strike Avoidance Group, 2023) — arithmetic a buyer can run themselves. Expectations: on the ground it is built for it exceeds them, where current methods return a caveat; in good conditions it only meets them, and we say so. Outperformance: outcomes are reported against the national baseline, so the claim is checkable, and data returns NUAR-ready, turning a survey cost into an asset the owner keeps.
+Savings: priced by the day against the true cost of one strike, 29 times its repair bill (Utility Strike Avoidance Group, 2023) — arithmetic a buyer can run themselves. Expectations: on the ground it is built for it exceeds them, where current methods return a caveat; in good conditions it only meets them, and we say so. Outperformance: outcomes are reported against the national baseline, so the claim is checkable, and data is returned NUAR-ready, turning a survey cost into an asset the owner keeps.
 
 ---
 
@@ -155,7 +155,7 @@ Value proposition: the licensed IP matters less than the tacit build-and-align k
 Suppliers: a university physics group for the licence; laser, vacuum and shielding vendors. Resources: the interferometry IP and absorptive capacity; components whose lead times become ours. Activities: training the people we hire; calibration and repair. Who else: a PAS 128 survey firm as channel; the Geospatial Commission through NUAR. Stakeholders: Innovate UK, the National Quantum Technologies Programme, HSE and unions, engaged while the product is still shapeable: the triple helix in practice (Etzkowitz and Leydesdorff, 2000).
 
 ### Cost Structure
-Essential: people, instrument, fieldwork, compliance. Most expensive resources: physicists and field engineers, the largest, least compressible and scarcest cost; then the instrument's lasers, vacuum and shielding, and its vehicle. Most expensive activities: field trials and traffic management. Standards, certification and export-control compliance are small lines, easy to underestimate and awkward to retrofit.
+Essential: people, instrument, fieldwork, compliance — a value-driven structure, not a cost-driven one (Osterwalder and Pigneur, 2010). Most expensive resources: physicists and field engineers, the largest, least compressible and scarcest cost; then the instrument's lasers, vacuum and shielding, and its vehicle. Most expensive activities: field trials and traffic management. Standards, certification and export-control compliance are small lines, easy to underestimate and awkward to retrofit.
 
 ---
 
@@ -198,12 +198,13 @@ pp. 590-594.
 Teece, D.J. (1986) 'Profiting from technological innovation: implications for integration,
 collaboration, licensing and public policy', *Research Policy*, 15(6), pp. 285-305.
 
-The Quantum Insider (2025) *University of Birmingham spin-out Delta.g raises GBP 4.6 million
-in oversubscribed seed round*. Available at: https://thequantuminsider.com (Accessed: 20
-August 2026).
-
 Tidd, J. and Bessant, J. (2021) *Managing innovation: integrating technological, market and
 organizational change*. 7th edn. Chichester: Wiley.
+
+University of Birmingham (2025) *Delta.g secures GBP 4.6 million in oversubscribed seed round
+to advance quantum sensing*. Available at:
+https://www.birmingham.ac.uk/news/2025/delta.g-secures-4.6-million-in-oversubscribed-seed-round-to-advance-quantum-sensing
+(Accessed: 23 August 2026).
 
 Utility Strike Avoidance Group (2023) *Utility strike damage report*. Coventry: USAG.
 

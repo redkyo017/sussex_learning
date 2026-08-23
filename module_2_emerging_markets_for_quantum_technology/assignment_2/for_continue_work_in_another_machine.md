@@ -1,7 +1,7 @@
 cd module_2_emerging_markets_for_quantum_technology/assignment_2
 python3 -m venv build/venv && ./build/venv/bin/pip install python-docx docxcompose
 ./build/venv/bin/python build/verify.py      # ALL CHECKS PASS
-./build/venv/bin/python build/wordcount.py   # 1723 words (+15%) — deliberate, see CHANGES-2026-08-23.md
+./build/venv/bin/python build/wordcount.py   # 1747 words (+16%) — deliberate, see CHANGES-2026-08-23.md
 Those two outputs tell you the document arrived intact. If they pass and you don't want changes, Assessment2_Quantum_Portfolio.docx is ready to upload as-is.
 
 To change anything, the one rule: the prose lives in two places — portfolio_content.md and the matching build/fill_*.py. Edit both, then:
