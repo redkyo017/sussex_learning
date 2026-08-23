@@ -56,22 +56,28 @@ OPPS_PART2 = {
             'Implementation Obstacles': 'MEDIUM', 'Time to Revenue': 'MEDIUM',
             'External Risks': 'HIGH', 'Overall Challenge': 'MEDIUM',
         },
-        impact_and_potential=T(
-            ('Impact and potential: One hole in every 65 hits something: about 60,000 '
-                'strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance '
-                'Group, 2023). Workers are hurt. Contractors already buy PAS 128 surveys,'
-                ' so a budget line and a standard exist to sell against (British '
-                'Standards Institution, 2022), and reported strike rates mean improvement'
-                ' can be shown rather than claimed.')),
-        challenge=T(
-            ('Challenge: The physics already works outdoors, so this is '
-                'productisation, not discovery. Two risks bite: PAS 128 recognises radar '
-                'and electromagnetic location, not gravity; and Delta.g, a Birmingham '
+        # one Notes: paragraph under each Overall score, plus one under the category
+        notes={
+            'Overall Impact': T(
+                'Notes: One hole in every 65 hits something: about 60,000 strikes a '
+                'year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, '
+                '2023). Workers are hurt.'),
+            'Overall Potential': T(
+                'Notes: Contractors already buy PAS 128 surveys, so a budget line and a '
+                'standard exist to sell against (British Standards Institution, 2022), '
+                'and reported strike rates mean improvement can be shown rather than '
+                'claimed.'),
+            'Overall Challenge': T(
+                'Notes: The physics already works outdoors, so this is productisation, '
+                'not discovery. Two risks bite: PAS 128 recognises radar and '
+                'electromagnetic location, not gravity; and Delta.g, a Birmingham '
                 'spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum '
-                'Insider, 2025).')),
+                'Insider, 2025).'),
+            'Opportunity Category': T(
+                'Notes: Gold Mine: highest potential, lowest challenge of the three, '
+                'judged against each other, not in the abstract.'),
+        },
         category='GOLD MINE',
-        category_trailing=T(
-            'highest potential, lowest challenge of the three — judged against each other, not in the abstract.'),
     ),
     2: dict(
         name="Opportunity 2: Mineral and geothermal exploration",
@@ -83,17 +89,19 @@ OPPS_PART2 = {
             'Implementation Obstacles': 'HIGH', 'Time to Revenue': 'HIGH',
             'External Risks': 'MEDIUM', 'Overall Challenge': 'HIGH',
         },
-        impact_and_potential=T(
-            ('Impact and potential: Better targeting means fewer speculative '
-                'boreholes, though the harm avoided is diffuse next to a struck gas main.'
-                ' Global exploration budgets dwarf UK survey spend, and drilling costs '
-                'enough that better targets are worth paying for.')),
-        challenge=T(
-            ('Challenge: Remote sites, power and calibration in harsh conditions sit '
+        notes={
+            'Overall Impact': T(
+                'Notes: Better targeting means fewer speculative boreholes, though the '
+                'harm avoided is diffuse next to a struck gas main.'),
+            'Overall Potential': T(
+                'Notes: Global exploration budgets dwarf UK survey spend, and drilling '
+                'costs enough that better targets are worth paying for.'),
+            'Overall Challenge': T(
+                'Notes: Remote sites, power and calibration in harsh conditions sit '
                 'beyond our packaging. Campaigns are seasonal, procurement slow, and '
-                'airborne gradiometry already serves it.')),
+                'airborne gradiometry already serves it.'),
+        },
         category='MOON SHOT',
-        category_trailing=None,
     ),
     3: dict(
         name="Opportunity 3: GPS-denied navigation",
@@ -105,19 +113,21 @@ OPPS_PART2 = {
             'Implementation Obstacles': 'VERY HIGH', 'Time to Revenue': 'VERY HIGH',
             'External Risks': 'HIGH', 'Overall Challenge': 'VERY HIGH',
         },
-        impact_and_potential=T(
-            ('Impact and potential: Satellite navigation is jammed and spoofed '
-                'routinely, with consequences from delayed shipping to lost life. The '
-                'national mission targets quantum navigation on aircraft by 2030 (HM '
-                'Government, 2023), so the state agrees the problem is severe even '
-                'without a commercial market. Defence buyers pay well, but are few and '
-                'slow.')),
-        challenge=T(
-            ('Challenge: A survey instrument may stand still; a navigator must work '
+        notes={
+            'Overall Impact': T(
+                'Notes: Satellite navigation is jammed and spoofed routinely, with '
+                'consequences from delayed shipping to lost life. The national mission '
+                'targets quantum navigation on aircraft by 2030 (HM Government, 2023), '
+                'so the state agrees the problem is severe even without a commercial '
+                'market.'),
+            'Overall Potential': T(
+                'Notes: Defence buyers pay well, but are few and slow.'),
+            'Overall Challenge': T(
+                'Notes: A survey instrument may stand still; a navigator must work '
                 'while moving, at a fraction of the size, weight and power. Export '
-                'control applies, and the dual-use question becomes ours to answer.')),
+                'control applies, and the dual-use question becomes ours to answer.'),
+        },
         category='MOON SHOT',
-        category_trailing=None,
     ),
 }
 
@@ -255,16 +265,13 @@ for opp_num, block_els in zip([1, 2, 3], blocks):
     cat_heading_el, cat_options = groups['Opportunity Category']
     tick(cat_options, data['category'])
 
-    # insert rationale paragraphs immediately before the Opportunity Category heading
-    p_impact = new_paragraph('Normal', data['impact_and_potential'])
-    p_challenge = new_paragraph('Normal', data['challenge'])
-    cat_heading_el.addprevious(p_impact)
-    cat_heading_el.addprevious(p_challenge)
-
-    if data['category_trailing']:
-        last_cat_option_el = cat_options[-1][1].getparent()  # the <w:p> containing sdt
-        p_trailing = new_paragraph('Normal', data['category_trailing'])
-        last_cat_option_el.addnext(p_trailing)
+    # insert a Notes: paragraph directly after the last checkbox of each group it
+    # explains (Overall Impact / Potential / Challenge, and the category), so the
+    # rationale sits beside the score rather than at the foot of the card
+    for group_label, text in data['notes'].items():
+        _, options = groups[group_label]
+        last_option_el = options[-1][1].getparent()  # the <w:p> containing the sdt
+        last_option_el.addnext(new_paragraph('Normal', text))
 
 # -- Part 3 --
 # refresh paragraph list / locate by scanning doc.paragraphs again since indices shifted

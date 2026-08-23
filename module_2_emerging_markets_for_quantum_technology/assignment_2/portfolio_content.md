@@ -51,34 +51,38 @@ operators later.
 ### Opportunity 1: Pre-excavation subsurface survey
 Impact — Problem Severity: HIGH. Pertinent Solution: HIGH. Impact Reach: HIGH.
 Overall Impact: HIGH.
+Notes: One hole in every 65 hits something: about 60,000 strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, 2023). Workers are hurt.
 Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: MEDIUM.
 Economic Viability: HIGH. Overall Potential: HIGH.
+Notes: Contractors already buy PAS 128 surveys, so a budget line and a standard exist to sell against (British Standards Institution, 2022), and reported strike rates mean improvement can be shown rather than claimed.
 Challenge — Implementation Obstacles: MEDIUM. Time to Revenue: MEDIUM.
 External Risks: HIGH. Overall Challenge: MEDIUM.
-Impact and potential: One hole in every 65 hits something: about 60,000 strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, 2023). Workers are hurt. Contractors already buy PAS 128 surveys, so a budget line and a standard exist to sell against (British Standards Institution, 2022), and reported strike rates mean improvement can be shown rather than claimed.
-Challenge: The physics already works outdoors, so this is productisation, not discovery. Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and Delta.g, a Birmingham spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum Insider, 2025).
-Opportunity Category: GOLD MINE — highest potential, lowest challenge of the three — judged against each other, not in the abstract.
+Notes: The physics already works outdoors, so this is productisation, not discovery. Two risks bite: PAS 128 recognises radar and electromagnetic location, not gravity; and Delta.g, a Birmingham spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum Insider, 2025).
+Opportunity Category: GOLD MINE.
+Notes: Gold Mine: highest potential, lowest challenge of the three, judged against each other, not in the abstract.
 
 ### Opportunity 2: Mineral and geothermal exploration
 Impact — Problem Severity: MEDIUM. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
 Overall Impact: MEDIUM.
+Notes: Better targeting means fewer speculative boreholes, though the harm avoided is diffuse next to a struck gas main.
 Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: HIGH.
 Economic Viability: MEDIUM. Overall Potential: HIGH.
+Notes: Global exploration budgets dwarf UK survey spend, and drilling costs enough that better targets are worth paying for.
 Challenge — Implementation Obstacles: HIGH. Time to Revenue: HIGH. External Risks: MEDIUM.
 Overall Challenge: HIGH.
-Impact and potential: Better targeting means fewer speculative boreholes, though the harm avoided is diffuse next to a struck gas main. Global exploration budgets dwarf UK survey spend, and drilling costs enough that better targets are worth paying for.
-Challenge: Remote sites, power and calibration in harsh conditions sit beyond our packaging. Campaigns are seasonal, procurement slow, and airborne gradiometry already serves it.
+Notes: Remote sites, power and calibration in harsh conditions sit beyond our packaging. Campaigns are seasonal, procurement slow, and airborne gradiometry already serves it.
 Opportunity Category: MOON SHOT.
 
 ### Opportunity 3: GPS-denied navigation
 Impact — Problem Severity: HIGH. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
 Overall Impact: MEDIUM.
+Notes: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life. The national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023), so the state agrees the problem is severe even without a commercial market.
 Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: MEDIUM.
 Economic Viability: MEDIUM. Overall Potential: HIGH.
+Notes: Defence buyers pay well, but are few and slow.
 Challenge — Implementation Obstacles: VERY HIGH. Time to Revenue: VERY HIGH.
 External Risks: HIGH. Overall Challenge: VERY HIGH.
-Impact and potential: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life. The national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023), so the state agrees the problem is severe even without a commercial market. Defence buyers pay well, but are few and slow.
-Challenge: A survey instrument may stand still; a navigator must work while moving, at a fraction of the size, weight and power. Export control applies, and the dual-use question becomes ours to answer.
+Notes: A survey instrument may stand still; a navigator must work while moving, at a fraction of the size, weight and power. Export control applies, and the dual-use question becomes ours to answer.
 Opportunity Category: MOON SHOT.
 
 ## Part 3 — Agile Focus Strategy
