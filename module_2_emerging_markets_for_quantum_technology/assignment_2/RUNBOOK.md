@@ -62,6 +62,7 @@ Start a session in the repo root and give it this:
 > Read `module_2_emerging_markets_for_quantum_technology/assignment_2/RUNBOOK.md` and
 > `docs/superpowers/specs/2026-08-20-module2-assignment2-portfolio-design.md`, then
 > `module_2_emerging_markets_for_quantum_technology/assignment_2/build/README.md`.
+> and `module_2_emerging_markets_for_quantum_technology/assignment_2/CHANGES-2026-08-23.md`.
 > I'm continuing Module 2 Assignment 2. <what you want to change>
 
 Reading order matters: the spec carries the decisions and the rejected alternatives, so it
