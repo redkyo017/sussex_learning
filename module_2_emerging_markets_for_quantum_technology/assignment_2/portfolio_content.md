@@ -7,7 +7,7 @@ gravity gradiometry for subsurface survey.
 opportunity -> VPC drills into one segment inside it -> BMC answers the value-capture
 question the MON raised (sell surveys and data, not instruments).
 
-**Word budget:** measured 1738 (MON 594, VPC 551, BMC 593), +16%; every worksheet prompt answered. Template prompt text and the
+**Word budget:** measured 1769 (MON 625, VPC 551, BMC 593), +18%; every worksheet prompt answered. Template prompt text and the
 reference list are not counted.
 
 ---
@@ -46,7 +46,9 @@ operators later.
 
 ## Part 2 — Market Attractiveness
 
-### Opportunity 1: Pre-excavation subsurface survey
+Lead sentence (added under the template's "Evaluate and compare options systematically."): The scorecard below is completed once for each of the three opportunities identified in Part 1.
+
+### Scorecard 1 of 3 — Opportunity 1: Pre-excavation subsurface survey  (bold card heading in the document)
 Impact — Problem Severity: HIGH. Pertinent Solution: HIGH. Impact Reach: HIGH.
 Overall Impact: HIGH.
 Notes: One hole in every 65 hits something: about 60,000 strikes a year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, 2023). Workers are hurt.
@@ -59,7 +61,7 @@ Notes: The physics already works outdoors, so this is productisation. Two risks 
 Opportunity Category: GOLD MINE.
 Notes: Gold Mine: highest potential, lowest challenge of the three, judged against each other, not in the abstract.
 
-### Opportunity 2: Mineral and geothermal exploration
+### Scorecard 2 of 3 — Opportunity 2: Mineral and geothermal exploration  (bold card heading in the document)
 Impact — Problem Severity: MEDIUM. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
 Overall Impact: MEDIUM.
 Notes: Better targeting means fewer speculative boreholes, though the harm avoided is diffuse next to a struck gas main.
@@ -71,7 +73,7 @@ Overall Challenge: HIGH.
 Notes: Remote sites, power and calibration in harsh conditions sit beyond our packaging. Campaigns are seasonal, procurement slow, and airborne gradiometry already serves it.
 Opportunity Category: MOON SHOT.
 
-### Opportunity 3: GPS-denied navigation
+### Scorecard 3 of 3 — Opportunity 3: GPS-denied navigation  (bold card heading in the document)
 Impact — Problem Severity: HIGH. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
 Overall Impact: MEDIUM.
 Notes: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life; the national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023).

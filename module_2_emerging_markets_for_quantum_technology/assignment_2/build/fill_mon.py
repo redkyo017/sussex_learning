@@ -47,7 +47,7 @@ OPPS_PART1 = {
 
 OPPS_PART2 = {
     1: dict(
-        name="Opportunity 1: Pre-excavation subsurface survey",
+        name="Scorecard 1 of 3 — Opportunity 1: Pre-excavation subsurface survey",
         criteria={
             'Problem Severity': 'HIGH', 'Pertinent Solution': 'HIGH', 'Impact Reach': 'HIGH',
             'Overall Impact': 'HIGH',
@@ -79,7 +79,7 @@ OPPS_PART2 = {
         category='GOLD MINE',
     ),
     2: dict(
-        name="Opportunity 2: Mineral and geothermal exploration",
+        name="Scorecard 2 of 3 — Opportunity 2: Mineral and geothermal exploration",
         criteria={
             'Problem Severity': 'MEDIUM', 'Pertinent Solution': 'MEDIUM', 'Impact Reach': 'MEDIUM',
             'Overall Impact': 'MEDIUM',
@@ -103,7 +103,7 @@ OPPS_PART2 = {
         category='MOON SHOT',
     ),
     3: dict(
-        name="Opportunity 3: GPS-denied navigation",
+        name="Scorecard 3 of 3 — Opportunity 3: GPS-denied navigation",
         criteria={
             'Problem Severity': 'HIGH', 'Pertinent Solution': 'MEDIUM', 'Impact Reach': 'MEDIUM',
             'Overall Impact': 'MEDIUM',
@@ -246,6 +246,11 @@ insert_block_after(last, clone3)
 
 blocks = [orig_block_els, clone2, clone3]
 
+# one orienting sentence under Part 2's own instruction line, before the first card
+PART2_LEAD = T('The scorecard below is completed once for each of the three opportunities '
+               'identified in Part 1.')
+paras[26]._p.addnext(new_paragraph('Normal', PART2_LEAD))
+
 for opp_num, block_els in zip([1, 2, 3], blocks):
     data = OPPS_PART2[opp_num]
     # Opportunity Name: is the first paragraph in the block
@@ -253,6 +258,13 @@ for opp_num, block_els in zip([1, 2, 3], blocks):
     assert paragraph_label_text(name_p).strip() == 'Opportunity Name:', \
         paragraph_label_text(name_p)
     add_run_after_label(name_p, data['name'])
+    # bold the whole card heading so each of the three scorecards is visibly its own card
+    for r in name_p.iter(qn('w:r')):
+        rPr = r.find(qn('w:rPr'))
+        if rPr is None:
+            rPr = r.makeelement(qn('w:rPr'), {}); r.insert(0, rPr)
+        if rPr.find(qn('w:b')) is None:
+            rPr.append(rPr.makeelement(qn('w:b'), {}))
 
     groups = scan_groups(block_els)
     for crit, val in data['criteria'].items():

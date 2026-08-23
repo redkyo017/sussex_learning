@@ -64,7 +64,7 @@ Verified online on 2026-08-20 before drafting; do not re-cite these without the 
 
 ## Word budget
 
-Allowance 1500 (500 per item). Measured by `build/wordcount.py`, which diffs the built document against the blank templates: **1738 words — MON 594, VPC 551, BMC 593 (+16%)**. Template prompt text, checkbox labels, the title block and the reference list are excluded.
+Allowance 1500 (500 per item). Measured by `build/wordcount.py`, which diffs the built document against the blank templates: **1769 words — MON 625, VPC 551, BMC 593 (+18%)**; the last 31 are the Part 2 orientation sentence and the three "Scorecard n of 3 —" card headings added 2026-08-23 so the three scorecards read as three cards, not a copy-paste. Template prompt text, checkbox labels, the title block and the reference list are excluded.
 
 History: 1691 (+13%) at first draft; phrasing trim to 1633 (+9%) on 2026-08-21. On 2026-08-23 a review found that the VPC/BMC notes left roughly a third of the printed prompts unanswered (e.g. "expected outcomes or exceed expectations?", "how much revenue will each stream contribute?"). Every box was rewritten so each prompt is answered in order, led by the prompt's keyword ("Interaction:", "Barriers:", "Suppliers:" …) so coverage is legible to the marker. That costs ~60–75 words per prompted box however tightly phrased; three compression passes brought the total from 1806 to 1738 without removing any answer, citation or critical-thinking hook. Going to +10% would require deleting direct answers to printed prompts, which was judged the worse trade for a worksheet-based submission.
 
