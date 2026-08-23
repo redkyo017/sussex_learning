@@ -47,7 +47,7 @@ Nothing else. No LaTeX, no pandoc.
     ./build/venv/bin/pip install python-docx docxcompose
 
     ./build/venv/bin/python build/verify.py      # expect: OVERALL: ALL CHECKS PASS
-    ./build/venv/bin/python build/wordcount.py   # expect: 1633 words total (+9%)
+    ./build/venv/bin/python build/wordcount.py   # expect: 1738 words total (+16%)
 
 If `verify.py` passes, the document is complete: every box filled, exactly one tick per
 criterion group, references present. If it fails, do not edit the .docx by hand — rebuild
@@ -81,7 +81,7 @@ deliberate critical-thinking hooks listed in §Invariants below.
     ./build/venv/bin/python build/merge.py
     ./build/venv/bin/python build/verify.py
 
-Verified 2026-08-21 to reproduce the submitted document's text exactly (473 paragraphs).
+Last rebuilt in place 2026-08-23 (MON Part 2 notes per score; VPC/BMC answer every prompt).
 
 ### B. Change the wording
 
@@ -89,7 +89,7 @@ The prose lives in **two** places and both must change:
 
 1. `portfolio_content.md` — the readable source of truth
 2. the matching build script — `fill_mon.py` (core abilities, applications, Part 2 scores
-   and rationales, Part 3 notes), `fill_vpc.py` / `fill_bmc.py` (each box's `Notes:`),
+   and per-score notes, Part 3 notes), `verify.py` (`required_snippets` if a box's opening words change), `fill_vpc.py` / `fill_bmc.py` (each box's `Notes:`),
    `references.py` (reference list), `merge.py` (`TITLE` / `SUBTITLE`)
 
 Then build to a scratch directory first, so a mistake cannot damage the file you may
@@ -107,8 +107,9 @@ Read the diff against the current file, then rebuild in place (step 4A) once hap
     ./build/venv/bin/python build/wordcount.py
 
 Counts only inserted prose: template prompts, field labels, checkbox options and the
-reference list are excluded. Allowance is 1500 (500 per item). If over, trim the MON
-Part 2 rationales first — they are the most compressible without losing an argument.
+reference list are excluded. Allowance is 1500 (500 per item); current build is 1738 (+16%), a deliberate
+trade recorded in the spec's Word budget section. Do not trim further without re-reading it —
+what is left is direct answers to printed prompts and the critical-thinking hooks.
 
 ### D. Export a PDF
 

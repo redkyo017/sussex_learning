@@ -18,11 +18,11 @@ T = lambda s: fix_typography(s)
 
 CA = {
     1: T('Measures the gravitational difference between two clouds of laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line of sight, no contact and no excavation.'),
-    2: T('Vibration is common to both clouds and cancels differentially; accelerometers and shielding handle the rest. This is what took the instrument off the optical bench and onto a street (Stray et al., 2022).'),
+    2: T('Vibration is common to both clouds and cancels differentially; shielding handles the rest. This took the instrument off the optical bench and onto a street (Stray et al., 2022).'),
     3: T("Bayesian inversion turns sparse gradient readings into a three-dimensional "
-         "density estimate, and reports its confidence in position and depth rather than "
-         "drawing one certain line."),
-    4: T('Packaging lasers, vacuum and shielding into equipment a trained surveyor can run through a working day. Most of it is tacit knowledge held by people, which matters for value capture.'),
+         "density estimate, reporting confidence in position and depth rather than one "
+         "certain line."),
+    4: T('Packaging lasers, vacuum and shielding into equipment a trained surveyor can run through a working day. Most of it is tacit knowledge, which matters for value capture.'),
 }
 
 OPPS_PART1 = {
@@ -63,13 +63,12 @@ OPPS_PART2 = {
                 'year and GBP 2.4bn in economic cost (Utility Strike Avoidance Group, '
                 '2023). Workers are hurt.'),
             'Overall Potential': T(
-                'Notes: Contractors already buy PAS 128 surveys, so a budget line and a '
-                'standard exist to sell against (British Standards Institution, 2022), '
-                'and reported strike rates mean improvement can be shown rather than '
-                'claimed.'),
+                'Notes: Contractors already buy PAS 128 surveys, so a budget line exists '
+                'to sell against (British Standards Institution, 2022), and reported '
+                'strike rates mean improvement can be shown, not claimed.'),
             'Overall Challenge': T(
-                'Notes: The physics already works outdoors, so this is productisation, '
-                'not discovery. Two risks bite: PAS 128 recognises radar and '
+                'Notes: The physics already works outdoors, so this is productisation. '
+                'Two risks bite: PAS 128 recognises radar and '
                 'electromagnetic location, not gravity; and Delta.g, a Birmingham '
                 'spin-out with GBP 4.6m of seed funding, is ahead of us (The Quantum '
                 'Insider, 2025).'),
@@ -116,12 +115,10 @@ OPPS_PART2 = {
         notes={
             'Overall Impact': T(
                 'Notes: Satellite navigation is jammed and spoofed routinely, with '
-                'consequences from delayed shipping to lost life. The national mission '
-                'targets quantum navigation on aircraft by 2030 (HM Government, 2023), '
-                'so the state agrees the problem is severe even without a commercial '
-                'market.'),
+                'consequences from delayed shipping to lost life; the national mission '
+                'targets quantum navigation on aircraft by 2030 (HM Government, 2023).'),
             'Overall Potential': T(
-                'Notes: Defence buyers pay well, but are few and slow.'),
+                'Notes: The state agrees the problem is severe; defence buyers pay well but are few and slow.'),
             'Overall Challenge': T(
                 'Notes: A survey instrument may stand still; a navigator must work '
                 'while moving, at a fraction of the size, weight and power. Export '
@@ -152,8 +149,8 @@ OPP_ASSESS = {
 NOTES_TEXT = T(
     ("Notes: The kernel is Rumelt's (2011): our diagnosis is a laboratory-"
         'grade sensor with no route to a customer, so the guiding policy is to '
-        'earn revenue surveying the ground everyone else struggles with, maturing'
-        " the instrument on a client's site rather than in our own. Exploration "
+        'earn revenue on the ground everyone else struggles with, maturing the '
+        "instrument on a client's site rather than our own. Exploration "
         'is a genuine back-up, its buyers unrelated to UK construction, so a '
         'stall in contractor adoption would not stop it. It is not a hedge '
         'against technical failure: all three need the same sensor to work, and '

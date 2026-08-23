@@ -1,8 +1,8 @@
 # Portfolio build pipeline
 
 Rebuilds `Assessment2_Quantum_Portfolio.docx` by filling the three blank worksheet
-templates issued with the assignment. Verified on 2026-08-21 to reproduce the submitted
-document's text exactly (473 paragraphs, identical).
+templates issued with the assignment. Last rebuilt in place on 2026-08-23; `portfolio_content.md` cross-checked line for line
+against the built document.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ scripts hardcode their own copy of it**. Editing the markdown alone changes noth
 .docx. To change wording you must edit both:
 
 - `fill_mon.py` — core ability descriptions, opportunity applications/customer groups,
-  Part 2 scores and rationales, Part 3 notes
+  Part 2 scores and per-score `notes`, Part 3 notes
 - `fill_vpc.py` / `fill_bmc.py` — the `Notes:` body of each box
 - `references.py` — the reference list (alphabetical: Teece, The Quantum Insider, Tidd)
 - `merge.py` — `TITLE` / `SUBTITLE` constants
@@ -47,7 +47,12 @@ Then re-run the pipeline and `verify.py`.
 - Part 3's Opportunity Assessment block is likewise duplicated for Opportunities 2 and 3.
   Opportunity 1 gets a plain "Agile Strategy: Pursue Now" line, since relatedness is
   measured relative to the primary opportunity and would be meaningless for it.
-- The MON template has no `Notes:` field in Part 3; one is added to match the VPC/BMC
-  convention.
+- The MON template has no `Notes:` field in Part 2 or Part 3. `fill_mon.py` adds one under
+  each Overall Impact / Potential / Challenge score (and under Opportunity 1's category) via
+  the per-opportunity `notes={group_label: text}` map, anchored after the group's last
+  checkbox; Part 3 gets one to match the VPC/BMC convention.
 - Typography: `GBP ` -> `£`, straight apostrophes -> typographic, page-range hyphens ->
   en dashes in references only, `*asterisks*` -> real italic runs.
+
+`verify.py` also checks a list of opening phrases from each box (`required_snippets`); if you
+reword the start of a box, update that list too.

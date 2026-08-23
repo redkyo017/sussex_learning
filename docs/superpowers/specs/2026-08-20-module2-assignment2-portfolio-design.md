@@ -64,9 +64,11 @@ Verified online on 2026-08-20 before drafting; do not re-cite these without the 
 
 ## Word budget
 
-Allowance 1500 (500 per item). Measured by `build/wordcount.py`, which diffs the built document against the blank templates: **1633 words — MON 625, VPC 505, BMC 503 (+9%)**. Template prompt text, checkbox labels, the title block and the reference list are excluded.
+Allowance 1500 (500 per item). Measured by `build/wordcount.py`, which diffs the built document against the blank templates: **1738 words — MON 594, VPC 551, BMC 593 (+16%)**. Template prompt text, checkbox labels, the title block and the reference list are excluded.
 
-A phrasing-only trim was applied on 2026-08-21, taking it from 1691 (+13%) to 1633 (+9%) across 19 paragraphs without removing a single argument — the diff was reviewed word by word. Going below ~1600 would require deleting content, most likely the Part 3 "not a hedge against technical failure" point or one opportunity's challenge rationale, which are Critical Thinking marks. That trade was judged not worth making for a worksheet-based submission where no exact count is possible.
+History: 1691 (+13%) at first draft; phrasing trim to 1633 (+9%) on 2026-08-21. On 2026-08-23 a review found that the VPC/BMC notes left roughly a third of the printed prompts unanswered (e.g. "expected outcomes or exceed expectations?", "how much revenue will each stream contribute?"). Every box was rewritten so each prompt is answered in order, led by the prompt's keyword ("Interaction:", "Barriers:", "Suppliers:" …) so coverage is legible to the marker. That costs ~60–75 words per prompted box however tightly phrased; three compression passes brought the total from 1806 to 1738 without removing any answer, citation or critical-thinking hook. Going to +10% would require deleting direct answers to printed prompts, which was judged the worse trade for a worksheet-based submission.
+
+Also on 2026-08-23: the MON Part 2 rationales, previously two paragraphs parked at the foot of each scorecard ("Impact and potential:", "Challenge:") plus an unlabelled orphan sentence under Opportunity 1's category ticks, were split into one `Notes:` paragraph directly under each Overall Impact / Overall Potential / Overall Challenge score, with a labelled category note for Opportunity 1. The blank template has no Part 2 notes field; these are additions, placed beside the score they justify.
 
 ## Deliverable pipeline
 
