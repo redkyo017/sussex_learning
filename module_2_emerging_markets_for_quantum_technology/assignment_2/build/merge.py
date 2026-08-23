@@ -21,6 +21,11 @@ except ImportError:
     HAVE_COMPOSER = False
 
 
+# Student name, placed at the left of the template's running head. Change it here,
+# not by hand in Word -- an edit made in the .docx is lost on the next rebuild.
+NAME = "Hung Han"
+RUNNING_HEAD = "Quantum Technology"   # right-hand side, supplied by the Sussex template
+
 TITLE = "Assessment 2 Portfolio"
 SUBTITLE = ("A proposed UK venture commercialising cold-atom gravity gradiometry "
             "for subsurface survey.")
@@ -39,6 +44,32 @@ def add_title_block(doc):
         ttl.style = doc.styles['Title']
     except KeyError:
         pass
+
+
+def add_name_to_header(doc):
+    """Put NAME at the left of the running head, keeping the template's module title
+    right-aligned on the same line via a right tab stop at the right margin."""
+    from docx.enum.text import WD_TAB_ALIGNMENT, WD_ALIGN_PARAGRAPH
+    done = 0
+    for section in doc.sections:
+        for p in section.header.paragraphs:
+            if p.text.strip() != RUNNING_HEAD or not p.runs:
+                continue
+            p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            width = section.page_width - section.left_margin - section.right_margin
+            p.paragraph_format.tab_stops.add_tab_stop(width, WD_TAB_ALIGNMENT.RIGHT)
+            first_r = p.runs[0]._r
+            new_r = copy.deepcopy(first_r)          # inherit the SSX_RunningHead run formatting
+            for t in list(new_r.findall(qn('w:t'))):
+                new_r.remove(t)
+            t = new_r.makeelement(qn('w:t'), {})
+            t.text = NAME
+            new_r.append(t)
+            new_r.append(new_r.makeelement(qn('w:tab'), {}))
+            first_r.addprevious(new_r)
+            done += 1
+    if not done:
+        raise RuntimeError(f"running head {RUNNING_HEAD!r} not found; name not inserted")
 
 
 def add_page_break(doc):
@@ -67,6 +98,7 @@ if HAVE_COMPOSER:
     composer.append(Document(BMC))
     add_references_section(master)
     add_title_block(master)
+    add_name_to_header(master)
     composer.save(OUT)
     print(f"Merged via docxcompose -> {OUT}")
 else:
@@ -87,5 +119,6 @@ else:
     append_body(master, BMC)
     add_references_section(master)
     add_title_block(master)
+    add_name_to_header(master)
     master.save(OUT)
     print(f"Merged via fallback body-concat -> {OUT}")

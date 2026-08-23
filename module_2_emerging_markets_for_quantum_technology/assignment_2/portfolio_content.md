@@ -7,7 +7,7 @@ gravity gradiometry for subsurface survey.
 opportunity -> VPC drills into one segment inside it -> BMC answers the value-capture
 question the MON raised (sell surveys and data, not instruments).
 
-**Word budget:** measured 1747 (MON 613, VPC 542, BMC 592), +16%; every worksheet prompt answered. Template prompt text and the
+**Word budget:** measured 1748 (MON 613, VPC 543, BMC 592), +17%; every worksheet prompt answered. Template prompt text and the
 reference list are not counted.
 
 ---
@@ -20,7 +20,7 @@ reference list are not counted.
 Description: Measures the gravitational difference between two clouds of laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line of sight, no contact and no excavation.
 
 ### Core Ability 2 — Rejection of real-world noise
-Description: Vibration is common to both clouds and cancels differentially; shielding handles the rest. This took the instrument off the optical bench and onto a street (Stray et al., 2022).
+Description: Vibration is common to both clouds and cancels differentially. Shielding handles the rest. This took the instrument off the optical bench and onto a street (Stray et al., 2022).
 
 ### Core Ability 3 — Inference under uncertainty
 Description: Bayesian inversion turns sparse gradient readings into a three-dimensional density estimate, reporting confidence in position and depth rather than one certain line.
@@ -76,13 +76,13 @@ Opportunity Category: MOON SHOT.
 ### Opportunity 3 — GPS-denied navigation  (bold card heading in the document)
 Impact — Problem Severity: HIGH. Pertinent Solution: MEDIUM. Impact Reach: MEDIUM.
 Overall Impact: MEDIUM.
-Notes: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life; the national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023).
+Notes: Satellite navigation is jammed and spoofed routinely, with consequences from delayed shipping to lost life. The national mission targets quantum navigation on aircraft by 2030 (HM Government, 2023).
 Potential — Compelling Reasons to Buy: HIGH. Potential Market Volume: MEDIUM.
 Economic Viability: MEDIUM. Overall Potential: HIGH.
-Notes: The state agrees the problem is severe; defence buyers pay well but are few and slow.
+Notes: The state agrees the problem is severe. Defence buyers pay well but are few and slow.
 Challenge — Implementation Obstacles: VERY HIGH. Time to Revenue: VERY HIGH.
 External Risks: HIGH. Overall Challenge: VERY HIGH.
-Notes: A survey instrument may stand still; a navigator must work while moving, at a fraction of the size, weight and power. Export control applies, and the dual-use question becomes ours to answer.
+Notes: A survey instrument may stand still. A navigator must work while moving, at a fraction of the size, weight and power. Export control applies, and the dual-use question becomes ours to answer.
 Opportunity Category: MOON SHOT.
 
 ## Part 3 — Agile Focus Strategy
@@ -103,10 +103,10 @@ Notes: The kernel is Rumelt's (2011): our diagnosis is a laboratory-grade sensor
 # ITEM 2 — VALUE PROPOSITION CANVAS
 
 ## Customer Segment
-Notes: The survey or HSE manager at a UK utility asset owner, or the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer; the site crew is the user; the asset owner's insurer is a third party whose interests we can borrow.
+Notes: The survey or HSE manager at a UK utility asset owner, or the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer. The site crew is the user, and the asset owner's insurer is a third party whose interests we can borrow.
 
 ### Jobs
-Interaction: commissioned per site as a second pass beside a PAS 128 contract; they receive a map, not an instrument. Context: always to know what is under the ground before breaking it; on a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.
+Interaction: commissioned per site as a second pass beside a PAS 128 contract. They receive a map, not an instrument. Context: always to know what is under the ground before breaking it. On a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.
 
 ### Pains
 Barriers: some 4 million km of buried pipes and cables, a hole dug every seven seconds (Geospatial Commission, 2024), and records that are often wrong; trial holes sample points only, at a cost in money and closures. Challenges: radar loses signal in wet, clay-rich ground and at depth; electromagnetic location cannot see plastic. Underperformance: surveys come back qualified B3 or B4 (British Standards Institution, 2022), handing the risk back to the manager. The worst outcome is not the invoice but the injury.
@@ -137,10 +137,10 @@ Value is created for UK utility asset owners and tier-1 contractors on high-risk
 Problem: excavation on ground where radar and electromagnetic location fail. Need: depth-resolved subsurface maps with stated uncertainty, defensible after the event. What only they want: risk reduction per site that an insurer will recognise, so it is sold as that, not as quantum technology: nobody buys physics.
 
 ### Channels
-Reach: direct technical selling into a handful of asset owners for the first paid trials, then framework agreements. Channels they use: accredited PAS 128 survey firms under existing frameworks, so we partner with one already holding the accreditation, relationships and logistics we lack. Fit: direct sales prove the method; the partner scales it. The channel is the complementary asset (Teece, 1986); building one from nothing would cost more than the sensor did.
+Reach: direct technical selling into a handful of asset owners for the first paid trials, then framework agreements. Channels they use: accredited PAS 128 survey firms under existing frameworks, so we partner with one already holding the accreditation, relationships and logistics we lack. Fit: direct sales prove the method. The partner scales it. The channel is the complementary asset (Teece, 1986). Building one from nothing would cost more than the sensor did.
 
 ### Relationships
-Expected: technical and consultative, not transactional; the manager must understand the uncertainty figure before signing. Repeat rather than one-off, because difficult sites recur. Maintained by a named crew per account, a data licence that renews, and a joint review after each survey, doubling as our post-project review: the learning routine Tidd and Bessant (2021) treat as a dynamic capability.
+Expected: technical and consultative, not transactional. The manager must understand the uncertainty figure before signing. Repeat rather than one-off, because difficult sites recur. Maintained by a named crew per account, a data licence that renews, and a joint review after each survey, doubling as our post-project review: the learning routine Tidd and Bessant (2021) treat as a dynamic capability.
 
 ### Revenue Streams
 Willing to pay: a day rate set against the cost of one strike, as this industry already buys. Preferred: per-site day rates under a framework, with a renewing licence for the processed dataset. Contribution, as a planning assumption rather than a forecast: surveys about two-thirds of early revenue, data licences and re-surveys a fifth, Innovate UK and quantum-mission grants the rest, costing no equity. Leasing only later, once know-how is no longer the product.

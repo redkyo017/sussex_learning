@@ -13,9 +13,9 @@ OUT = f"{OUT_DIR}/VPC_filled.docx"
 
 BOXES = {
     'Customer Segment': T(
-        "The survey or HSE manager at a UK utility asset owner, or the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer; the site crew is the user; the asset owner's insurer is a third party whose interests we can borrow."),
+        "The survey or HSE manager at a UK utility asset owner, or the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer. The site crew is the user, and the asset owner's insurer is a third party whose interests we can borrow."),
     'Jobs': T(
-        'Interaction: commissioned per site as a second pass beside a PAS 128 contract; they receive a map, not an instrument. Context: always to know what is under the ground before breaking it; on a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.'),
+        'Interaction: commissioned per site as a second pass beside a PAS 128 contract. They receive a map, not an instrument. Context: always to know what is under the ground before breaking it. On a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.'),
     'Gains': T(
         'Measured by strike rate per thousand excavations, PAS 128 quality level, and days lost to stoppages. Time is the saving valued most: an emergency reinstatement closes a street for longer than the survey took. Socially: fewer injured workers, fewer disrupted streets, and data that stays useful through NUAR. They would pay most for a strike-rate improvement they can show an insurer and a board.'),
     'Pains': T(

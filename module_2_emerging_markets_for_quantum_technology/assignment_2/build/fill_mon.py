@@ -18,7 +18,7 @@ T = lambda s: fix_typography(s)
 
 CA = {
     1: T('Measures the gravitational difference between two clouds of laser-cooled atoms falling in one apparatus. It reads density contrast, so it needs no line of sight, no contact and no excavation.'),
-    2: T('Vibration is common to both clouds and cancels differentially; shielding handles the rest. This took the instrument off the optical bench and onto a street (Stray et al., 2022).'),
+    2: T('Vibration is common to both clouds and cancels differentially. Shielding handles the rest. This took the instrument off the optical bench and onto a street (Stray et al., 2022).'),
     3: T("Bayesian inversion turns sparse gradient readings into a three-dimensional "
          "density estimate, reporting confidence in position and depth rather than one "
          "certain line."),
@@ -115,12 +115,12 @@ OPPS_PART2 = {
         notes={
             'Overall Impact': T(
                 'Notes: Satellite navigation is jammed and spoofed routinely, with '
-                'consequences from delayed shipping to lost life; the national mission '
+                'consequences from delayed shipping to lost life. The national mission '
                 'targets quantum navigation on aircraft by 2030 (HM Government, 2023).'),
             'Overall Potential': T(
-                'Notes: The state agrees the problem is severe; defence buyers pay well but are few and slow.'),
+                'Notes: The state agrees the problem is severe. Defence buyers pay well but are few and slow.'),
             'Overall Challenge': T(
-                'Notes: A survey instrument may stand still; a navigator must work '
+                'Notes: A survey instrument may stand still. A navigator must work '
                 'while moving, at a fraction of the size, weight and power. Export '
                 'control applies, and the dual-use question becomes ours to answer.'),
         },

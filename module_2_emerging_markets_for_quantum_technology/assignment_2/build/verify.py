@@ -39,7 +39,7 @@ required_snippets = [
     'Better targeting means fewer speculative boreholes,',
     "Remote sites, power and calibration in harsh conditions",
     'Satellite navigation is jammed and spoofed routinely,',
-    'A survey instrument may stand still;',
+    'A survey instrument may stand still.',
     "The kernel is Rumelt’s (2011):",
     "The survey or HSE manager at a UK utility asset owner",
     "Interaction: commissioned per site",

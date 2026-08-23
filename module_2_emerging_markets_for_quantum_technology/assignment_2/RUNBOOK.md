@@ -47,7 +47,7 @@ Nothing else. No LaTeX, no pandoc.
     ./build/venv/bin/pip install python-docx docxcompose
 
     ./build/venv/bin/python build/verify.py      # expect: OVERALL: ALL CHECKS PASS
-    ./build/venv/bin/python build/wordcount.py   # expect: 1747 words total (+16%)
+    ./build/venv/bin/python build/wordcount.py   # expect: 1748 words total (+17%)
 
 If `verify.py` passes, the document is complete: every box filled, exactly one tick per
 criterion group, references present. If it fails, do not edit the .docx by hand — rebuild
@@ -108,7 +108,7 @@ Read the diff against the current file, then rebuild in place (step 4A) once hap
     ./build/venv/bin/python build/wordcount.py
 
 Counts only inserted prose: template prompts, field labels, checkbox options and the
-reference list are excluded. Allowance is 1500 (500 per item); current build is 1747 (+16%), a deliberate
+reference list are excluded. Allowance is 1500 (500 per item); current build is 1748 (+17%), a deliberate
 trade recorded in the spec's Word budget section. Do not trim further without re-reading it —
 what is left is direct answers to printed prompts and the critical-thinking hooks.
 
