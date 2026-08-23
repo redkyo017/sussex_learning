@@ -47,7 +47,7 @@ required_snippets = [
     "Measured by strike rate per thousand excavations",
     "We tell contractors what lies under the ground",
     "A survey service, not an instrument sale:",
-    "Frustrations: the sensor responds to density contrast",
+    "Frustrations: the sensor reads density contrast",
     "Savings: priced by the day against the true cost of one strike",
     "Suppliers: a university physics group for the licence",
     "Value proposition: paid field trials with lead users",

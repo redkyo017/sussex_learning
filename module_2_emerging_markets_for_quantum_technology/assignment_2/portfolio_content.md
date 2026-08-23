@@ -7,7 +7,7 @@ gravity gradiometry for subsurface survey.
 opportunity -> VPC drills into one segment inside it -> BMC answers the value-capture
 question the MON raised (sell surveys and data, not instruments).
 
-**Word budget:** measured 1769 (MON 625, VPC 551, BMC 593), +18%; every worksheet prompt answered. Template prompt text and the
+**Word budget:** measured 1723 (MON 613, VPC 530, BMC 580), +15%; every worksheet prompt answered. Template prompt text and the
 reference list are not counted.
 
 ---
@@ -103,59 +103,59 @@ Notes: The kernel is Rumelt's (2011): our diagnosis is a laboratory-grade sensor
 # ITEM 2 — VALUE PROPOSITION CANVAS
 
 ## Customer Segment
-Notes: The survey or HSE manager at a UK utility asset owner, or at the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer; the site crew is the user; the asset owner's insurer is a third party whose interests we can borrow.
+Notes: The survey or HSE manager at a UK utility asset owner, or the tier-1 contractor digging for them, who signs off pre-excavation risk. They are the buyer; the site crew is the user; the asset owner's insurer is a third party whose interests we can borrow.
 
 ### Jobs
-Interaction: commissioned per site as a second pass beside a PAS 128 contract; they receive a map, not an instrument. Context: always to know what is under the ground before breaking it; on a verge a compliance step, beside a gas main a safety sign-off that must be defensible afterwards. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.
+Interaction: commissioned per site as a second pass beside a PAS 128 contract; they receive a map, not an instrument. Context: always to know what is under the ground before breaking it; on a verge a compliance step, beside a gas main a safety sign-off that must be defensible. Current tools: record drawings, electromagnetic location, radar and trial holes, returned into NUAR.
 
 ### Pains
-Barriers: records are often wrong, with around 4 million km of buried pipes and cables and a hole dug every seven seconds (Geospatial Commission, 2024); trial holes sample points only, at a cost in money and closures. Challenges: radar loses signal in wet, clay-rich ground and at depth; electromagnetic location cannot see plastic. Underperformance: surveys come back qualified as B3 or B4 (British Standards Institution, 2022), handing the risk back to the manager. The worst outcome is not the invoice; it is the injury.
+Barriers: records are often wrong across some 4 million km of buried pipes and cables, with a hole dug every seven seconds (Geospatial Commission, 2024); trial holes sample points only, at a cost in money and closures. Challenges: radar loses signal in wet, clay-rich ground and at depth; electromagnetic location cannot see plastic. Underperformance: surveys come back qualified B3 or B4 (British Standards Institution, 2022), handing the risk back to the manager. The worst outcome is not the invoice but the injury.
 
 ### Gains
-Measured by strike rate per thousand excavations, PAS 128 quality level achieved, and days lost to stoppages. Time is the saving valued most: an emergency reinstatement closes a street for longer than the survey took. Socially they want fewer injured workers, fewer disrupted streets, and data that stays useful through NUAR. They would pay most for a strike-rate improvement they can show an insurer and a board.
+Measured by strike rate per thousand excavations, PAS 128 quality level, and days lost to stoppages. Time is the saving valued most: an emergency reinstatement closes a street for longer than the survey took. Socially: fewer injured workers, fewer disrupted streets, and data that stays useful through NUAR. They would pay most for a strike-rate improvement they can show an insurer and a board.
 
 ## Value Proposition
-Notes: We tell contractors what lies under the ground on the sites where radar gives up. Stated honestly: we are slower per metre and coarser than radar in good conditions, so we are the second pass on hard ground, not a replacement for the first. Claiming more would put crews at risk, which is where responsible innovation becomes a design constraint (Stilgoe, Owen and Macnaghten, 2013).
+Notes: We tell contractors what lies under the ground where radar gives up. Stated honestly: slower per metre and coarser than radar in good conditions, so we are the second pass on hard ground, not a replacement for the first. Claiming more would put crews at risk, which is where responsible innovation becomes a design constraint (Stilgoe, Owen and Macnaghten, 2013).
 
 ### Products and Features
-A survey service, not an instrument sale: a trolley or vehicle-mounted quantum gravity gradiometer run by our own crews. One specific job, the risk sign-off on difficult ground, not a variety. The features are both tangible and digital: the field service, and a depth-resolved density map with stated uncertainty, issued in GIS and BIM formats and cross-referenced to PAS 128 quality levels.
+A survey service, not an instrument sale: a trolley or vehicle-mounted quantum gravity gradiometer run by our own crews. One specific job, the risk sign-off on difficult ground, not a variety. Features tangible and digital: the field service, and a depth-resolved density map with stated uncertainty, issued in GIS and BIM formats and cross-referenced to PAS 128 quality levels.
 
 ### Pain Relievers
-Frustrations: the sensor responds to density contrast, so wet clay and plastic pipes stop being the problem they are for radar and electromagnetic location. Improvement: voids, culverts and abandoned shafts become visible, and each survey removes several trial holes. Risk: the output carries explicit uncertainty (Stray et al., 2022), so the manager prices residual risk instead of discovering it with a digger. It mitigates rather than eliminates: PAS 128 does not yet recognise gravity methods.
+Frustrations: the sensor reads density contrast, so wet clay and plastic pipes stop being the problem they are for radar and electromagnetic location. Improvement: voids, culverts and abandoned shafts become visible, and each survey removes several trial holes. Risk: the output carries explicit uncertainty (Stray et al., 2022), so the manager prices residual risk rather than discovering it with a digger. It mitigates rather than eliminates: PAS 128 does not yet recognise gravity.
 
 ### Gain Creators
-Savings: priced by the day against the true cost of one strike, 29 times its repair bill (Utility Strike Avoidance Group, 2023), it is arithmetic a buyer can run themselves. Expectations: on the ground it is built for it exceeds them, because current methods return a caveat there; in good conditions it only meets them, and we say so. Outperformance: outcomes are reported against the national baseline, so the claim can be checked, and data is returned NUAR-ready, turning a survey cost into an asset the owner keeps.
+Savings: priced by the day against the true cost of one strike, 29 times its repair bill (Utility Strike Avoidance Group, 2023) — arithmetic a buyer can run themselves. Expectations: on the ground it is built for it exceeds them, where current methods return a caveat; in good conditions it only meets them, and we say so. Outperformance: outcomes are reported against the national baseline, so the claim is checkable, and data returns NUAR-ready, turning a survey cost into an asset the owner keeps.
 
 ---
 
 # ITEM 3 — BUSINESS MODEL CANVAS
 
 ### Customer Segments
-Value is created for UK utility asset owners and tier-1 contractors on high-risk urban sites, and secondarily for highway, rail and local authorities. Most important: the first few asset owners who allow trials on live sites, because their strike data becomes our evidence. Who else benefits: the site crew, the insurer, and the public whose street stays open, who never appear on the invoice.
+Value is created for UK utility asset owners and tier-1 contractors on high-risk urban sites, and secondarily for highway, rail and local authorities. Most important: the first asset owners to allow trials on live sites, because their strike data becomes our evidence. Who else benefits: the site crew, the insurer, and the public whose street stays open, who never appear on the invoice.
 
 ### Value Proposition
-Problem: excavation on ground where radar and electromagnetic location fail. Need: depth-resolved subsurface maps with stated uncertainty, defensible after the event. What only they want: risk reduction per site that an insurer will recognise, so it is sold as that rather than as quantum technology: nobody buys physics.
+Problem: excavation on ground where radar and electromagnetic location fail. Need: depth-resolved subsurface maps with stated uncertainty, defensible after the event. What only they want: risk reduction per site that an insurer will recognise, so it is sold as that, not as quantum technology: nobody buys physics.
 
 ### Channels
-Reach: direct technical selling into a handful of asset owners for the first paid trials, then framework agreements. Channels they use: accredited PAS 128 survey firms under existing frameworks, so we partner with one that already holds the accreditation, relationships and logistics we lack. Fit: direct sales prove the method; the partner scales it. The channel is the complementary asset (Teece, 1986); building one from nothing would cost more than the sensor did.
+Reach: direct technical selling into a handful of asset owners for the first paid trials, then framework agreements. Channels they use: accredited PAS 128 survey firms under existing frameworks, so we partner with one already holding the accreditation, relationships and logistics we lack. Fit: direct sales prove the method; the partner scales it. The channel is the complementary asset (Teece, 1986); building one from nothing would cost more than the sensor did.
 
 ### Relationships
-Expected: technical and consultative, not transactional; the manager must understand the uncertainty figure before signing. Repeat rather than one-off, because difficult sites recur. Maintained by a named crew per account, a data licence that renews, and a joint review after each survey, which doubles as our post-project review: the learning routine Tidd and Bessant (2021) treat as a dynamic capability.
+Expected: technical and consultative, not transactional; the manager must understand the uncertainty figure before signing. Repeat rather than one-off, because difficult sites recur. Maintained by a named crew per account, a data licence that renews, and a joint review after each survey, doubling as our post-project review: the learning routine Tidd and Bessant (2021) treat as a dynamic capability.
 
 ### Revenue Streams
-Willing to pay: a day rate set against the cost of one strike, which is how this industry already buys. Preferred: per-site day rates under a framework, with a renewing licence for the processed dataset. Contribution, as a planning assumption rather than a forecast: surveys about two-thirds of early revenue, data licences and re-surveys a fifth, and Innovate UK and quantum-mission grants the rest, costing no equity. Leasing only later, once know-how is no longer the product.
+Willing to pay: a day rate set against the cost of one strike, as this industry already buys. Preferred: per-site day rates under a framework, with a renewing licence for the processed dataset. Contribution, as a planning assumption rather than a forecast: surveys about two-thirds of early revenue, data licences and re-surveys a fifth, Innovate UK and quantum-mission grants the rest, costing no equity. Leasing only later, once know-how is no longer the product.
 
 ### Key Activities
-Value proposition: paid field trials with lead users on their worst sites rather than our best (von Hippel, 1986); inversion software; standards work with BSI so gravity becomes specifiable under PAS 128. Channels: training the partner's surveyors, and settling the dual-use question early, since the instrument that finds a culvert finds a tunnel, export-control classification comes first. Relationships: recruiting and keeping the ten or so people who can do this.
+Value proposition: paid field trials with lead users on their worst sites rather than our best (von Hippel, 1986); inversion software; standards work with BSI so gravity becomes specifiable under PAS 128. Channels: training the partner's surveyors, settling the dual-use question early, since the instrument that finds a culvert finds a tunnel: export-control classification comes first. Relationships: recruiting and keeping the ten or so people who can do this.
 
 ### Key Resources
-Value proposition: the licensed IP matters less than the tacit build-and-align knowledge held by staff, the part a competitor cannot buy, and the dataset of subsurface signatures that improves the inversion with every job. Channels: the partner's PAS 128 accreditation and field logistics. Relationships: the crews, and access control designed in from the first survey, because a map of what lies beneath critical infrastructure is a liability worth stealing.
+Value proposition: the licensed IP matters less than the tacit build-and-align knowledge staff hold, the part a competitor cannot buy, and the dataset of subsurface signatures that improves the inversion with every job. Channels: the partner's PAS 128 accreditation and field logistics. Relationships: the crews, and access control designed in from the first survey, because a map of what lies beneath critical infrastructure is a liability worth stealing.
 
 ### Key Partners
-Suppliers: a university physics group for the licence; laser, vacuum and shielding vendors. Resources: the interferometry IP and absorptive capacity; components whose lead times become ours. Activities: training the people we hire; calibration and repair. Who else: a PAS 128 survey firm as channel; the Geospatial Commission through NUAR. Stakeholders: Innovate UK, the National Quantum Technologies Programme, and the HSE and unions, engaged while the product is still shapeable: the triple helix in practice (Etzkowitz and Leydesdorff, 2000).
+Suppliers: a university physics group for the licence; laser, vacuum and shielding vendors. Resources: the interferometry IP and absorptive capacity; components whose lead times become ours. Activities: training the people we hire; calibration and repair. Who else: a PAS 128 survey firm as channel; the Geospatial Commission through NUAR. Stakeholders: Innovate UK, the National Quantum Technologies Programme, HSE and unions, engaged while the product is still shapeable: the triple helix in practice (Etzkowitz and Leydesdorff, 2000).
 
 ### Cost Structure
-Essential: people, instrument, fieldwork, compliance. Most expensive resources: physicists and field engineers, the largest, least compressible and scarcest cost; then the instrument's lasers, vacuum and shielding, and the vehicle carrying it. Most expensive activities: field trials and traffic management. Standards, certification and export-control compliance are small lines, easy to underestimate and awkward to retrofit.
+Essential: people, instrument, fieldwork, compliance. Most expensive resources: physicists and field engineers, the largest, least compressible and scarcest cost; then the instrument's lasers, vacuum and shielding, and its vehicle. Most expensive activities: field trials and traffic management. Standards, certification and export-control compliance are small lines, easy to underestimate and awkward to retrofit.
 
 ---
 
