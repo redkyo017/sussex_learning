@@ -73,7 +73,7 @@ Also on 2026-08-23: the MON Part 2 rationales, previously two paragraphs parked 
 ## Deliverable pipeline
 
 Source of truth for every word: `module_2_emerging_markets_for_quantum_technology/assignment_2/portfolio_content.md`.
-Build scripts: `assignment_2/build/` — see its README. Rebuild verified on 2026-08-21 to reproduce the submitted document's text exactly (473 paragraphs, identical). Operational steps live in `assignment_2/RUNBOOK.md`.
+Build scripts: `assignment_2/build/` — see its README. Last rebuilt in place 2026-08-23; `portfolio_content.md` cross-checked line for line against the built document. Operational steps live in `assignment_2/RUNBOOK.md`.
 Submission file: `assignment_2/Assessment2_Quantum_Portfolio.docx` (single upload; PDF export from Word is equally acceptable).
 
 **Known duplication:** the fill scripts hardcode the prose rather than parsing `portfolio_content.md`. Editing the markdown alone does not change the .docx. See the build README.
