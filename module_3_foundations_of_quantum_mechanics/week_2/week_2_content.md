@@ -1,3 +1,4 @@
+# Week 2: The wave functions, operators and observables
 ## Intro
 During Week 1 we gave a brief overview of the most important concepts in quantum mechanics. In Week 2 we will return to some of those concepts and discuss more profoundly their meaning and, where relevant, their implications for quantum technologies. You will learn about the formalism of quantum mechanics that is based on a number of postulates. These postulates represent the minimal set of assumptions needed to develop the theory of quantum mechanics. At the end of the week, you should be able to use those postulates to extract quantitative information about physical systems.
 

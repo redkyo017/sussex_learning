@@ -37,10 +37,10 @@ We can define the composite system $S_\text{AB}$ by specifying its basis vectors
 
 **Vectors table**
 
-| | $|1\rangle$ | $|2\rangle$ | $|3\rangle$ | $|4\rangle$ | $|5\rangle$ | $|6\rangle$ |
-| --- | --- | --- | --- | --- | --- | --- |
-| $|H\rangle$ | $|H1\rangle$ | $|H2\rangle$ | $|H3\rangle$ | $|H4\rangle$ | $|H5\rangle$ | $|H6\rangle$ |
-| $|T\rangle$ | $|T1\rangle$ | $|T2\rangle$ | $|T3\rangle$ | $|T4\rangle$ | $|T5\rangle$ | $|T6\rangle$ |
+| | $\vert1\rangle$ | $\vert2\rangle$ | $\vert3\rangle$ | $\vert4\rangle$ | $\vert5\rangle$ | $\vert6\rangle$ |
+--- | --- | --- | --- | --- | --- | --- 
+| $\vert H\rangle$ | $\vert H1\rangle$ | $\vert H2\rangle$ | $\vert H3\rangle$ | $\vert H4\rangle$ | $\vert H5\rangle$ | $\vert H6\rangle$ |
+| $\vert T\rangle$ | $\vert T1\rangle$ | $\vert T2\rangle$ | $\vert T3\rangle$ | $\vert T4\rangle$ | $\vert T5\rangle$ | $\vert T6\rangle$ |
 
 > **Table 7.1:** the basis states of the composite system $S_\text{AB}$. A composite system is made using a tensor product of the two subsystems. In this example, a two-dimensional 'quantum coin' and a six-dimensional 'quantum die' make a composite system of dimension 12 ($2 \times 6$). Each combined state-label shows the state of each of the two subsystems.
 

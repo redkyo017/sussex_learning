@@ -1,3 +1,4 @@
+# Week 3: Probabilistic nature of the measurement in Quantum Mechanics
 ## Intro
 Physics is based on experimental observations and quantitative measurements. In quantum mechanics, the act of measurement affects the system that we are measuring and fundamentally changes it. In Week 3 we will present three postulates that deal with measurement. This will allow us to highlight fundamental differences between classical and quantum physics.
 
