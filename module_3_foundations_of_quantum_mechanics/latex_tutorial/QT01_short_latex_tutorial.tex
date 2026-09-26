@@ -1,0 +1,351 @@
+\documentclass[12pt]{article}
+
+% =========================
+% Toggle: show only problems, or problems + student solution boxes
+% =========================
+\newif\ifsolutions
+\solutionstrue     % Use this for the student template with solution boxes.
+%\solutionsfalse   % Use this for a question sheet only.
+
+% =========================
+% Packages
+% =========================
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{float} % Allows figure to be placed at exact desired location
+\usepackage[hidelinks]{hyperref}
+
+\sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+\renewcommand{\d}{\mathop{}\!\mathrm{d}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[enumerate,1]{label=(\alph*),itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate,2]{label=(\roman*),itemsep=0.15em,topsep=0.15em}
+
+% =========================
+% Boxes
+% =========================
+\tcbset{
+  enhanced,
+  breakable,
+  boxrule=0.8pt,
+  arc=1.5mm,
+  left=2mm,right=2mm,top=1.5mm,bottom=1.5mm
+}
+
+\newtcolorbox{problembox}[1]{
+  colback=gray!8,
+  colframe=black,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{solutionbox}{
+  colback=blue!3,
+  colframe=blue!60!black,
+  title={Solution},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{answerbox}{
+  colback=yellow!10,
+  colframe=orange!70!black,
+  title={Final answer},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{insightbox}{
+  colback=green!5,
+  colframe=green!50!black,
+  title={Physical insight},
+  fonttitle=\bfseries
+}
+
+\newcommand{\problemsep}{\vspace{0.8em}}
+
+\newcommand{\placeholderfigure}[2][50mm]{%
+\begin{center}
+\fbox{\parbox[c][#1][c]{0.82\linewidth}{\centering\small Figure placeholder}}\\[0.3em]
+{\footnotesize\emph{Caption: #2}}
+\end{center}}
+
+\graphicspath{{figures/}} % If you want to place figures in the folder 'figures' (cleaner)
+
+\setcounter{secnumdepth}{0} % Avoids numbering of the section and subsection while allowing them to appear in the TOC
+
+
+
+% ======================================================
+% ======================================================
+% ================                    ==================
+% ================   BEGIN DOCUMENT   ==================
+% ================                    ==================
+% ======================================================
+% ======================================================
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries A short \LaTeX{} tutorial for Quantum Mechanics\\[0.3em]
+}
+\end{center}
+
+\tableofcontents
+
+\newpage
+
+This section is a quick guide to \LaTeX{} commands that are especially useful for these portfolio problems.
+
+\section{Inline and displayed mathematics}
+
+Use inline mathematics for short expressions that fit naturally within a sentence. For example,
+\verb|$E_n=\hbar\omega(n+\tfrac{1}{2})$|
+gives
+$E_n=\hbar\omega(n+\tfrac{1}{2})$.
+
+For a displayed equation on its own line, use
+\begin{verbatim}
+	\[
+	E_n=\hbar\omega(n+\tfrac{1}{2})
+	\]
+\end{verbatim}
+which produces
+\[
+E_n=\hbar\omega(n+\tfrac12).
+\]
+
+If you want the equation to be numbered so that you can refer to it later, use the \verb|equation| environment together with a \verb|\label|:
+\begin{verbatim}
+	\begin{equation}
+		E_n=\hbar\omega(n+\tfrac{1}{2})
+		\label{eq:sho-energy}
+	\end{equation}
+\end{verbatim}
+which gives
+\begin{equation}
+	E_n=\hbar\omega(n+\tfrac12)
+	\label{eq:sho-energy-example}
+\end{equation}
+You can then refer to this equation in the text using \verb|\eqref| or \verb|\ref|. For example,
+\verb|Eq.~\eqref{eq:sho-energy}| 
+would produce something like Eq.~\eqref{eq:sho-energy-example}.
+
+For multi-line derivations, use the \verb|align| environment. Place an ampersand \verb|&| before the alignment point, usually before the equals sign, and use \verb|\\| to start a new line:
+\begin{verbatim}
+	\begin{align}
+		\braket{\psi|\psi} &= |c_1|^2+|c_2|^2+|c_3|^2 \\
+		&= 1
+		\label{eq:norm-example}
+	\end{align}
+\end{verbatim}
+which gives
+\begin{align}
+	\braket{\psi|\psi} &= |c_1|^2+|c_2|^2+|c_3|^2 \\
+	&= 1
+	\label{eq:norm-example}
+\end{align}
+
+You can refer to this derivation using \verb|\eqref{eq:norm-example}|, which gives \eqref{eq:norm-example}.
+
+The starred versions \verb|equation*| and \verb|align*| work in the same way, but they suppress equation numbers. Use them when you do not want numbering. For example:
+
+\begin{verbatim}
+	\begin{equation*}
+		E_n=\hbar\omega(n+\tfrac{1}{2})
+	\end{equation*}
+\end{verbatim}
+
+and
+
+\begin{verbatim}
+	\begin{align*}
+		\braket{\psi|\psi}
+		&= |c_1|^2+|c_2|^2+|c_3|^2 \\
+		&= 1
+	\end{align*}
+\end{verbatim}
+
+So the role of the asterisk is simple: it gives an unnumbered version of the environment.
+
+
+
+\section{Dirac notation with the \texttt{braket} package}
+This template already loads the \verb|braket| package. Useful commands are:
+\begin{itemize}
+\item \verb|\ket{\psi}| gives $\ket{\psi}$
+\item \verb|\bra{\phi}| gives $\bra{\phi}$
+\item \verb!\braket{\phi|\psi}! gives $\braket{\phi|\psi}$
+\item \verb!\braket{\psi|\hat{H}|\psi}! gives $\braket{\psi|\hat{H}|\psi}$
+\end{itemize}
+
+\section{Norms, modulus squares, roots, fractions}
+Some common commands are:
+\begin{itemize}
+\item \verb!\|\psi\|! gives $\|\psi\|$
+\item \verb!\|\psi\|^2! gives $\|\psi\|^2$
+\item \verb!|\psi(x)|^2! gives $|\psi(x)|^2$
+\item \verb|\sqrt{\frac{3}{b}}| gives $\sqrt{\frac{3}{b}}$
+\item \verb|\frac{a}{b}| gives $\frac{a}{b}$
+\end{itemize}
+
+\section{Integrals, derivatives and differentials}
+The command \verb|\d| is already defined in this template for upright differentials rather than italicised ones ($\d$ instead of $d$). For example:
+\begin{itemize}
+\item \verb|\int_0^a x^2\,\d x| gives $\int_0^a x^2\,\d x$
+\item \verb|\frac{\partial \psi}{\partial x}| gives $\frac{\partial \psi}{\partial x}$
+\item \verb|\frac{\d}{\d t}\braket{\hat H}| gives $\frac{\d}{\d t}\braket{\hat H}$
+\end{itemize}
+The command \verb|\,| adds a small space, making integrands look less cramped.
+
+\section{Sums, matrices, cases and alignment}
+Useful examples:
+\begin{itemize}
+\item \verb!\sum_n^\infty |c_n|^2 E_n! gives $\sum_n^\infty |c_n|^2 E_n$, or in displayed mathematics:
+\[
+\sum_n^\infty |c_n|^2 E_n
+\]
+\item
+\begin{tabular}[t]{@{}l@{}}
+	\verb|\begin{bmatrix}|\\
+		\verb|1\\|\\
+		\verb|0|\\
+		\verb|\end{bmatrix}|
+\end{tabular}
+\qquad gives \qquad
+$\begin{bmatrix}
+	1\\
+	0
+\end{bmatrix}$
+
+\item
+\begin{tabular}[t]{@{}l@{}}
+	\verb|\begin{bmatrix}|\\
+		\verb|a & b & c\\|\\
+		\verb|d & e & f\\|\\
+		\verb|g & h & i|\\
+		\verb|\end{bmatrix}|
+\end{tabular}
+\qquad gives \qquad
+$\begin{bmatrix}
+	a & b & c\\
+	d & e & f\\
+	g & h & i
+\end{bmatrix}$
+
+\item use \verb|cases| for piecewise definitions, for example
+
+	\begin{tabular}{@{}l@{}}
+		\verb|\[|\\
+		\verb|\psi(x)=\begin{cases}|\\
+			\verb|A\dfrac{x}{a}, & 0\le x\le a,\\[0.3em]|\\
+			\verb|0, & \text{otherwise.}|\\
+			\verb|\end{cases}|\\
+		\verb|\]|
+	\end{tabular}
+	
+gives
+\[
+\psi(x)=\begin{cases}
+	A\dfrac{x}{a}, & 0\le x\le a,\\[0.3em]
+	0, & \text{otherwise.}
+\end{cases}
+\]
+
+\end{itemize}
+
+For multi-line derivations, use \verb|align*|:
+
+\begin{verbatim}
+	\begin{align*}
+		\braket{\psi|\psi}
+		&= |c_1|^2+|c_2|^2+|c_3|^2 \\
+		&= 1.
+	\end{align*}
+\end{verbatim}
+
+which gives
+\begin{align*}
+	\braket{\psi|\psi}
+	&= |c_1|^2+|c_2|^2+|c_3|^2 \\
+	&= 1.
+\end{align*}
+
+\section{Adding a figure}
+
+To add a figure in \LaTeX, note that this template already includes the required package:
+
+\begin{verbatim}
+	\usepackage{graphicx}
+\end{verbatim}
+
+You can either place your image file in the same folder as your \texttt{.tex} document, or, for cleaner organisation and better practice, create a subfolder inside your main project folder, for example called \texttt{figures}. You can then tell \LaTeX{} to search for image files in that folder by adding the following line in the preamble:
+
+\begin{verbatim}
+	\graphicspath{{figures/}}
+\end{verbatim}
+
+Make sure that the folder name in \verb|\graphicspath| matches the actual folder name.
+
+This template already contains the instruction telling \LaTeX{} to search for images in the \texttt{figures} folder. Therefore, you should create a subfolder called \texttt{figures} in the same folder as your main \texttt{.tex} document, and place your figure files there.
+
+Then, if your image is called \texttt{psi\_proba.png}, you can include it without writing the full folder path each time.
+
+To include figure you can include it using:
+
+\begin{verbatim}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{psi_proba.png}
+		\caption{This is a caption with a short description of what the figure shows.}
+		\label{fig:psi_proba}
+	\end{figure}
+\end{verbatim}
+
+The command \verb|\caption{}| adds the figure caption, while \verb|\label{}| gives the figure a name that can be used for referencing. It is good practice to place the \verb|\label{}| after the \verb|\caption{}|.
+
+The optional argument \verb|[h]| asks \LaTeX{} to place the figure approximately \emph{here}. However, figures are treated as floating objects, so \LaTeX{} may move them to a better position if it thinks this improves the page layout.
+
+If you want to force the figure to appear exactly where it is written in the code, you can use the \texttt{float} package. This template already includes this package in the preamble:
+
+\begin{verbatim}
+	\usepackage{float}
+\end{verbatim}
+
+This allows you to use \verb|[H]| instead of \verb|[h]| when adding a figure:
+
+\begin{verbatim}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{psi_proba.png}
+		\caption{This is a caption with a short description of what the figure shows.}
+		\label{fig:psi_proba}
+	\end{figure}
+\end{verbatim}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{psi_proba.png}
+	\caption{This is a caption, containing a short description of what the figure shows.}
+	\label{fig:psi_proba}
+\end{figure}
+
+Here, \verb|H| means ``place the figure exactly here''. This can be useful in assignments when you want the figure to appear close to the relevant text. However, it should be used with care, because forcing figure placement can sometimes produce awkward page breaks or large empty spaces.
+
+You can refer to the figure in the text using:
+
+\begin{verbatim}
+	As shown in Fig.~(\ref{fig:psi_proba}), ...
+\end{verbatim}
+
+This will produce a reference such as Fig.~(1), depending on the figure number. The numbering is done automatically by \LaTeX.
+
+\end{document}

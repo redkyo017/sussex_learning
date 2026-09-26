@@ -1,0 +1,324 @@
+\documentclass[12pt]{article}
+
+% =========================
+% Toggle: show only problems, or problems + student solution boxes
+% =========================
+\newif\ifsolutions
+\solutionstrue     % Use this for the student template with solution boxes.
+%\solutionsfalse   % Use this for a question sheet only.
+
+% =========================
+% Packages
+% =========================
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{float} % Allows figure to be placed at exact desired location
+\usepackage[hidelinks]{hyperref}
+
+\sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+\renewcommand{\d}{\mathop{}\!\mathrm{d}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[enumerate,1]{label=(\alph*),itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate,2]{label=(\roman*),itemsep=0.15em,topsep=0.15em}
+
+% =========================
+% Boxes
+% =========================
+\tcbset{
+  enhanced,
+  breakable,
+  boxrule=0.8pt,
+  arc=1.5mm,
+  left=2mm,right=2mm,top=1.5mm,bottom=1.5mm
+}
+
+\newtcolorbox{problembox}[1]{
+  colback=gray!8,
+  colframe=black,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{solutionbox}{
+  colback=blue!3,
+  colframe=blue!60!black,
+  title={Solution},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{answerbox}{
+  colback=yellow!10,
+  colframe=orange!70!black,
+  title={Final answer},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{insightbox}{
+  colback=green!5,
+  colframe=green!50!black,
+  title={Physical insight},
+  fonttitle=\bfseries
+}
+
+\newcommand{\problemsep}{\vspace{0.8em}}
+
+\newcommand{\placeholderfigure}[2][50mm]{%
+\begin{center}
+\fbox{\parbox[c][#1][c]{0.82\linewidth}{\centering\small Figure placeholder}}\\[0.3em]
+{\footnotesize\emph{Caption: #2}}
+\end{center}}
+
+\graphicspath{{figures/}} % If you want to place figures in the folder 'figures' (cleaner)
+
+\setcounter{secnumdepth}{0} % Avoids numbering of the section and subsection while allowing them to appear in the TOC
+
+
+
+% ======================================================
+% ======================================================
+% ================                    ==================
+% ================   BEGIN DOCUMENT   ==================
+% ================                    ==================
+% ======================================================
+% ======================================================
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries QT01 -- Foundations of Quantum Mechanics\\[0.2em]
+Assessed problem set (PRB) -- Week 4\\[0.3em]
+{\normalsize Weight: 30\% of module grade}\\[1em]
+Candidate number: 123456  % Replace candidate number with yours
+}
+\end{center}
+
+
+% ======================================================
+%                  Question 1
+% ======================================================
+\section{Question 1}
+\begin{problembox}{Question 1 \hfill [8 marks]}
+Consider the operator
+\[
+    \hat{A} = \begin{pmatrix} -3 & 2i \\ -2i & -3 \end{pmatrix}.
+\]
+Prove that \( \hat{A} \) is Hermitian.
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+ Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\newpage
+% ======================================================
+%                  Question 2
+% ======================================================
+\section{Question 2}
+\begin{problembox}{Question 2 \hfill [37 marks]}
+The wave function of a particle moving in one dimension is given by
+\[
+    \psi(x) = \begin{cases}
+        B \exp(\beta x) & \text{for } x<0,\\
+        B \exp(-2\beta x) & \text{for } x \ge 0,
+    \end{cases}
+\]
+where \(\beta\) is a real and positive constant.
+
+\begin{enumerate}
+    \item What is the probability density for finding the particle along the \(x\)-axis? Sketch the probability density function. \hfill [7 marks]
+    \item Calculate the normalisation constant \(B\). \hfill [10 marks]
+    \item Calculate the average position of the particle on the \(x\)-axis, as a function of \(\beta\). Mark the average position in your sketch. \hfill [15 marks]
+    \item Mark the most likely position of the particle in your sketch. \hfill [5 marks]
+\end{enumerate}
+
+\textit{Hint: You can calculate the integrals you need by expressing powers of \(x\) through repeated differentiation with respect to the parameter in the exponential, for example}
+\begin{align*}
+    \int_a^b x \exp(\gamma x)\,\d x
+    &= \frac{\partial}{\partial \gamma} \int_a^b \exp(\gamma x)\,\d x, \\
+    \int_a^b x^2 \exp(\gamma x)\,\d x
+    &= \frac{\partial^2}{\partial \gamma^2} \int_a^b \exp(\gamma x)\,\d x,
+\end{align*}
+\textit{and so on.}
+\end{problembox}
+
+% ======================================================
+%                  Solution 2
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+ Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\newpage
+% ======================================================
+%                  Question 3
+% ======================================================
+\section{Question 3}
+\begin{problembox}{Question 3 \hfill [22 marks]}
+Take the wave function
+\[
+    \varphi(x) = N \sin(kx).
+\]
+\begin{enumerate}
+    \item Calculate the effect of the operator
+    \[
+        \left[x\left(\frac{\hbar}{i}\frac{\partial}{\partial x}\right)\right]
+    \]
+    on \(\varphi(x)\). \hfill [2 marks]
+
+    \item Calculate the effect of the operator
+    \[
+        \left[\left(\frac{\hbar}{i}\frac{\partial}{\partial x}\right)x\right]
+    \]
+    on \(\varphi(x)\), that is, multiply \(\varphi(x)\) by \(x\) before acting with the differential operator.
+    \\
+    \phantom{add some invisible space} \hfill [5 marks]
+
+    \item Calculate the difference of the two previous results, that is,
+    \[
+        \text{result of (a)} - \text{result of (b)}.
+    \]
+    Express the answer in terms of \(\varphi(x)\). \hfill [5 marks]
+
+    \item Repeat parts (a) to (c) for a general wave function \(\psi(x)\), that is, calculate
+    \[
+        \left[x\left(\frac{\hbar}{i}\frac{\partial}{\partial x}\right)\right] \psi(x)
+        -
+        \left[\left(\frac{\hbar}{i}\frac{\partial}{\partial x}\right)x\right] \psi(x).
+    \]
+    \hfill [10 marks]
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 3
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+ Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\newpage
+% ======================================================
+%                  Question 4
+% ======================================================
+\section{Question 4}
+\begin{problembox}{Question 4 \hfill [8 marks]}
+A system is prepared in a state
+\[
+    \ket{\psi} = \frac{1}{\sqrt{3}} \ket{\phi_1}
+    - \frac{\sqrt{2}}{\sqrt{3}} \ket{\phi_2}
+    + \frac{i}{\sqrt{3}} \ket{\phi_3},
+\]
+where \( \ket{\phi_1} \), \( \ket{\phi_2} \), and \( \ket{\phi_3} \) are orthonormal eigenstates of an observable \(A\), with corresponding eigenvalues \(a_1\), \(a_2\), and \(a_3\), respectively. What is the probability of measuring \(A\) to be \(a_3\)?
+\end{problembox}
+
+% ======================================================
+%                  Solution 4
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+ Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\newpage
+% ======================================================
+%                  Question 5
+% ======================================================
+\section{Question 5}
+\begin{problembox}{Question 5 \hfill [25 marks]}
+A system is initially in the state
+\[
+    \ket{\psi_0} = \frac{1}{\sqrt{7}}\left[\sqrt{2}\ket{\phi_1}
+    + \sqrt{3}\ket{\phi_2}
+    + \ket{\phi_3}
+    + \ket{\phi_4} \right],
+\]
+where \(\ket{\phi_n}\) are eigenstates of the system's Hamiltonian such that
+\[
+    \hat{H}\ket{\phi_n} = n^2\mathcal{E}_0\ket{\phi_n}.
+\]
+
+\begin{enumerate}
+    \item If energy is measured, what values will be obtained and with what probabilities? \\
+     \phantom{add some invisible space}\hfill [10 marks]
+
+    \item Consider an operator \(\hat{A}\) whose action on \(\ket{\phi_n}\) is defined by
+    \[
+        \hat{A}\ket{\phi_n} = (n+1)a_0\ket{\phi_n}.
+    \]
+    If \(A\) is measured, what values will be obtained and with what probabilities? \\
+    \phantom{add some invisible space}\hfill [10 marks]
+
+    \item Suppose that a measurement of the energy yields \(4\mathcal{E}_0\). If we measure \(A\) immediately afterwards, what value will be obtained? \hfill [5 marks]
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 5
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+ Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\end{document}
