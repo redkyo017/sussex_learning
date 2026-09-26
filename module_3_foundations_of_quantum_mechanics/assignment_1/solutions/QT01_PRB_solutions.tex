@@ -148,13 +148,7 @@ The proof therefore consists of carrying out those two operations and comparing 
 
 \textbf{Step 3: compare.} The final matrix is entry by entry identical to $\hat{A}$, so $\hat{A}^{\dagger}=\hat{A}$ and the operator is Hermitian.
 
-\textbf{The same statement entry by entry.} Writing $\hat{A}^{\dagger}=\hat{A}$ in components gives the condition $A_{ij}=A_{ji}^{*}$, which can be checked directly:
-\begin{align*}
-    A_{11}&=-3, & A_{11}^{*}&=-3, &&\text{diagonal entry real,}\\
-    A_{22}&=-3, & A_{22}^{*}&=-3, &&\text{diagonal entry real,}\\
-    A_{12}&=2i, & A_{21}^{*}&=(-2i)^{*}=2i, &&\text{so } A_{12}=A_{21}^{*}.
-\end{align*}
-Both diagonal entries are real and the two off-diagonal entries are complex conjugates of one another, which is exactly what Hermiticity demands of a $2\times 2$ matrix.
+Equivalently, in components the condition reads $A_{ij}=A_{ji}^{*}$: both diagonal entries are real, and the off-diagonal entries $2i$ and $-2i$ are complex conjugates of one another, which is exactly what Hermiticity demands of a $2\times 2$ matrix.
 
 \textbf{Check: the eigenvalues must come out real.} A Hermitian operator is guaranteed to have real eigenvalues, so computing them is an independent test of the result above. The characteristic equation is
 \[
@@ -170,19 +164,7 @@ so that
 \[
     \lambda_{1}=-1, \qquad \lambda_{2}=-5 .
 \]
-Both are real, as required. A second test is that eigenvectors belonging to distinct eigenvalues of a Hermitian operator must be orthogonal. Solving $(\hat{A}-\lambda I)\ket{\lambda}=0$ for each eigenvalue gives
-\[
-    \ket{\lambda_{1}}=\frac{1}{\sqrt{2}}\begin{pmatrix} i \\ 1\end{pmatrix},
-    \qquad
-    \ket{\lambda_{2}}=\frac{1}{\sqrt{2}}\begin{pmatrix} -i \\ 1\end{pmatrix},
-\]
-and their inner product, remembering that forming the bra requires complex conjugation, is
-\[
-    \braket{\lambda_{1}|\lambda_{2}}
-    =\tfrac{1}{2}\begin{pmatrix} -i & 1\end{pmatrix}\begin{pmatrix} -i \\ 1\end{pmatrix}
-    =\tfrac{1}{2}\left[(-i)(-i)+1\right]=\tfrac{1}{2}\left(i^{2}+1\right)=0 .
-\]
-The two eigenvectors are orthogonal, consistent with $\hat{A}$ being Hermitian.
+Both are real, as they must be for a Hermitian operator, which independently confirms the result.
 \end{solutionbox}
 
 \begin{answerbox}
@@ -190,19 +172,17 @@ The two eigenvectors are orthogonal, consistent with $\hat{A}$ being Hermitian.
     \hat{A}^{\dagger}=\left(\hat{A}^{\mathsf{T}}\right)^{*}
     =\begin{pmatrix} -3 & 2i \\ -2i & -3\end{pmatrix}=\hat{A},
 \]
-so $\hat{A}$ is Hermitian. Its eigenvalues, $\lambda_{1}=-1$ and $\lambda_{2}=-5$, are real and its eigenvectors are orthogonal, as Hermiticity requires.
+so $\hat{A}$ is Hermitian. Its eigenvalues, $\lambda_{1}=-1$ and $\lambda_{2}=-5$, are real, as Hermiticity requires.
 \end{answerbox}
 
 \begin{insightbox}
-Hermiticity is the property that makes an operator usable as an observable: measured values are eigenvalues, and a measured value must be a real number. The two structural features seen here, real entries on the diagonal and off-diagonal entries that are complex conjugate partners, are what enforce this.
-
-It is worth noticing that this particular matrix is built from the spin operators met earlier in the module. Since
+This matrix is a spin operator in disguise. Since
 \[
     \hat{A}=-3\,I-2\hat{\sigma}_{y},
     \qquad
     \hat{\sigma}_{y}=\begin{pmatrix} 0 & -i \\ i & 0\end{pmatrix},
 \]
-and $\hat{\sigma}_{y}$ has eigenvalues $\pm 1$, the eigenvalues of $\hat{A}$ must be $-3\mp 2$, that is $-5$ and $-1$. This reproduces the characteristic-equation result without any determinant, and shows that $\hat{A}$ describes a spin observable that has been shifted by a constant $-3$ and rescaled by a factor $-2$. Adding a multiple of the identity shifts every eigenvalue but changes no eigenvector, which is why the physics of such an operator is the physics of $\hat{\sigma}_{y}$ in disguise.
+and $\hat{\sigma}_{y}$ has eigenvalues $\pm 1$, the eigenvalues of $\hat{A}$ must be $-3\mp 2$, that is $-5$ and $-1$, which reproduces the characteristic-equation result without a determinant. Adding a multiple of the identity shifts every eigenvalue by the same amount but leaves every eigenvector unchanged, so $\hat{A}$ measures the same physical property as $\hat{\sigma}_{y}$, on a shifted and rescaled scale.
 \end{insightbox}
 \fi
 
@@ -412,7 +392,7 @@ Inserting $|B|^{2}=4\beta/3$ from part (b),
 \]
 the boundary term vanishing at both limits because the exponential decays faster than $x$ grows. Substituting $x=-u$ in $I_{-}$ turns it into $-\int_{0}^{\infty}u\,e^{-2\beta u}\,\d u=-1/(4\beta^{2})$ by the same standard result. Both agree with the values found above.
 
-\textbf{Check 2: sign and size.} The answer is negative, which is what the sketch demands: the density is spread twice as far to the left of the origin as to the right, so the mean must be pulled to the negative side of the peak. Its magnitude, $1/(4\beta)$, is smaller than the left-hand decay length $1/(2\beta)$, as it must be, since the mean cannot lie beyond the bulk of the distribution. Finally, $1/\beta$ has dimensions of length, so the result is dimensionally a position.
+\textbf{Check 2: sign and size.} The answer is negative, which is what the sketch demands: the density is spread twice as far to the left of the origin as to the right, so the mean must be pulled to the negative side of the peak. Its magnitude, $1/(4\beta)$, is smaller than the left-hand decay length $1/(2\beta)$, which is reasonable: the mean sits well inside the region carrying most of the probability. Finally, $1/\beta$ has dimensions of length, so the result is dimensionally a position.
 
 The value $\langle x\rangle=-1/(4\beta)$, that is $\beta x=-0.25$ in the dimensionless units of the figure, is marked by the dashed vertical line in Fig.~(\ref{fig:psi_proba}).
 
@@ -461,17 +441,9 @@ a cusped, asymmetric peak centred on the origin, sketched in Fig.~(\ref{fig:psi_
 \end{answerbox}
 
 \begin{insightbox}
-The striking feature of this state is that the average position and the most likely position are different: $\langle x\rangle=-1/(4\beta)$ while the mode sits at $x=0$. There is no contradiction. The mean answers ``where does the particle land on average over many measurements'', and it is sensitive to the long left-hand tail, which contributes many detections far out at negative $x$. The mode answers ``which single location is most likely in any one measurement'', and it ignores the tails entirely. The two coincide only for a symmetric distribution, and this one is deliberately lopsided, the density falling off twice as fast to the right as to the left.
+The average position and the most likely position differ: $\langle x\rangle=-1/(4\beta)$ while the mode sits at $x=0$. There is no contradiction. The mean is pulled towards the long left-hand tail, whereas the mode ignores the tails entirely; the two coincide only for a symmetric density, and this one falls off twice as fast to the right as to the left. Neither number alone describes the state: the same parameter-differentiation trick gives $\langle x^{2}\rangle=3/(8\beta^{2})$, hence a spread $\Delta x=\sqrt{5}/(4\beta)$, larger than $|\langle x\rangle|$, so the particle is delocalised over a region of order $1/\beta$.
 
-A useful consequence is that neither number on its own describes the state. The spread does the rest of the work. Using the same parameter-differentiation trick a second time gives $\langle x^{2}\rangle=3/(8\beta^{2})$, and hence
-\[
-    \Delta x=\sqrt{\langle x^{2}\rangle-\langle x\rangle^{2}}
-    =\sqrt{\frac{3}{8\beta^{2}}-\frac{1}{16\beta^{2}}}
-    =\frac{\sqrt{5}}{4\beta}\approx\frac{0.56}{\beta},
-\]
-which is comfortably larger than $|\langle x\rangle|$. The particle is genuinely delocalised over a region of order $1/\beta$, and quoting $\langle x\rangle$ alone would suggest a far more definite position than the state actually possesses.
-
-Finally, the cusp carries physical content. A kink in $\psi$, meaning a discontinuous first derivative, is not allowed for a particle moving in a smooth potential; it arises only where the potential is infinitely sharp. A wave function of exactly this two-sided exponential form is what a delta-function potential well at the origin produces, and the fact that the two decay constants differ signals that the potential is not symmetric about that point.
+The cusp at $x=0$ also carries information. A discontinuous $\d\psi/\d x$ cannot occur where the potential is finite, so the potential must contain an infinitely sharp, delta-function feature at the origin. Moreover, because the decay constants differ on the two sides, the potential energy must differ there as well, being higher on the right, where the wave function is squeezed more tightly.
 \end{insightbox}
 \fi
 
@@ -629,15 +601,9 @@ This is the canonical commutation relation between position and momentum.
 \end{answerbox}
 
 \begin{insightbox}
-The whole result comes from one extra term in the product rule, and yet it is the point at which quantum mechanics parts company with classical mechanics. Classically, position and momentum are numbers, and numbers commute: $xp-px=0$ identically. Here the same combination is not zero but $i\hbar$, a constant so small on everyday scales that the classical answer is recovered for all practical purposes, and so non-zero that the microscopic world is reorganised around it.
+The entire result is one extra term from the product rule, yet it marks where quantum mechanics departs from classical mechanics: classically $xp-px=0$, whereas here $\hat{x}\hat{p}-\hat{p}\hat{x}=i\hbar$. The order in which the two operators act therefore matters, and the difference is fixed by a universal constant.
 
-Two consequences follow. First, order of operations now carries physical meaning. Measuring position and then momentum is not the same operation as measuring momentum and then position, and the difference between the two is precisely $i\hbar$. Second, and equivalently, $\hat{x}$ and $\hat{p}$ can have no common eigenstates. If some state $\psi$ were an eigenstate of both, with $\hat{x}\psi=x_{0}\psi$ and $\hat{p}\psi=p_{0}\psi$, then $(\hat{x}\hat{p}-\hat{p}\hat{x})\psi=(x_{0}p_{0}-p_{0}x_{0})\psi=0$, contradicting $i\hbar\psi\neq 0$. No state can therefore have a sharp position and a sharp momentum at the same time.
-
-Quantitatively, the general uncertainty relation $\Delta A\,\Delta B\ge\frac{1}{2}\left|\left\langle[\hat{A},\hat{B}]\right\rangle\right|$ turns this commutator directly into the Heisenberg relation
-\[
-    \Delta x\,\Delta p\ge\frac{\hbar}{2},
-\]
-so the small algebraic remainder computed in part (d) is the origin of the limit on how sharply a particle can be localised. The state of Question 2 illustrates the same point from the other side: it has a well-defined spread $\Delta x=\sqrt{5}/(4\beta)$ in position, and the price of that localisation is an unavoidable spread in momentum.
+A direct consequence is that $\hat{x}$ and $\hat{p}$ share no eigenstates. If some $\psi$ were an eigenstate of both, with eigenvalues $x_{0}$ and $p_{0}$, then $(\hat{x}\hat{p}-\hat{p}\hat{x})\psi=(x_{0}p_{0}-p_{0}x_{0})\psi=0$, contradicting $i\hbar\psi\neq 0$. No state has both a sharp position and a sharp momentum. The general relation $\Delta A\,\Delta B\ge\tfrac{1}{2}\left|\langle[\hat{A},\hat{B}]\rangle\right|$ makes this quantitative, turning the commutator directly into $\Delta x\,\Delta p\ge\hbar/2$.
 \end{insightbox}
 \fi
 
@@ -750,11 +716,9 @@ The probability of measuring $A$ to be $a_{3}$ is $1/4$, that is, $25\%$. For co
 \end{answerbox}
 
 \begin{insightbox}
-Two features of this calculation are worth drawing out.
+The factor $i$ on $\ket{\phi_{3}}$, and the minus sign on $\ket{\phi_{2}}$, have no effect on these probabilities, because the modulus square discards them: probabilities for measuring $A$ depend only on the magnitudes of the coefficients in the eigenbasis of $\hat{A}$. That does not make the phases meaningless. They become decisive as soon as a different observable is measured, one whose eigenstates are superpositions of the $\ket{\phi_{n}}$, where relative phases produce interference.
 
-First, the factor $i$ multiplying $\ket{\phi_{3}}$ has no effect whatever on the answer, because the modulus square discards it. This is an instance of a general rule: the probabilities for measuring $A$ depend only on the magnitudes of the expansion coefficients in the eigenbasis of $\hat{A}$. It would be wrong, however, to conclude that the phase is meaningless. Relative phases between components are physically real and show up as interference as soon as a different observable is measured, one whose eigenstates are superpositions of the $\ket{\phi_{n}}$. The same is true of the minus sign on $\ket{\phi_{2}}$. A phase is invisible to one measurement and decisive for another.
-
-Second, normalisation is not a cosmetic step. The squared coefficients are probabilities only when the state has unit length, because the total probability of all mutually exclusive outcomes must be one. Here the raw coefficients would have given $1/3$ for the third outcome and a total of $4/3$ across all three, which is not a probability distribution at all. Dividing by $\braket{\psi|\psi}$ restores the interpretation, and the final check that the probabilities sum to one is the cheapest way to confirm that it has been done correctly.
+Normalisation, by contrast, is not cosmetic. Squared coefficients are probabilities only for a unit-length state; the raw coefficients here sum to $4/3$, which is not a probability distribution, and dividing by $\braket{\psi|\psi}$ is what restores the interpretation.
 \end{insightbox}
 \fi
 
@@ -928,11 +892,9 @@ and every other outcome has probability zero. The measurement of $A$ therefore r
 \end{answerbox}
 
 \begin{insightbox}
-The thread running through all three parts is that $\hat{H}$ and $\hat{A}$ are \emph{compatible} observables. Both are diagonal in the same basis $\{\ket{\phi_{n}}\}$, so they commute: acting with them in either order on any $\ket{\phi_{n}}$ gives $n^{2}(n+1)\mathcal{E}_{0}a_{0}\ket{\phi_{n}}$, hence $[\hat{H},\hat{A}]=0$. This is what makes part (b) almost free once part (a) is done, since no re-expansion of the state is required, and it is what makes part (c) certain rather than probabilistic.
+The thread through all three parts is that $\hat{H}$ and $\hat{A}$ are \emph{compatible} observables: both are diagonal in the basis $\{\ket{\phi_{n}}\}$, so they commute, $[\hat{H},\hat{A}]=0$. That is why part (b) needs no re-expansion of the state, and why part (c) is certain rather than probabilistic.
 
-Part (c) is the sharpest illustration. Before any measurement, neither the energy nor $A$ has a definite value; the system is in a superposition and both are genuinely indeterminate. The energy measurement does not merely reveal a pre-existing value, it \emph{prepares} the system in $\ket{\phi_{2}}$. Because that state is simultaneously an eigenstate of $\hat{A}$, the subsequent measurement of $A$ is fully determined. Measuring one observable has removed the uncertainty in the other.
-
-This is exactly the behaviour that fails for incompatible observables. Position and momentum, whose commutator $[\hat{x},\hat{p}]=i\hbar$ was computed in Question 3, share no eigenstates at all, so sharpening one necessarily blurs the other. The contrast between the two situations is the practical meaning of a commutator: it is zero when two quantities can be known together, and non-zero when they cannot. The word ``immediately'' in the question carries this weight, since the state $\ket{\phi_{2}}$ subsequently evolves in time, and a delayed measurement of an observable that did not commute with $\hat{H}$ would no longer be certain.
+Part (c) also shows what a measurement does. Before it, neither $E$ nor $A$ has a definite value. The energy measurement does not reveal a pre-existing value; it \emph{prepares} the system in $\ket{\phi_{2}}$, and because that state is also an eigenstate of $\hat{A}$, the uncertainty in $A$ is removed at the same time. The word ``immediately'' is in fact not needed here: $\ket{\phi_{2}}$ is an eigenstate of $\hat{H}$ and therefore a stationary state, so time evolution only multiplies it by an overall phase and every subsequent measurement probability is the same at any later time. The word would matter had the first measurement been of an observable that does not commute with $\hat{H}$, since the collapsed state would then not be stationary and would evolve into a fresh superposition.
 \end{insightbox}
 \fi
 

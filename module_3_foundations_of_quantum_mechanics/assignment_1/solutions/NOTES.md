@@ -48,7 +48,7 @@ The lecture gives the un-normalised form explicitly for expectation values, $\la
 
 ## 3. The compiled PDF
 
-`QT01_PRB_solutions.pdf` is built and checked in: **20 pages**, zero overfull boxes, all cross-references resolved, Figure 1 placed inside Question 2 and referenced from parts (a), (c) and (d). Every page has been inspected visually.
+`QT01_PRB_solutions.pdf` is built and checked in: **16 pages**, zero overfull boxes, all cross-references resolved, Figure 1 placed inside Question 2 and referenced from parts (a), (c) and (d). Every page has been inspected visually.
 
 **Canvas numbering is carried throughout.** Your professor's template groups the 13 Canvas questions into 5 problems (8 + 37 + 22 + 8 + 25 = 100, matching the Canvas points exactly). Because that grouping is not obvious to someone reading down the Canvas list, the PDF states it in two places: a Canvas range in each section heading ("Question 2 (Canvas questions 2--5)") and a `(Canvas Qn)` tag on every sub-part heading. Nothing is omitted — all 13 parts are answered. Marks are shown once, in your professor's grey question boxes; the duplicates that had appeared in the solution headings were removed.
 
@@ -67,11 +67,44 @@ Overleaf remains a fine fallback: upload the `.tex`, put the PNG in a `figures/`
 
 The title page carries candidate number **672128**.
 
+## 3b. Pre-submission review (26 Sep, evening)
+
+A sceptical read of the whole document, checking for extra material, overstated physics and
+Turnitin exposure. Three physics statements in the insight boxes were wrong or misleading and have
+been corrected. Worth understanding each, because they are exactly the kind of thing a marker
+probes in a viva.
+
+| Where | What it said | Why it was wrong | Now says |
+|---|---|---|---|
+| Q2 insight | A delta-function well at the origin "produces exactly this two-sided exponential form" | A lone delta well on a flat potential gives the **same** decay constant on both sides. Solving the TISE region by region, decay constants $\beta$ and $2\beta$ require a delta **plus a potential step**: $V_R - E = 4(V_L - E)$, so the potential is higher on the right. | The kink needs a delta feature at the origin; the differing decay constants additionally require the potential to differ on the two sides, higher on the right. |
+| Q3 insight | "Measuring position and then momentum is not the same operation as measuring momentum and then position, and the difference is precisely $i\hbar$" | Conflates operator ordering with sequential *measurements*. Sequential measurements involve collapse; the commutator is a statement about operators. | The order in which the two *operators* act matters, and the difference is a universal constant. |
+| Q5 insight | "The word 'immediately' carries weight, since $\lvert\phi_2\rangle$ subsequently evolves in time, and a delayed measurement ... would no longer be certain" | $\lvert\phi_2\rangle$ is an energy eigenstate, hence **stationary**: time evolution only multiplies it by a phase, so *every* later measurement probability is unchanged. "Immediately" would matter only if the first measurement had left a non-stationary state. | Exactly that. |
+
+Also trimmed, none of it wrong but all of it beyond what was asked:
+- Q1: the entry-by-entry restatement of the proof (now one sentence) and the eigenvector-orthogonality
+  check (removed; the question asks to prove Hermiticity, and the real-eigenvalue check already
+  confirms it).
+- All five insight boxes shortened from 167-280 words to 90-183. The professor's own template says
+  "Add a **short** physical interpretation".
+- Q2(c): "as it must be, since the mean cannot lie beyond the bulk" softened - a hand-wave, not a proof.
+
+Result: 5497 -> 4931 words, 20 -> 16 pages. For calibration, the Module 1 script that scored 98/100
+was ~1000 words, though its feedback asked for *more* exposition and this brief explicitly weights
+justification.
+
+**Turnitin:** an 8-word shingle comparison of all prose against every lecture, hint, model answer and
+sprint file in the module found 2 matches, both the generic phrase "the probability of finding the
+particle in the". The question statements are the professor's template verbatim and will match every
+classmate - expected and harmless (see the 6% / 16% history). No action needed.
+
+The pre-review version is preserved at
+`scratchpad/QT01_PRB_solutions.BEFORE-REVIEW.tex` for this session only.
+
 ## 4. Before you submit
 
 - [x] Candidate number on the title page set to 672128.
 - [ ] Q10 and Q11 states checked against the *rendered* Canvas quiz (section 1 above).
-- [x] PDF compiled (20 pages); Figure 1 appears and resolves as "Fig. (1)". Rebuild only if you edit the `.tex`.
+- [x] PDF compiled (16 pages); Figure 1 appears and resolves as "Fig. (1)". Rebuild only if you edit the `.tex`.
 - [ ] Solutions read through and re-voiced in your own words where the phrasing does not sound like you — the brief requires the workings to be your own, and you should be able to reproduce every step unaided.
 - [ ] Every derivation checked once by you independently. The results to confirm: $B = 2\sqrt{\beta/3}$; $\langle x\rangle = -1/(4\beta)$; mode at $x=0$; $[\hat{x},\hat{p}] = i\hbar$; $P(a_3) = 1/4$; energies $E_0, 4E_0, 9E_0, 16E_0$ with $\frac27, \frac37, \frac17, \frac17$; $A$ values $2a_0 \dots 5a_0$ with the same probabilities; final answer $3a_0$.
 - [ ] Pointer lines typed into Canvas Q1–Q13 (see `CANVAS_ANSWERS.md`, Part A), in one browser tab only.
