@@ -1,0 +1,91 @@
+% Generic solution template for a Sussex assessed problem set.
+% Use this ONLY when the module supplies no template of its own.
+% If the instructor supplies one, use theirs and leave its preamble untouched.
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{braket}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\d}{\mathop{}\!\mathrm{d}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\graphicspath{{figures/}}
+\setcounter{secnumdepth}{0}
+
+\tcbset{enhanced, breakable, boxrule=0.8pt, arc=1.5mm,
+        left=2mm, right=2mm, top=1.5mm, bottom=1.5mm}
+
+\newtcolorbox{problembox}[1]{colback=gray!8,  colframe=black,
+                             fonttitle=\bfseries, title={#1}}
+\newtcolorbox{solutionbox}{  colback=blue!3,  colframe=blue!60!black,
+                             fonttitle=\bfseries, title={Solution}}
+\newtcolorbox{answerbox}{    colback=yellow!10, colframe=orange!70!black,
+                             fonttitle=\bfseries, title={Final answer}}
+
+% =====================================================================
+%  REQUIRED SLOT: every solution ends with a closing sentence.
+%
+%  Tutor feedback on a 98/100 script, repeated across four questions:
+%    "I appreciate the neatly boxed final answer, but it will be
+%     appropriate to write a sentence of text to help close off the
+%     final answer."
+%
+%  \closing{...}  renders that sentence.
+%  \closingmissing is the placeholder. Leave it in by accident and it
+%  prints a red warning into the PDF, so a page-read catches it.
+% =====================================================================
+\newcommand{\closing}[1]{\par\medskip\noindent\textbf{Therefore,} #1}
+\newcommand{\closingmissing}{%
+  \par\medskip\noindent
+  \fcolorbox{red}{red!12}{\parbox{0.95\linewidth}{\bfseries
+  CLOSING SENTENCE MISSING --- replace \texttt{\textbackslash closingmissing}
+  with \texttt{\textbackslash closing\{...\}}: a sentence naming the result.}}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries MODULE CODE -- Module Title\\[0.2em]
+Assessed problem set -- Week N\\[0.3em]
+{\normalsize Weight: NN\% of module grade}\\[1em]
+Candidate number: REPLACE-ME}
+\end{center}
+
+% =====================================================================
+\section{Question 1 (Canvas question 1)}
+
+\begin{problembox}{Question 1 \hfill [N marks]}
+Paste the question statement here, from the instructor-authored source,
+not from a platform markdown export. See references/checks.md.
+\end{problembox}
+
+\begin{solutionbox}
+\textbf{What is asked.} Restate the question and list the givens.
+
+\textbf{Principle used.} Name the principle in words and say why it applies
+here. Marks are explicitly allocated to this when notes are permitted.
+
+\textbf{Working.} Show every step. Scale the prose to the marks: a 2-mark
+part can be three lines of algebra, a 15-mark part needs explanation
+between the equations.
+
+\textbf{Check.} An independent check -- dimensions, a limiting case, a
+probability summing to one, a sign agreeing with a sketch.
+\end{solutionbox}
+
+\begin{answerbox}
+State the result.
+\closingmissing   % <-- replace with \closing{...}
+\end{answerbox}
+
+\end{document}
