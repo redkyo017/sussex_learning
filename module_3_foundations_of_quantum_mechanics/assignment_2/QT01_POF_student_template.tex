@@ -1,0 +1,494 @@
+\documentclass[12pt]{article}
+
+% =========================
+% Toggle: show only problems, or problems + student solution boxes
+% =========================
+\newif\ifsolutions
+\solutionstrue     % Use this for the student template with solution boxes.
+%\solutionsfalse   % POF template: questions only.
+
+% =========================
+% Packages
+% =========================
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{float} % Allows figure to be placed at exact desired location
+\usepackage[hidelinks]{hyperref}
+
+\sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+\renewcommand{\d}{\mathop{}\!\mathrm{d}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[enumerate,1]{label=(\alph*),itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate,2]{label=(\roman*),itemsep=0.15em,topsep=0.15em}
+
+% =========================
+% Boxes
+% =========================
+\tcbset{
+  enhanced,
+  breakable,
+  boxrule=0.8pt,
+  arc=1.5mm,
+  left=2mm,right=2mm,top=1.5mm,bottom=1.5mm
+}
+
+\newtcolorbox{problembox}[1]{
+  colback=gray!8,
+  colframe=black,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{solutionbox}{
+  colback=blue!3,
+  colframe=blue!60!black,
+  title={Solution},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{answerbox}{
+  colback=yellow!10,
+  colframe=orange!70!black,
+  title={Final answer},
+  fonttitle=\bfseries
+}
+
+\newtcolorbox{insightbox}{
+  colback=green!5,
+  colframe=green!50!black,
+  title={Physical insight},
+  fonttitle=\bfseries
+}
+
+\newcommand{\problemsep}{\vspace{0.8em}}
+
+\newcommand{\placeholderfigure}[2][50mm]{%
+	\begin{center}
+		\fbox{\parbox[c][#1][c]{0.82\linewidth}{\centering\small Figure placeholder}}\\[0.3em]
+		{\footnotesize\emph{Caption: #2}}
+\end{center}}
+
+\graphicspath{{figures/}} % If you want to place figures in the folder 'figures' (cleaner)
+
+\setcounter{secnumdepth}{0} % Avoids numbering of the section and subsection while allowing them to appear in the TOC
+
+
+
+% ======================================================
+% ======================================================
+% ================                    ==================
+% ================   BEGIN DOCUMENT   ==================
+% ================                    ==================
+% ======================================================
+% ======================================================
+
+\begin{document}
+
+\begin{center}
+	{\Large\bfseries QT01 -- Foundations of Quantum Mechanics\\[0.2em]
+		Portfolio (POF) -- Week 8\\[0.3em]
+		{\normalsize Weight: 70\% of module grade}\\[1em]
+		Candidate number: 123456  % Replace candidate number with yours
+	}
+\end{center}
+
+
+% ======================================================
+% ======================================================
+%                      Week 2
+% ======================================================
+% ======================================================
+\section{Week 2}
+
+% ======================================================
+%                  Problem 1
+% ======================================================
+\begin{problembox}{Problem 1 \hfill [16 marks]}
+At time $t=0$ a particle is represented by the wave function
+\[
+\psi(x,0)=
+\begin{cases}
+A\left(\dfrac{x}{a}\right), & 0\le x\le a,\\[0.8em]
+A\dfrac{(b-x)}{(b-a)}, & a\le x\le b,\\[0.8em]
+0, & \text{otherwise},
+\end{cases}
+\]
+where $A$, $a$, and $b$ are positive real constants.
+
+\begin{enumerate}
+    \item Normalise $\psi$ (that is, find $A$, in terms of $a$ and $b$).
+    \item Sketch $\psi(x,0)$, as a function of $x$.
+    \item Where is the particle most likely to be found, at $t=0$?
+    \item What is the probability of finding the particle to the left of $a$? Check your result in the limiting cases $b=a$ and $b=2a$.
+    \item What is the expectation value of $x$?
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	 Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+% ======================================================
+%                  Problem 2
+% ======================================================
+\newpage
+\begin{problembox}{Problem 2 \hfill [6 marks]}
+In the concrete representation of bras and kets by row and column vectors, the inner product is defined in terms of components:
+\[
+\braket{B|A}
+=
+\begin{pmatrix}
+\beta_1^* & \beta_2^* & \beta_3^*
+\end{pmatrix}
+\begin{pmatrix}
+\alpha_1\\
+\alpha_2\\
+\alpha_3
+\end{pmatrix}
+=\beta_1^*\alpha_1+\beta_2^*\alpha_2+\beta_3^*\alpha_3.
+\]
+
+The rule for inner products is essentially the same as for dot products: add the products of corresponding components of the vectors whose inner product is being calculated.
+
+Show that the inner product $\braket{B|A}$, defined as above, satisfies all the axioms of inner products (conjugate symmetry, linearity in the second argument, and positive-definiteness).
+\end{problembox}
+
+% ======================================================
+%                  Solution 2
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+
+\newpage
+% ======================================================
+% ======================================================
+%                      Week 3
+% ======================================================
+% ======================================================
+\section{Week 3}
+
+% ======================================================
+%                  Problem 1
+% ======================================================
+\begin{problembox}{Problem 1 \hfill [12 marks]}
+Show that the position operator 
+\[
+\hat{x}=x,
+\]
+and momentum operator
+\[
+\hat{p}=\frac{\hbar}{i}\frac{\partial}{\partial x},
+\]
+are Hermitian, in other words, that
+\[
+\braket{\phi|\hat{x}\psi}=\braket{\hat{x}\phi|\psi}
+\qquad\text{and}\qquad
+\braket{\phi|\hat{p}\psi}=\braket{\hat{p}\phi|\psi}.
+\]
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+% ======================================================
+%                  Problem 2
+% ======================================================
+\newpage
+\begin{problembox}{Problem 2 \hfill [8 marks]}
+The wave function of an electron in the lowest energy state of a hydrogen atom is proportional to $e^{-r/a_0}$, with $a_0$ a constant and $r$ the distance from the nucleus. Calculate the relative probabilities of finding the electron inside a region of volume $1.0\,\mathrm{pm}^3$, located at
+\begin{itemize}
+    \item the nucleus,
+    \item a distance $a_0$ from the nucleus.
+\end{itemize}
+
+As the region of interest is so small, even on the scale of the atom, we can ignore the variation of $\psi$ within it.
+\end{problembox}
+
+% ======================================================
+%                  Solution 2
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+
+\newpage
+% ======================================================
+% ======================================================
+%                      Week 4
+% ======================================================
+% ======================================================
+\section{Week 4}
+
+% ======================================================
+%                  Problem 1
+% ======================================================
+\begin{problembox}{Problem 1 \hfill [5 marks]}
+Consider a system whose state is given in terms of an orthonormal set of three vectors: $\ket{\phi_1}$, $\ket{\phi_2}$, $\ket{\phi_3}$ as
+\[
+\ket{\psi}=\frac{\sqrt{3}}{3}\ket{\phi_1}+\frac{2}{3}\ket{\phi_2}+\frac{\sqrt{2}}{3}\ket{\phi_3}.
+\]
+
+\begin{enumerate}
+    \item Verify that $\ket{\psi}$ is normalised. Then, calculate the probability of finding the system in any one of the states $\ket{\phi_1}$, $\ket{\phi_2}$ and $\ket{\phi_3}$. Verify that the total probability is equal to one.
+    \item Consider now an ensemble of 810 identical systems, each one of them in the state $\psi$. If measurements are done on all of them, how many systems will be found in each of the states $\ket{\phi_1}$, $\ket{\phi_2}$ and $\ket{\phi_3}$?
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+% ======================================================
+%                  Problem 2
+% ======================================================
+\newpage
+\begin{problembox}{Problem 2 \hfill [17 marks]}
+\begin{enumerate}
+    \item Show that the sum of two Hermitian operators is Hermitian.
+    \item Suppose $\hat{Q}$ is Hermitian, and $\alpha$ is a complex number. Under what condition (on $\alpha$) is $\alpha\hat{Q}$ Hermitian?
+    \item When is the product of two Hermitian operators Hermitian?
+    \item Show that the Hamiltonian operator
+    \[
+        \hat{H}=-\frac{\hbar^2}{2m}\frac{\d^2}{\d x^2}+V(x)
+    \]
+    is Hermitian.
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 2
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+
+\newpage
+% ======================================================
+% ======================================================
+%                      Week 5
+% ======================================================
+% ======================================================
+\section{Week 5}
+
+% ======================================================
+%                  Problem 1
+% ======================================================
+\begin{problembox}{Problem 1 \hfill [20 marks]}
+Consider a system whose wave function at time $t=0$ is given by
+\[
+\ket{\psi(x,0)}=
+\frac{5}{\sqrt{50}}\ket{\phi_0(x)}
++\frac{4}{\sqrt{50}}\ket{\phi_1(x)}
++\frac{3}{\sqrt{50}}\ket{\phi_2(x)},
+\]
+where $\ket{\phi_n(x)}$ is the wave function of the $n^{\mathrm{th}}$ excited state for a harmonic oscillator of energy
+\[
+E_n=\hbar\omega\left(n+\frac{1}{2}\right).
+\]
+
+\begin{enumerate}
+    \item Find the average energy of this system.
+    \item Find the state $\ket{\psi(x,t)}$ at a later time and the average value of the energy; compare the result with the value obtained in (a).
+
+    \textit{Hint: the eigenvalue equation for the time-evolution operator is}
+    \[
+    \hat{U}\ket{\phi_n(x)}\equiv e^{-i\hat{H}t/\hbar}\ket{\phi_n(x)}
+    =e^{-iE_nt/\hbar}\ket{\phi_n(x)}.
+    \]
+
+    \item Find the expectation value of the operator $\hat{x}$ with respect to the state $\ket{\psi(x,t)}$ (i.e., find $\braket{\psi(x,t)|\hat{x}|\psi(x,t)}$).
+
+    \textit{Hint: Use}
+    \[
+    \hat{x}=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^{\dagger}+\hat{a}\right).
+    \]
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+% ======================================================
+%                  Problem 2
+% ======================================================
+\newpage
+\begin{problembox}{Problem 2 \hfill [6 marks]}
+Calculate the expectation value of the momentum for a harmonic oscillator prepared in a state which is a superposition of two number states,
+\[
+\ket{\psi}=\frac{1}{\sqrt{2}}\left(\ket{\psi_1}-i\ket{\psi_2}\right).
+\]
+\end{problembox}
+
+% ======================================================
+%                  Solution 2
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+
+\newpage
+% ======================================================
+% ======================================================
+%                      Week 7
+% ======================================================
+% ======================================================
+\section{Week 7}
+
+% ======================================================
+%                  Problem 1
+% ======================================================
+\begin{problembox}{Problem 1 \hfill [10 marks]}
+Consider a two-spin composite state $\ket{\psi}$ prepared such that we can write
+\[
+\ket{\psi}=\frac{1}{\sqrt{2}}
+\left(\ket{\uparrow_A\downarrow_B}-\ket{\downarrow_A\uparrow_B}\right),
+\]
+where, for clarity, the subscripts $A$ and $B$ denote the subspace on which Alice and Bob will measure their spin components. First, Bob measures $y$-component of the spin with the operator $\tau_y$, then Alice measures $x$-component with the operator $\sigma_x$.
+
+\begin{enumerate}
+    \item What is the expectation value of
+    \[
+    \braket{\sigma_x\tau_y}=\braket{\psi|\sigma_x\tau_y|\psi}?
+    \]
+    \item Calculate the expectation values of
+    \[
+    \braket{\tau_y}=\braket{\psi|\tau_y|\psi}
+    \]
+    and
+    \[
+    \braket{\sigma_x}=\braket{\psi|\sigma_x|\psi}.
+    \]
+    \item What is the correlation between the two measurements
+    \[
+    \braket{\sigma_x\tau_y}-\braket{\sigma_x}\braket{\tau_y}?
+    \]
+\end{enumerate}
+\end{problembox}
+
+% ======================================================
+%                  Solution 1
+% ======================================================
+\ifsolutions
+\begin{solutionbox}
+	Replace this placeholder with your own detailed derivation, making your algebra clear and showing the steps needed to reach the result.
+\end{solutionbox}
+
+\begin{answerbox}
+	State your final answer(s) clearly here.
+\end{answerbox}
+
+\begin{insightbox}
+	Add a short physical interpretation here. Explain what the result means, why it matters, or what feature of the system it illustrates.
+\end{insightbox}
+\fi
+
+\end{document}
