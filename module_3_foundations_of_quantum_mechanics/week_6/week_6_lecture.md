@@ -96,15 +96,15 @@ To use the language of quantum mechanics, the action of measuring the state of a
 Using the first Stern-Gerlach apparatus to prepare the particle initially in a specific state $S_z = +$ (respectively, $S_z = -$) described by the wave function $|\psi_z^+\rangle$ (respectively, $|\psi_z^-\rangle$), we can calculate the probabilities of finding the particle in each of the $S_z = +$ or $S_z = -$ states after the second apparatus. Recall that $\langle b | a \rangle$ is the amplitude that a particle that is in state $a$ will get through an apparatus into the $b$ state. We can say: $\langle b | a \rangle$ is the amplitude for an atom in the state $a$ to get into the state $b$. Furthermore, to obtain the probability $P(b | a)$ of obtaining the state $b$, knowing that the particle is in state $a$, we need to take the modulus square of the corresponding amplitude: $P(b | a) = |\langle b | a \rangle|^2$. Observing the experimental outcomes in Figure 6.5, we can write the following results for the amplitudes:
 
 $$\begin{aligned}
-\langle \psi_z^+ | \psi_z^+ \rangle = 1 &\longrightarrow P(\psi_z^+ | \psi_z^+) = |\langle \psi_z^+ | \psi_z^+ \rangle|^2 = 1 \\
-\langle \psi_z^- | \psi_z^+ \rangle = 0 &\longrightarrow P(\psi_z^- | \psi_z^+) = |\langle \psi_z^- | \psi_z^+ \rangle|^2 = 0 \\
-\langle \psi_z^+ | \psi_z^- \rangle = 0 &\longrightarrow P(\psi_z^+ | \psi_z^-) = |\langle \psi_z^+ | \psi_z^- \rangle|^2 = 0 \\
-\langle \psi_z^- | \psi_z^- \rangle = 1 &\longrightarrow P(\psi_z^- | \psi_z^-) = |\langle \psi_z^- | \psi_z^- \rangle|^2 = 1
+\langle{\psi_{z+}|\psi_{z+}}\rangle =1 \longrightarrow  P(\psi_{z+}|\psi_{z+}) = \left|\langle{\psi_{z+}|\psi_{z+}}\rangle\right|^2 = 1 \\
+\langle{\psi_{z-}|\psi_{z+}}\rangle = 0 \longrightarrow  P(\psi_{z-}|\psi_{z+}) = \left|\langle{\psi_{z-}|\psi_{z+}}\rangle\right|^2 = 0 \\
+\langle{\psi_{z+}|\psi_{z-}}\rangle = 0 \longrightarrow  P(\psi_{z+}|\psi_{z-}) = \left|\langle{\psi_{z+}|\psi_{z-}}\rangle\right|^2 = 0 \\
+\langle{\psi_{z-}|\psi_{z-}}\rangle = 1 \longrightarrow  P(\psi_{z-}|\psi_{z-}) = \left|\langle{\psi_{z-}|\psi_{z-}}\rangle\right|^2 = 1
 \end{aligned} \tag{6.1}$$
 
 We can write those results more succinctly under their matrix form, whose elements are the amplitudes:
 
-$$\hat{S}_z = \begin{pmatrix} |\langle \psi_z^+ | \psi_z^+ \rangle| & |\langle \psi_z^+ | \psi_z^- \rangle| \\ |\langle \psi_z^- | \psi_z^+ \rangle| & |\langle \psi_z^- | \psi_z^- \rangle| \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$$
+$$\begin{equation*} \hat{S}_z = \begin{bmatrix} \langle{\psi_{z+}|\psi_{z+}}\rangle & \langle{\psi_{z+}|\psi_{z-}}\rangle\\ \langle{\psi_{z-}|\psi_{z+}}\rangle & \langle{\psi_{z-}|\psi_{z-}}\rangle \end{bmatrix} = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix}. \end{equation*}f$$
 
 > **Figure 6.5: A repeated $\hat{S}_z$ measurement will give the same outcome as the first $\hat{S}_z$ measurement.**
 > 
@@ -119,7 +119,7 @@ The Stern-Gerlach device presents a possible way of both preparing and measuring
 
 To understand how the many possible states are related to each other, consider successive Stern-Gerlach measurements of different types, say $\hat{S}_z$ then $\hat{S}_x$, as illustrated in Figure 6.6.
 
-> **Figure 6.6: If the atoms are in a definite state with respect to $\hat{S}_z$, they are not in the same state with respect to $\hat{S}_x$. A $\hat{S}_x$ measurement that follows an $\hat{S}_z$ measurement will give equal probability of measuring $S_x = +$ as $S_x = -$, independently of the value after $\hat{S}_z$ measurement.**
+> **Figure 6.6: If the atoms are in a definite state with respect to $\hat{S}_z$, they are not in the same state with respect to $\hat{S}_x$. A $\hat{S}_x$ measurement that follows an $\hat{S}_z$ measurement will give equal probability of measuring $\hat{S}_x = +$ as $\hat{S}_x = -$, independently of the value after $\hat{S}_z$ measurement.**
 > 
 > *Long Description:*
 > A box labelled '$\hat{S}_z$' has two lines coming from it to the right.
@@ -131,21 +131,21 @@ Experiments show that if the particle emerges from the $\hat{S}_z$ apparatus in 
 As in the previous section, we can write the amplitudes of possible outcomes of the measurements with $\hat{S}_z$ then $\hat{S}_x$:
 
 $$\begin{aligned}
-\langle \psi_x^+ | \psi_z^+ \rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_x^+ | \psi_z^+) = |\langle \psi_x^+ | \psi_z^+ \rangle|^2 = \frac{1}{2} \\
-\langle \psi_x^- | \psi_z^+ \rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_x^- | \psi_z^+) = |\langle \psi_x^- | \psi_z^+ \rangle|^2 = \frac{1}{2} \\
-\langle \psi_x^+ | \psi_z^- \rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_x^+ | \psi_z^-) = |\langle \psi_x^+ | \psi_z^- \rangle|^2 = \frac{1}{2} \\
-\langle \psi_x^- | \psi_z^- \rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_x^- | \psi_z^-) = |\langle \psi_x^- | \psi_z^- \rangle|^2 = \frac{1}{2}
+\langle{\psi_{x+}|\psi_{z+}}\rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_{x+}|\psi_{z+}) = \left|\langle{\psi_{x+}|\psi_{z+}}\rangle\right|^2 = \frac{1}{2} \\
+\langle{\psi_{x-}|\psi_{z+}}\rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_{x-}|\psi_{z+}) = \left|\langle{\psi_{x-}|\psi_{z+}}\rangle\right|^2 = \frac{1}{2} \\
+\langle{\psi_{x+}|\psi_{z-}} \rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_{x+}|\psi_{z-}) = \left|\langle{\psi_{x+}|\psi_{z-}}\rangle\right|^2 = \frac{1}{2} \\
+\langle{\psi_{x-}|\psi_{z-}}\rangle = \frac{1}{\sqrt{2}} &\longrightarrow P(\psi_{x-}|\psi_{z-}) = \left|\langle{\psi_{x-}|\psi_{z-}}\rangle\right|^2 = \frac{1}{2}
 \end{aligned} \tag{6.2}$$
 
-If the atoms are in a definite state with respect to $\hat{S}_z$, they are not in the same state with respect to $\hat{S}_x$ — a $|\psi_z^+\rangle$ state is not also a $|\psi_x^+\rangle$ state.
+If the atoms are in a definite state with respect to $\hat{S}_z$, they are not in the same state with respect to $\hat{S}_x$ — a $\hat{S}_x - a \mid{\psi_{z+}}\rangle$ state is not also a $\mid{\psi_{x+}}\rangle$ state.
 
 In general, a particle can be subjected to an $\hat{S}_m$ apparatus followed by an $\hat{S}_n$ apparatus where $\mathbf{m}$ and $\mathbf{n}$ are any two unit vectors with an arbitrary angle between them. Suppose that the particle emerges from $\hat{S}_m$ with $S_m = +$. Thus, the state immediately after the first Stern-Gerlach apparatus is $|\psi_m^+\rangle$. The experimental evidence is that it will emerge from $\hat{S}_n$ with $S_n = +$ with probability $(1 + \mathbf{m} \cdot \mathbf{n}) / 2$, where $\mathbf{m} \cdot \mathbf{n}$ denotes a dot product between unit vectors $\mathbf{m}$ and $\mathbf{n}$. Thus, the general rules are:
 
-$$|\psi_m^+\rangle \text{ into } \hat{S}_n \longrightarrow \begin{cases} S_n = + & \text{with probability } \frac{1 + \mathbf{m} \cdot \mathbf{n}}{2} \\ S_n = - & \text{with probability } \frac{1 - \mathbf{m} \cdot \mathbf{n}}{2} \end{cases} \tag{6.3}$$
+$$\mid{\psi_{+m}}\rangle\quad \text{into} \quad \hat{S}_n \longrightarrow \begin{cases} S_n = + \quad \text{with probability} \quad \dfrac{1+\textbf{m}\cdot \textbf{n}}{2}\\ S_n = - \quad \text{with probability} \quad \dfrac{1-\textbf{m}\cdot \textbf{n}}{2} \end{cases} \tag{6.3}$$
 
 and
 
-$$|\psi_m^-\rangle \text{ into } \hat{S}_n \longrightarrow \begin{cases} S_n = + & \text{with probability } \frac{1 - \mathbf{m} \cdot \mathbf{n}}{2} \\ S_n = - & \text{with probability } \frac{1 + \mathbf{m} \cdot \mathbf{n}}{2} \end{cases} \tag{6.4}$$
+$$\mid{\psi_{-m}}\rangle\quad \text{into} \quad \hat{S}_n \longrightarrow \begin{cases} S_n = + \quad \text{with probability} \quad \dfrac{1-\textbf{m}\cdot \textbf{n}}{2}\\ S_n = - \quad \text{with probability} \quad \dfrac{1+\textbf{m}\cdot \textbf{n}}{2} \end{cases} \tag{6.4}$$
 
 An unusual feature of quantum mechanics is evident when one considers two Stern-Gerlach measurements of the same type interspersed with a single Stern-Gerlach measurement along an orthogonal direction. An example is illustrated in Figure 6.4, in which it is assumed that the particle emerged with $S_z = +$ after the first $\hat{S}_z$ measurement.
 

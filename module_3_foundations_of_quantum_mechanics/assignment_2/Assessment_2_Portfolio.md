@@ -1,226 +1,116 @@
-# Assessment 1 [Problem Set (PRB)]
+# Assessment 2 [Portfolio (POF)]
 
-## Quiz Instructions
+## Portfolio problems
 
-### Overview:
-Due on Thursday of Week 4 at 17:00 UK time, worth 30 per cent of your overall assessment grade.
+### Week 2:
+#### Problem 1
 
-Please note that this assessment *does* have a 24-hour lateness period. You can [find out more information about lateness periods on the Syllabus page](https://canvas.sussex.ac.uk/courses/41954/assignments/syllabus).
+At time $t = 0$ a particle is represented by the wave function
 
-The reasonable adjustment provided for this assessment is a deadline extension. If you are eligible for reasonable adjustments, please check your module calendar for the correct due date.
+$$\begin{equation*}
+	\psi(x,0) =
+	\begin{cases}
+		A\left(\dfrac{x}{a}\right) &0\le x\le a,\\
+		A\dfrac{(b-x)}{(b-a)} &a\le x \le b,\\
+		0, &\text{otherwise},
+	\end{cases}
+\end{equation*}$$
 
-### Learning outcomes:
-The learning outcomes of this assessment are:
-- understand and assess the principles on which quantum technologies operate.
+where $A$, $a$, and $b$ are positive real constants.
 
-### Purpose:
-The purpose of this assessment is to check your understanding of what has been covered in Weeks 1–3.
-
-### Details:
-For this problem set, you will have to answer 13 questions. You must also include all your workings out to show how you obtained your solutions. If you answer all the questions correctly, you will obtain 100 marks. The allocation of marks is shown by the questions.
-
-You can:
-- use the LaTeX editor within Canvas to add your solutions directly into your Assessment 1 Problem Set quiz questions, or
-- use an alternative LaTeX editor or other word processor to create a pdf that can be uploaded in the final question.
-
-For more information, please [see: How do I use the Math Editor in the Rich Content Editor as a student? Links to an external site.](https://community.canvaslms.com/t5/Student-Guide/How-do-I-use-the-Math-Editor-in-the-Rich-Content-Editor-as-a/ta-p/522)
-
-You are permitted to use your notes and the internet to look up definitions and formulae. Because of this, greater emphasis will be placed in marking schemes on justifying and explaining the use of any such formulae. You can also [use the resources on the Quantum technology resources page in the SOSSS](https://canvas.sussex.ac.uk/courses/41954/pages/quantum-technology-resources).
-
-All your workings and solutions to problems should be your own work and you should not directly copy these from either the module lecture notes or external sources.
-
-Calculators are permitted.
-
-[Read 'Six steps to problem solving: How to gain marks'](https://canvas.sussex.ac.uk/courses/41954/pages/six-steps-to-problem-solving-how-to-gain-marks) on the Quantum Technology Resources page in the SOSSS for guidance on the expected way of working and advice on how to gain marks for this assessment.
-
-### Using Canvas Quizzes for your assessment submission
-- While completing and submitting a quiz, make sure you only have *one instance of the quiz open* across all browsers, tabs and devices. Multiple open instances of the quiz could cause the auto-save to overwrite your most recent submission or changes. Any unfinished attempts could be auto-submitted at the due date if tabs are still open. This will cause any previous attempts to be overwritten, and your final grade may be affected.
-- Select the Submit button when you finish your assessment. Auto-submission can be impacted by the setup and connection of your browser.
-- If you are uploading images or other files as part of your answers, check your storage allowance in Canvas. Please make sure you have enough storage by checking and freeing up space in your files area. For information on how to do that, please see the Canvas guide: [How do I view my user files as a student? Links to an external site.](https://community.canvaslms.com/t5/Student-Guide/How-do-I-view-my-user-files-as-a-student/ta-p/520)
-- If you are working on the Canvas App, make sure you have the latest version.
+a. Normalise $\psi$ (that is, find $A$, in terms of $a$ and $b$).\
+b. Sketch $\psi(x,0)$ as a function of $x$.\
+c. Where is the particle most likely to be found, at $t = 0$?\
+d. What is the probability of finding the particle to the left of $x = a$? Check your result in the limiting cases $b \to 2a$ and $b \to a$.\
+e. What is the expectation value of $x$?
 
 ---
 
-## Questions
+#### Problem 2
 
-### Question 1 (8 pts)
-Consider the operator $\hat{A} = \begin{pmatrix} -3 & 2i \\ -2i & -3 \end{pmatrix}$.
+In the concrete representation of bras and kets by row and column vectors, the inner product is defined in terms of components:
 
-Prove that $\hat{A}$ is Hermitian.
+$$\begin{align*}
+	\langle{B|A}\rangle &= (\beta_1^{\star}\, \beta_2^{\star}\, \beta_3^{\star}) \begin{pmatrix}\alpha_1\\ \alpha_2\\ \alpha_3 \end{pmatrix}\\
+	&= \beta_1^{\star}\alpha_1 + \beta_2^{\star}\alpha_2 + \beta_3^{\star}\alpha_3.
+\end{align*}$$
 
----
+The rule for inner products is essentially the same as for dot products: add the products of corresponding components of the vectors whose inner product is being calculated.
 
-### Question 2 (7 pts)
-*The following information is used for questions 2, 3, 4, and 5.*
+Show that the inner product $\langle{B|A}\rangle$, defined as above, satisfies all the axioms of inner products (conjugate symmetry, linearity in the second argument, and positive-definiteness).
 
-The wave function of a particle moving in one dimension is given by 
+### Week 3
+#### Problem 1
 
-$$\psi(x) = \begin{cases} B \exp(\beta x) & \text{for } x < 0 \\ B \exp(-2\beta x) & \text{for } x \ge 0 \end{cases}$$
-
-where $\beta$ is a real and positive constant.
-
-*Hint: You can calculate the integrals you need by expressing powers of $x$ through (repeated) differentiation with respect to the parameter in the exponential, for example,*
-
-$$\int_a^b x \exp(\gamma x) \, dx = \frac{\partial}{\partial \gamma} \int_a^b \exp(\gamma x) \, dx$$
-
-$$\int_a^b x^2 \exp(\gamma x) \, dx = \frac{\partial^2}{\partial \gamma^2} \int_a^b \exp(\gamma x) \, dx$$
-
-*and so on.*
-
-What is the probability density for finding the particle along the $x$-axis? Sketch the probability density function.
+Show that the position operator $\hat{x}=x$ and momentum operator $\hat{p} = \frac{\hbar}{i}\frac{\partial}{\partial x}$ are Hermitian, in other words, that $\langle{\phi|\hat{x}\psi}\rangle = \langle{\hat{x}\phi|\psi}\rangle$ and $\langle{\phi|\hat{p}\psi}\rangle = \langle{\hat{p}\phi|\psi}\rangle$
 
 ---
 
-### Question 3 (10 pts)
-*The following information is used for questions 2, 3, 4, and 5.*
+#### Problem 2
 
-The wave function of a particle moving in one dimension is given by 
+The wave function of an electron in the lowest energy state of a hydrogen atom is proportional to $e^{-r/a_0}$, with $a_0$ a constant and $r$ the distance from the nucleus. Calculate the relative probabilities of finding the electron inside a region of volume $1.0\text{ pm}^3$, located at
 
-$$\psi(x) = \begin{cases} B \exp(\beta x) & \text{for } x < 0 \\ B \exp(-2\beta x) & \text{for } x \ge 0 \end{cases}$$
+- the nucleus
+- a distance $a_0$ from the nucleus.
 
-where $\beta$ is a real and positive constant.
+As the region of interest is so small, even on the scale of the atom, we can ignore the variation of $\psi$ within it.
 
-*Hint: You can calculate the integrals you need by expressing powers of $x$ through (repeated) differentiation with respect to the parameter in the exponential, for example,*
+### Week 4
+#### Problem 1
 
-$$\int_a^b x \exp(\gamma x) \, dx = \frac{\partial}{\partial \gamma} \int_a^b \exp(\gamma x) \, dx$$
+Consider a system whose state is given in terms of an orthonormal set of three vectors: $\lvert \phi_1 \rangle$, $\lvert \phi_2 \rangle$, $\lvert \phi_3 \rangle$ as
 
-$$\int_a^b x^2 \exp(\gamma x) \, dx = \frac{\partial^2}{\partial \gamma^2} \int_a^b \exp(\gamma x) \, dx$$
+$$\lvert \psi \rangle= \frac{\sqrt{3}}{3}{\lvert\phi_1\rangle} + \frac{2}{3}{\lvert\phi_2\rangle} + \frac{\sqrt{2}}{3}{\lvert\phi_3\rangle}$$
 
-*and so on.*
+a. Verify that $\lvert \psi\rangle$ is normalised. Then, calculate the probability of finding the system in any one of the states $\lvert \phi_1 \rangle$, $\lvert \phi_2 \rangle$ and $\lvert \phi_3 \rangle$. Verify that the total probability is equal to one.\
+b. Consider now an ensemble of 810 identical systems, each one of them in the state $|\psi\rangle$. If measurements are done on all of them, how many systems will be found in each of the states $\lvert \phi_1 \rangle$, $\lvert \phi_2 \rangle$ and $\lvert \phi_3 \rangle$.
 
-Calculate the normalisation constant $B$.
+#### Problem 2
 
----
+1. Show that the sum of two hermitian operators is hermitian.
+2. Suppose $\hat{Q}$ is hermitian, and $\alpha$ is a complex number. Under what condition (on $\alpha$) is $\alpha \hat{Q}$ hermitian?
+3. When is the product of two hermitian operators hermitian?
+4. Show that the Hamiltonian operator $\hat{H} = -\frac{\hbar^2}{2m}\frac{d^2}{d x^2}+ V(x)$ is hermitian.
 
-### Question 4 (15 pts)
-*The following information is used for questions 2, 3, 4, and 5.*
+### Week 5
+#### Problem 1
 
-The wave function of a particle moving in one dimension is given by 
+Consider a system whose wave function at time $t = 0$ is given by:
 
-$$\psi(x) = \begin{cases} B \exp(\beta x) & \text{for } x < 0 \\ B \exp(-2\beta x) & \text{for } x \ge 0 \end{cases}$$
+$$\begin{equation*}
+\lvert \psi(x,0) \rangle = \frac{5}{\sqrt{50}}\lvert\phi_0(x)\rangle + \frac{4}{\sqrt{50}}\lvert\phi_1(x)\rangle + \frac{3}{\sqrt{50}}\lvert\phi_2(x)\rangle,
+\end{equation*}$$
 
-where $\beta$ is a real and positive constant.
+where $\lvert\phi_n(x)\rangle$ is the wave function of the $n^{\mathrm{th}}$ excited state for a harmonic oscillator of energy $E_n = \hbar \omega \left(n + \frac{1}{2}\right)$.
 
-*Hint: You can calculate the integrals you need by expressing powers of $x$ through (repeated) differentiation with respect to the parameter in the exponential, for example,*
-
-$$\int_a^b x \exp(\gamma x) \, dx = \frac{\partial}{\partial \gamma} \int_a^b \exp(\gamma x) \, dx$$
-
-$$\int_a^b x^2 \exp(\gamma x) \, dx = \frac{\partial^2}{\partial \gamma^2} \int_a^b \exp(\gamma x) \, dx$$
-
-*and so on.*
-
-Calculate the average position of the particle on the $x$-axis, as a function of $\beta$. Mark the average position in your sketch.
-
----
-
-### Question 5 (5 pts)
-*The following information is used for questions 2, 3, 4, and 5.*
-
-The wave function of a particle moving in one dimension is given by 
-
-$$\psi(x) = \begin{cases} B \exp(\beta x) & \text{for } x < 0 \\ B \exp(-2\beta x) & \text{for } x \ge 0 \end{cases}$$
-
-where $\beta$ is a real and positive constant.
-
-*Hint: You can calculate the integrals you need by expressing powers of $x$ through (repeated) differentiation with respect to the parameter in the exponential, for example,*
-
-$$\int_a^b x \exp(\gamma x) \, dx = \frac{\partial}{\partial \gamma} \int_a^b \exp(\gamma x) \, dx$$
-
-$$\int_a^b x^2 \exp(\gamma x) \, dx = \frac{\partial^2}{\partial \gamma^2} \int_a^b \exp(\gamma x) \, dx$$
-
-*and so on.*
-
-Mark the most likely position of the particle in your sketch.
+a. Find the average energy of this system.\
+b. Find the state $\lvert\psi(x,t)\rangle$ at a later time $t$ and the average value of the energy; compare the result with the value obtained in (a). *Hint:* the eigenvalue equation for the time-evolution operator is $$\hat{U}|{\phi_n(x)}\rangle \equiv e^{-i\hat{H}t/\hbar}|{\phi_n(x)}\rangle =  e^{-iE_n t/\hbar}|{\phi_n(x)}\rangle.$$
+\
+c. Find the expectation value of the operator $\hat{x}$ with respect to the state $|\psi(x, t)\rangle$ (i.e., find $\langle{\psi(x,t)\rvert\hat{x}\lvert\psi(x,t)\rangle}$). *Hint:* Use $\hat{x} = \sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^{\dagger} + \hat{a}\right)$.
 
 ---
 
-### Question 6 (2 pts)
-*The following information is used for questions 6, 7, 8, and 9.*
+#### Problem 2
 
-Take the wave function $\phi(x) = N \sin(kx)$.
+Calculate the expectation value of the momentum for a harmonic oscillator prepared in a state which is a superposition of two number states:
 
-Calculate the effect of the operator $\left[ x \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right) \right]$ on $\phi(x)$.
+$$\begin{equation*}
+	\lvert{\psi}\rangle = \frac{1}{\sqrt{2}}\left(\lvert{\psi_1}\rangle - i\lvert{\psi_2\rangle}\right).
+\end{equation*}$$
 
----
+### Week 7
+#### Problem 1
 
-### Question 7 (5 pts)
-*The following information is used for questions 6, 7, 8, and 9.*
+Consider a two-spin composite state $|{\psi}\rangle$ prepared such that we can write
 
-Take the wave function $\phi(x) = N \sin(kx)$.
+$$\begin{align*}
+    \lvert{\psi}\rangle = \frac{1}{\sqrt{2}}\left(\lvert{\uparrow_A \downarrow_B}\rangle - \lvert{\downarrow_A \uparrow_B}\rangle\right),
+\end{align*}$$
 
-Calculate the effect of the operator $\left[ \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right) x \right]$ on $\phi(x)$, in other words, multiply $\phi(x)$ by $x$ before acting with the differential operator.
+where, for clarity, the subscripts $A$ and $B$ denote the subspace on which Alice and Bob will measure their spin components. First, Bob measures $y$-component of the spin with the operator $\tau_y$, then Alice measures $x$-component with the operator $\sigma_x$.
 
----
-
-### Question 8 (5 pts)
-*The following information is used for questions 6, 7, 8, and 9.*
-
-Take the wave function $\phi(x) = N \sin(kx)$.
-
-Calculate the difference of the two previous results, in other words result of (a) - result of (b). Express the answer in terms of $\phi(x)$.
-
----
-
-### Question 9 (10 pts)
-*The following information is used for questions 6, 7, 8, and 9.*
-
-Take the wave function $\phi(x) = N \sin(kx)$.
-
-Repeat questions 6, 7 and 8 for a general wave function $\psi(x)$, in other words, calculate:
-
-$$\left[ x \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right) \right] \psi(x) - \left[ \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right) x \right] \psi(x)$$
-
----
-
-### Question 10 (8 pts)
-A system is prepared in a state 
-
-$$|\psi\rangle = \frac{1}{\sqrt{3}}|\phi_1\rangle - \frac{\sqrt{2}}{\sqrt{3}}|\phi_2\rangle + \frac{i}{\sqrt{3}}|\phi_3\rangle$$
-
-where $\phi_1$, $\phi_2$, and $\phi_3$ are orthonormal eigenstates of an observable $A$ with corresponding eigenvalues $a_1$, $a_2$, and $a_3$, respectively. What is the probability of measuring $A$ to be $a_3$?
-
----
-
-### Question 11 (10 pts)
-*The following information is used for questions 11, 12, and 13.*
-
-A system is initially in the state 
-
-$$|\psi_0\rangle = \frac{1}{\sqrt{7}} \left[ \sqrt{2}|\phi_1\rangle + \sqrt{3}|\phi_2\rangle + |\phi_3\rangle + |\phi_4\rangle \right]$$
-
-where $|\phi_n\rangle$ are eigenstates of the system's Hamiltonian such that $\hat{H}|\phi_n\rangle = n^2 E_0 |\phi_n\rangle$.
-
-If energy is measured, what values will be obtained and with what probabilities?
-
----
-
-### Question 12 (10 pts)
-*The following information is used for questions 11, 12, and 13.*
-
-A system is initially in the state 
-
-$$|\psi_0\rangle = \frac{1}{\sqrt{7}} \left[ \sqrt{2}|\phi_1\rangle + \sqrt{3}|\phi_2\rangle + |\phi_3\rangle + |\phi_4\rangle \right]$$
-
-where $|\phi_n\rangle$ are eigenstates of the system's Hamiltonian such that $\hat{H}|\phi_n\rangle = n^2 E_0 |\phi_n\rangle$.
-
-Consider an operator $\hat{A}$ whose action on $|\phi_n\rangle$ is defined by $\hat{A}|\phi_n\rangle = (n + 1)a_0 |\phi_n\rangle$.
-
-If $A$ is measured, what values will be obtained and with what probabilities?
-
----
-
-### Question 13 (5 pts)
-*The following information is used for questions 11, 12, and 13.*
-
-A system is initially in the state 
-
-$$|\psi_0\rangle = \frac{1}{\sqrt{7}} \left[ \sqrt{2}|\phi_1\rangle + \sqrt{3}|\phi_2\rangle + |\phi_3\rangle + |\phi_4\rangle \right]$$
-
-where $|\phi_n\rangle$ are eigenstates of the system's Hamiltonian such that $\hat{H}|\phi_n\rangle = n^2 E_0 |\phi_n\rangle$.
-
-Suppose that a measurement of the energy yields $4E_0$. If we measure $A$ immediately afterwards, what value will be obtained?
-
----
-
-### Question 14 (0 pts)
-If you have chosen to use an alternative LaTeX editor or other word processor to write your responses, please upload your pdf here.
+a. What is the expectation value of $\langle{\sigma_x \tau_y}\rangle = \langle{\psi\rvert\sigma_x \tau_y\lvert\psi}\rangle$? 
+\
+b. Calculate the expectation values of $\langle{\tau_y}\rangle = \langle{\psi\rvert\tau_y\lvert\psi}\rangle$ and $\langle{\sigma_x}\rangle = \langle{\psi\rvert\sigma_x\lvert\psi}\rangle$.
+\
+c. What is the correlation between the two measurements ($\langle{\sigma_x \tau_y}\rangle - \langle{\sigma_x}\rangle\langle{\tau_y}\rangle$)?
