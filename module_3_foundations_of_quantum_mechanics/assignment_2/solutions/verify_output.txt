@@ -43,6 +43,8 @@
   PASS  P(phi_3): got 0.2222222222, expected 0.2222222222
   PASS  N(phi_3) of 810: got 180, expected 180
   PASS  Monte Carlo mean counts [270. 360. 180.] ~ (270, 360, 180)
+  PASS  binomial spreads [13.42 14.14 11.83] = (13.42, 14.14, 11.83), i.e. 12-14
+  PASS  Monte Carlo spreads [13.34 14.07 11.81] match binomial within 2%
 
 == Week 4, Problem 2: Hermitian algebra on random matrices ==
   PASS  (a) Q + R Hermitian
@@ -71,6 +73,8 @@
   PASS  P2 <x>(t=0.5) = -sin t: got -0.4794255386, expected -0.4794255386
   PASS  P2 <p>(t=2.0) = -cos t: got 0.4161468365, expected 0.4161468365
   PASS  P2 <x>(t=2.0) = -sin t: got -0.9092974268, expected -0.9092974268
+  PASS  P2 variant: +i flips the sign: got 1, expected 1
+  PASS  P2 variant: real coefficient gives 0: got 0, expected 0
   PASS  P2 alternative reading (n=0,1): <p> = -sqrt(m hbar omega/2): got -0.7071067812, expected -0.7071067812
 
 == Week 5, Problem 2 again: Hermite functions in position space ==

@@ -313,7 +313,7 @@ are Hermitian, in other words, that
 \begin{solutionbox}
 \textbf{Given.} $\hat x=x$ (multiplication by $x$) and $\hat p=\frac{\hbar}{i}\frac{\partial}{\partial x}$, acting on wave functions in one dimension, with $\braket{f|g}=\int_{-\infty}^{\infty}f^*(x)\,g(x)\,\d x$. \textbf{Goal.} Show $\braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi}$ and $\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}$ for all physically admissible $\phi,\psi$.
 
-\textbf{Assumption.} $\phi$ and $\psi$ are square-integrable (normalisable) states, so $\phi,\psi\to0$ as $|x|\to\infty$; this is the condition every physical state satisfies, and it is what makes the boundary terms below vanish.
+\textbf{Domain and boundary conditions.} Normalisability alone does \emph{not} force a function to vanish at infinity (a square-integrable function can have ever narrower spikes as $|x|\to\infty$), so each identity is stated on the operator's natural domain. For $\hat x$: $\phi,\psi$ square-integrable with $x\phi,\,x\psi$ also square-integrable, so both sides are finite. For $\hat p$: $\phi,\psi$ square-integrable and differentiable with square-integrable derivatives $\phi',\psi'$. For such functions the boundary term vanishes: $\phi^*\psi$ is integrable, and its derivative $\phi^{*\prime}\psi+\phi^*\psi'$ is integrable by the Cauchy--Schwarz inequality, so $\phi^*\psi$ has limits at $\pm\infty$, and an integrable function with a limit must have limit $0$. Hence $\big[\phi^*\psi\big]_{-\infty}^{\infty}=0$. Bound states and localised wave packets lie in this domain.
 
 \textbf{Position operator.} Because $x$ is a real number at every point, $x^*=x$, so
 \[
@@ -327,7 +327,7 @@ Hence $\hat x$ is Hermitian. The same one-line argument applies to multiplicatio
 &=\int_{-\infty}^{\infty}\phi^*\,\frac{\hbar}{i}\frac{\partial\psi}{\partial x}\,\d x
 =\frac{\hbar}{i}\Big[\phi^*\psi\Big]_{-\infty}^{\infty}-\frac{\hbar}{i}\int_{-\infty}^{\infty}\frac{\partial\phi^*}{\partial x}\,\psi\,\d x .
 \end{align*}
-The boundary term is zero because both functions vanish at $\pm\infty$. For the remaining term, note that $\frac{\hbar}{i}=-i\hbar$, so $-\frac{\hbar}{i}=i\hbar=\big(\frac{\hbar}{i}\big)^*$, and $\frac{\partial\phi^*}{\partial x}=\big(\frac{\partial\phi}{\partial x}\big)^*$. Therefore
+The boundary term is zero for $\phi,\psi$ in the domain of $\hat p$, as shown above. For the remaining term, note that $\frac{\hbar}{i}=-i\hbar$, so $-\frac{\hbar}{i}=i\hbar=\big(\frac{\hbar}{i}\big)^*$, and $\frac{\partial\phi^*}{\partial x}=\big(\frac{\partial\phi}{\partial x}\big)^*$. Therefore
 \[
 \braket{\phi|\hat p\psi}=\int_{-\infty}^{\infty}\Big(\frac{\hbar}{i}\frac{\partial\phi}{\partial x}\Big)^*\psi\,\d x=\braket{\hat p\phi|\psi}.
 \]
@@ -339,13 +339,13 @@ Hence $\hat p$ is Hermitian.
 \begin{answerbox}
 \[
 \braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi},\qquad
-\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}\quad\text{for all normalisable }\phi,\psi .
+\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}\quad\text{for all }\phi,\psi\text{ in the respective domains.}
 \]
 Therefore, both $\hat x$ and $\hat p$ are Hermitian: $\hat x$ because $x$ is real, and $\hat p$ because the minus sign from integrating by parts (with vanishing boundary terms) is cancelled by the complex conjugate of the factor $\hbar/i$.
 \end{answerbox}
 
 \begin{insightbox}
-Hermiticity is what makes $\hat x$ and $\hat p$ legitimate observables: it guarantees real expectation values ($\braket{\psi|\hat p\psi}=\braket{\hat p\psi|\psi}=\braket{\psi|\hat p\psi}^*$) and real eigenvalues, as any measured position or momentum must be. The proof also shows that Hermiticity of $\hat p$ depends on the space of states, through the boundary term: it is the normalisability of physical wave functions that makes momentum an observable.
+Hermiticity is what makes $\hat x$ and $\hat p$ legitimate observables: it guarantees real expectation values ($\braket{\psi|\hat p\psi}=\braket{\hat p\psi|\psi}=\braket{\psi|\hat p\psi}^*$) and real eigenvalues, as any measured position or momentum must be. The proof also shows that Hermiticity of $\hat p$ depends on the space of states through the boundary term: it holds for normalisable states with normalisable derivatives (where $[\phi^*\psi]_{-\infty}^{\infty}=0$), not for arbitrary functions, which is why an operator is only fully specified together with its domain.
 \end{insightbox}
 \fi
 
@@ -449,7 +449,7 @@ and their total is $\frac39+\frac49+\frac29=1$, as it must be for a complete set
 \[
 810\times\tfrac13=270,\qquad 810\times\tfrac49=360,\qquad 810\times\tfrac29=180,
 \]
-and $270+360+180=810$, so every system is accounted for. These are expected (average) counts; an individual run of 810 measurements fluctuates around them by roughly $\sqrt{\mathcal N P_i(1-P_i)}\approx13$--$14$ systems, which a Monte Carlo simulation of 20\,000 such ensembles confirmed.
+and $270+360+180=810$, so every system is accounted for. These are expected (average) counts; an individual run of 810 measurements fluctuates around them by a binomial standard deviation $\sqrt{\mathcal N P_i(1-P_i)}\approx13.4,\ 14.1,\ 11.8$, i.e.\ roughly $12$--$14$ systems. A Monte Carlo simulation of 20\,000 such ensembles reproduced both the mean counts and these spreads.
 \end{solutionbox}
 
 \begin{answerbox}
@@ -512,7 +512,7 @@ so $(\hat Q\hat R)^\dagger=\hat R\hat Q$, i.e.\ the adjoint of a product reverse
 
 \emph{Method 1: from (a) and (c).} Write $\hat H=\frac{1}{2m}\hat p^2+V(x)$, since $\hat p^2=(\frac{\hbar}{i})^2\frac{\d^2}{\d x^2}=-\hbar^2\frac{\d^2}{\d x^2}$. $\hat p$ is Hermitian (Week 3, Problem 1) and commutes with itself, so $\hat p^2$ is Hermitian by (c); multiplying by the real number $\frac{1}{2m}$ keeps it Hermitian by (b). The potential is multiplication by a real function, Hermitian by the same argument as for $\hat x$. Their sum is Hermitian by (a).
 
-\emph{Method 2: directly, by integrating by parts twice.} For the kinetic term, with $f,g$ and their derivatives vanishing at $\pm\infty$,
+\emph{Method 2: directly, by integrating by parts twice.} Take $f,g$ in the domain of $\hat H$: square-integrable with square-integrable first and second derivatives (and $Vf,Vg$ square-integrable). By the argument given in Week~3, Problem~1, the products $f^*g'$ and $f^{*\prime}g$ are then integrable with integrable derivatives, so both tend to $0$ at $\pm\infty$ and the boundary terms below vanish. For the kinetic term,
 \begin{align*}
 \int f^*\,\frac{\d^2g}{\d x^2}\,\d x
 &=\Big[f^*\frac{\d g}{\d x}\Big]_{-\infty}^{\infty}-\int\frac{\d f^*}{\d x}\frac{\d g}{\d x}\,\d x\\
@@ -668,7 +668,7 @@ Calculate the expectation value of the momentum for a harmonic oscillator prepar
 % ======================================================
 \ifsolutions
 \begin{solutionbox}
-\textbf{Given.} $\ket{\psi}=\frac{1}{\sqrt2}\big(\ket{\psi_1}-i\ket{\psi_2}\big)$, where $\ket{\psi_n}$ are the number (energy) eigenstates of the oscillator, labelled as in the Week 5 notes, $n=0,1,2,\dots$ with $\ket{\psi_0}$ the ground state. It is normalised: $\frac12(1+|{-i}|^2)=1$. \textbf{Goal.} $\langle\hat p\rangle=\braket{\psi|\hat p|\psi}$.
+\textbf{Given.} $\ket{\psi}=\frac{1}{\sqrt2}\big(\ket{\psi_1}-i\ket{\psi_2}\big)$, where $\ket{\psi_n}$ are the number states defined in the Week 5 notes by $\hat N\ket{\psi_n}=n\ket{\psi_n}$, $n=0,1,2,\dots$, with $\ket{\psi_0}$ the ground state (Eqs.~5.14--5.15); so $\ket{\psi_1}$ and $\ket{\psi_2}$ contain one and two quanta. It is normalised: $\frac12(1+|{-i}|^2)=1$. \textbf{Goal.} $\langle\hat p\rangle=\braket{\psi|\hat p|\psi}$.
 
 \textbf{Principle.} Express $\hat p$ through the ladder operators. Inverting $\hat a=\sqrt{\frac{m\omega}{2\hbar}}\big(\hat x+\frac{i}{m\omega}\hat p\big)$ and its adjoint gives
 \[
@@ -816,25 +816,25 @@ Zero correlation here does not mean the spins are not entangled. The singlet is 
 % ESSAY-BODY-BEGIN
 \subsection{Introduction}
 
-In 1922 Otto Stern and Walther Gerlach sent a beam of silver atoms through an inhomogeneous magnetic field and found that it split into two distinct traces, rather than the continuous smear expected from classical physics~\cite{gerlach1922,bauer2023}. It was the first direct evidence of space quantisation, later understood as the quantisation of electron spin~\cite{friedrich2003,schmidt2016}. A century on, the experiment's central idea, that a two-level spin can be prepared, manipulated and read out as one of two discrete outcomes, underpins much of quantum technology. This essay first summarises what the experiment established, then examines its descendants in quantum computing, sensing and communication, and finally assesses critically the challenges of scalability, noise and control that determine how far these applications can go.
+In 1922 Otto Stern and Walther Gerlach sent a beam of silver atoms through an inhomogeneous magnetic field and found that it split into two distinct traces, rather than the continuous smear expected from classical physics~\cite{gerlach1922,bauer2023}. It was the first direct evidence of space quantisation, later understood as the quantisation of electron spin~\cite{friedrich2003,schmidt2016}. A century on, the experiment's central idea, that a two-level spin can be prepared, manipulated and read out as one of two discrete outcomes, underpins much of quantum technology. This essay summarises what the experiment established, examines its descendants in quantum computing, sensing and communication, and assesses critically the challenges of scalability, noise and control that limit them.
 
 \subsection{What the experiment established}
 
-A magnetic moment in a field gradient experiences a force $F_z=\mu_z\,\partial B_z/\partial z$, so randomly oriented classical moments should produce a continuous band. Gerlach's glass plate instead showed two bands and no undeflected atoms~\cite{bauer2023}. The measurement was delicate: a field of about $0.1\,\mathrm{T}$ with a gradient of about $10\,\mathrm{T\,cm^{-1}}$ separated the beams by only $0.2\,\mathrm{mm}$, so a misalignment of $0.01\,\mathrm{mm}$ could spoil a run~\cite{friedrich2003}. Ironically, the agreement with Bohr's orbital model was a coincidence: the ground state of silver has no orbital angular momentum, and the splitting comes from the spin of its outer electron, which was not recognised until 1927~\cite{friedrich2003}. Silver was a fortunate choice: 46 of its 47 electrons form a closed, spherically symmetric core, so the atom behaves magnetically like a heavy electron~\cite{lecture6}.
+A magnetic moment in a field gradient experiences a force $F_z=\mu_z\,\partial B_z/\partial z$, so randomly oriented classical moments should produce a continuous band. Gerlach's glass plate instead showed two bands and no undeflected atoms~\cite{bauer2023}. The measurement was delicate: a field of about $0.1\,\mathrm{T}$ with a gradient of about $10\,\mathrm{T\,cm^{-1}}$ separated the beams by only $0.2\,\mathrm{mm}$, so a misalignment of $0.01\,\mathrm{mm}$ could spoil a run~\cite{friedrich2003}. Ironically, the agreement with Bohr's orbital model was a coincidence: the ground state of silver has no orbital angular momentum, and the splitting comes from the spin of its outer electron, an idea postulated only in 1925; the earliest attribution of the splitting to spin came in 1927~\cite{friedrich2003}. Silver was a fortunate choice: 46 of its 47 electrons form a closed, spherically symmetric core, so the atom behaves magnetically like a heavy electron~\cite{lecture6}.
 
 Conceptually, the experiment is the textbook paradigm of quantum measurement~\cite{sakurai2020}. In sequential arrangements, atoms selected as $S_z=+$ stay $S_z=+$ when $S_z$ is measured again, yet split equally when $S_x$ is measured, and a final $S_z$ measurement splits them once more~\cite{lecture6,sakurai2020}. Measurement therefore prepares a state, and incompatible spin components cannot be known together. A two-level system, a force that maps spin onto position, and projective two-outcome readout are exactly the ingredients of a qubit.
 
 \subsection{Applications in quantum technologies}
 
-\textbf{Quantum computing.} Loss and DiVincenzo proposed encoding qubits in the spins of single electrons confined in quantum dots, with gates controlled electrically~\cite{loss1998}. Spin is attractive because it is a natural two-level system that is insensitive to electric fields, giving long coherence times~\cite{burkard2023}. Readout is a Stern--Gerlach measurement in spirit, though not in form: rather than deflecting an electron, spin-to-charge conversion lets a nearby charge sensor register ``parallel'' or ``antiparallel'' in a single shot~\cite{elzerman2004}. Trapped ions apply the same principle optically, where state-dependent fluorescence distinguishes the two qubit states with $99.991\%$ fidelity~\cite{myerson2008}. Silicon spin qubits have now crossed the surface-code error threshold, with all gate fidelities above $99.5\%$~\cite{xue2022}, and a six-qubit silicon processor is initialised by measurement with real-time feedback~\cite{philips2022}: projective, Stern--Gerlach-type readout used as a resource.
+\textbf{Quantum computing.} Loss and DiVincenzo proposed encoding qubits in the spins of single electrons confined in quantum dots, with gates controlled electrically~\cite{loss1998}. Spin is attractive because it is a natural two-level system that is insensitive to electric fields, giving long coherence times~\cite{burkard2023}. Readout is a Stern--Gerlach measurement in spirit, though not in form: rather than deflecting an electron, spin-to-charge conversion lets a nearby charge sensor register ``parallel'' or ``antiparallel'' in a single shot~\cite{elzerman2004}. Trapped ions apply the same principle optically: state-dependent fluorescence reads out the optical qubit in $^{40}$Ca$^+$ ions with $99.991\%$ fidelity~\cite{myerson2008}. Silicon spin qubits now have all gate fidelities above $99.5\%$, beyond the surface-code error threshold~\cite{xue2022}; this is a necessary condition for fault tolerance, not a demonstration of a fault-tolerant computer, and a six-qubit silicon processor is initialised by measurement with real-time feedback~\cite{philips2022}: projective, Stern--Gerlach-type readout used as a resource.
 
 \textbf{Quantum sensing.} Quantum sensing turns the fragility of quantum states into a strength, since a spin's precession records the field it experiences~\cite{degen2017}. The nitrogen-vacancy (NV) centre in diamond is the leading example. Its electron spin can be initialised and read out optically at room temperature, enabling magnetic imaging with nanometre resolution and nanotesla sensitivity~\cite{rondin2014}. In isotopically purified diamond, a room-temperature coherence time of $1.8\,\mathrm{ms}$ gave a sensitivity of $4\,\mathrm{nT\,Hz^{-1/2}}$~\cite{balasubramanian2009}. Stern--Gerlach physics also returns literally in matter-wave interferometry. Using precise atom-chip fields, Margalit \emph{et al.} split atoms with spin-dependent forces and recombined them in a complete Stern--Gerlach interferometer~\cite{margalit2021}. A related design accumulates a phase scaling with the cube of the interrogation time and uses no light, making it a candidate probe at very short distances from surfaces~\cite{amit2019}.
 
-\textbf{Quantum communication.} In photonic quantum communication, polarisation plays the role of spin and a polarising beam splitter the role of the Stern--Gerlach magnet~\cite{sakurai2020}. The connection is direct in networks built from solid-state spin memories. Hensen \emph{et al.} entangled NV electron spins $1.3\,\mathrm{km}$ apart and, because the spin readout was efficient, closed the detection loophole, violating Bell's inequality with $S=2.42\pm0.20$~\cite{hensen2015}. Such tests exploit the singlet correlations $\langle\sigma_a\tau_b\rangle=-\hat{\mathbf a}\cdot\hat{\mathbf b}$, which vanish for perpendicular axes (Week 7, Problem 1) and are perfect for parallel ones. Spins and photons are complementary here: photons carry entanglement between nodes, while spins store it locally and allow it to be read out on demand. A three-node NV network, each node holding a memory qubit, has since distributed and swapped entanglement~\cite{pompili2021}, an early stage on the roadmap to a quantum internet~\cite{wehner2018}.
+\textbf{Quantum communication.} In photonic quantum communication, polarisation plays the role of spin and a polarising beam splitter the role of the Stern--Gerlach magnet~\cite{sakurai2020}. Hensen \emph{et al.} entangled NV electron spins $1.3\,\mathrm{km}$ apart and, because the spin readout was efficient, closed the detection loophole, violating Bell's inequality with $S=2.42\pm0.20$~\cite{hensen2015}. Such tests exploit the singlet correlations $\langle\sigma_a\tau_b\rangle=-\hat{\mathbf a}\cdot\hat{\mathbf b}$, which vanish for perpendicular axes (Week 7, Problem 1) and are perfect for parallel ones. Spins and photons are complementary here: photons carry entanglement between nodes, while spins store it and allow it to be read out on demand. A three-node NV network, each node holding a memory qubit, has since distributed and swapped entanglement~\cite{pompili2021}, an early stage on the roadmap to a quantum internet~\cite{wehner2018}.
 
 \subsection{Challenges and opportunities}
 
-Table~\ref{tab:sg} summarises how the same strengths carry different limitations in each use.
+Table~\ref{tab:sg} contrasts strengths and limitations by use.
 
 \begin{table}[H]
 \centering\small
@@ -843,7 +843,7 @@ Table~\ref{tab:sg} summarises how the same strengths carry different limitations
 \hline
 \textbf{Use} & \textbf{Strength} & \textbf{Main limitation}\\
 \hline
-Computing & Readout above $99.99\%$ (ions)~\cite{myerson2008}; gates above $99.5\%$ (silicon)~\cite{xue2022} & Qubit count conflicts with fidelity~\cite{philips2022}\\
+Computing & Readout above $99.99\%$ ($^{40}$Ca$^+$)~\cite{myerson2008}; gates above $99.5\%$ (silicon)~\cite{xue2022} & Qubit count conflicts with fidelity~\cite{philips2022}\\
 Sensing & Nanoscale imaging; ms coherence at room temperature~\cite{rondin2014,balasubramanian2009} & Ensembles far from theoretical limits~\cite{barry2020}\\
 Communication & Loophole-free entanglement over $1.3\,\mathrm{km}$~\cite{hensen2015} & Few trials, few nodes~\cite{hensen2015,pompili2021}\\
 \hline
@@ -854,7 +854,7 @@ Communication & Loophole-free entanglement over $1.3\,\mathrm{km}$~\cite{hensen2
 
 \textbf{Control: measuring is easier than undoing a measurement.} Stern--Gerlach separation is an excellent measurement but a poor coherent operation. Recombining the two beams to recover the original spin state requires the field inhomogeneity to be controlled to about one part in $10^5$~\cite{englert1988}, and a full-loop interferometer was long regarded as nearly impossible~\cite{margalit2021}. Even the successful atom-chip version loses coherence as the splitting grows~\cite{margalit2021}. Practical devices therefore usually replace literal deflection with state-dependent readout that is equivalent in outcome.
 
-\textbf{Noise: sensitivity cuts both ways.} Spins are sensitive by design, and therefore to unwanted fields as well. NV coherence improved dramatically only when the nuclear-spin bath was removed by isotopic engineering~\cite{balasubramanian2009}, and ensemble magnetometers remain orders of magnitude from their theoretical limits, held back by dephasing and imperfect readout~\cite{barry2020}. Readout quality varies widely: the first single-shot electron-spin measurement achieved about $65\%$ visibility~\cite{elzerman2004}, against $99.99\%$ for ions~\cite{myerson2008}. ``Stern--Gerlach-type measurement'' is thus not one solved technology but a family whose performance depends on the platform.
+\textbf{Noise: sensitivity cuts both ways.} Spins are sensitive by design, and therefore to unwanted fields as well. NV coherence improved dramatically only when the nuclear-spin bath was removed by isotopic engineering~\cite{balasubramanian2009}, and ensemble magnetometers remain orders of magnitude from their theoretical limits, held back by dephasing and imperfect readout~\cite{barry2020}. Readout quality varies widely: the first single-shot electron-spin measurement achieved about $65\%$ visibility~\cite{elzerman2004}, against $99.99\%$ for $^{40}$Ca$^+$ ions~\cite{myerson2008}. ``Stern--Gerlach-type measurement'' is thus not one solved technology but a family whose performance depends on the platform.
 
 \textbf{Scalability.} High qubit counts and high fidelity typically conflict~\cite{philips2022}. Silicon promises compatibility with semiconductor manufacturing~\cite{burkard2023,xue2022}, while trapped ions demonstrate every requirement for universal computation but face scale-up and control-error challenges~\cite{bruzewicz2019}. Networks face the same gap: the 2015 Bell test rested on only 245 trials~\cite{hensen2015}, and three nodes are far from a network. Nor can every particle simply be passed through a magnet: Bohr and Pauli argued that free electrons could not show the effect, and although later analyses found no fundamental prohibition~\cite{garraway2002,batelaan1997}, electron spin is in practice read indirectly.
 
@@ -862,7 +862,7 @@ Communication & Loophole-free entanglement over $1.3\,\mathrm{km}$~\cite{hensen2
 
 \subsection{Conclusion}
 
-The Stern--Gerlach experiment did more than reveal spin: it introduced the operations of state preparation, state-dependent force and projective two-outcome readout on which spin-based technologies rely. Its descendants already achieve readout and gate fidelities at fault-tolerance thresholds, nanoscale magnetic imaging and loophole-free entanglement over kilometres. Their limitations are the experiment's own: keeping a split spin coherent demands exquisite field control, sensitivity cuts both ways, and scaling from a handful of qubits or nodes to useful systems remains unsolved. The most promising direction is the one Stern and Gerlach began, ever finer control of fields at the scale of single atoms, now pursued on chips rather than with a hand-shaped magnet.
+The Stern--Gerlach experiment did more than reveal spin: it introduced the operations of state preparation, state-dependent force and projective two-outcome readout on which spin-based technologies rely. Its descendants already achieve gate fidelities beyond error-correction thresholds, nanoscale magnetic imaging and loophole-free entanglement over kilometres. Their limitations are the experiment's own: keeping a split spin coherent demands exquisite field control, spins sense noise too, and scaling from a handful of qubits or nodes to useful systems remains unsolved. The most promising direction is the one Stern and Gerlach began, ever finer control of fields at the scale of single atoms, now pursued on chips rather than with a hand-shaped magnet.
 % ESSAY-BODY-END
 
 \begin{thebibliography}{99}

@@ -23,7 +23,7 @@ I compared four copies: the instructor `.tex` template (authoritative), its PDF,
 |---|---|---|
 | W2 P1(d) | template / week page: "limiting cases $b=a$ and $b=2a$"; export: "$b\to2a$ and $b\to a$" | Both readings give $P(x<a)=1/2$ at $b=2a$ and $P\to1$ as $b\to a$. Literally, $b=a$ is $0/0$ in the 2nd branch, so the solution treats it as $b\to a^+$ and says so. |
 | W2 P1(d) | "left of $a$" vs "left of $x=a$" | same quantity |
-| W5 P2 | the labels $\lvert\psi_1\rangle,\lvert\psi_2\rangle$ are identical in all copies but **ambiguous**: they could mean $n=1,2$ or "first and second states" $n=0,1$ | $n=1,2$ (Week 5 lecture convention, $\lvert\psi_0\rangle$ = ground): $\langle p\rangle=-\sqrt{m\hbar\omega}$. **$n=0,1$: $\langle p\rangle=-\sqrt{m\hbar\omega/2}$.** The solution uses $n=1,2$ because the lecture (eq. 5.24) labels the ground state $\psi_0$, and it states that convention explicitly in "Given". Both values are checked in `verify.py`. |
+| W5 P2 | the labels $\lvert\psi_1\rangle,\lvert\psi_2\rangle$ are identical in all copies but **ambiguous**: they could mean $n=1,2$ or "first and second states" $n=0,1$ | $n=1,2$ (Week 5 lecture convention, $\lvert\psi_0\rangle$ = ground): $\langle p\rangle=-\sqrt{m\hbar\omega}$. **$n=0,1$: $\langle p\rangle=-\sqrt{m\hbar\omega/2}$.** **Confirmed $n=1,2$:** the Week 5 lecture defines number states by $\hat N\lvert\psi_n\rangle=n\lvert\psi_n\rangle$ with $\lvert\psi_0\rangle$ the ground state (Eqs. 5.14–5.15), and the question says "two number states". The solution cites this in "Given". Both values are checked in `verify.py`. |
 | W7 P1 | $\sigma,\tau$ as Pauli ($\pm1$) or spin ($\pm\hbar/2$) operators | Every answer is 0 under either reading (stated in the solution). |
 | All others | no substantive difference; no dropped `\sqrt` this time (W4: $\sqrt3/3,\,2/3,\,\sqrt2/3$ in every copy, norm exactly 1; W5: $5,4,3$ over $\sqrt{50}$ in every copy, norm exactly 1) | n/a |
 
@@ -33,15 +33,15 @@ Template marks: 16+6+12+8+5+17+20+6+10 = **100**, which matches "100 points poss
 
 | Reading | Words |
 |---|---|
-| body prose only (agreed rule) | 1114 |
-| + headings | 1127 |
-| + table and caption (strictest) | 1191 |
+| body prose only (agreed rule) | 1119 |
+| + headings | 1132 |
+| + table and caption (strictest) | 1198 |
 
-The body is a little under the 1150 aim. I chose that so that **no reading of the rule exceeds 1200**. There's room for about 35 more words of prose if you re-voice into slightly longer sentences.
+The body is a little under the 1150 aim. I chose that so that **no reading of the rule exceeds 1200**. There's essentially no room left under the strictest count (2 words), so keep re-voicing word-neutral.
 
 ## 3. Verification (none of it re-runs the write-up's algebra)
 
-`verify.py`: 79/79 PASS (`verify_output.txt`). Each problem was checked a different way:
+`verify.py`: 83/83 PASS (`verify_output.txt`). Each problem was checked a different way:
 - W2 P1: quadrature at 3 values of (a,b), plus the numerical limits.
 - W2 P2: 1000 random complex vectors.
 - W3 P1 and W4 P2(d): finite-difference derivatives with grid quadrature on complex test functions. There's also a control showing that a complex $V$ breaks Hermiticity.
@@ -69,3 +69,10 @@ python verify.py          # needs numpy + scipy
 python3 essay_check.py    # citation order + word counts
 ```
 `build.py` copies the problem statements byte-for-byte from the instructor template and stops with an error if any placeholder or `123456` survives.
+
+## 6. Review pass (24 Oct 2026)
+
+- W4 P1: the spread is $\sqrt{NP(1-P)}=13.4,\ 14.1,\ 11.8$, so the text now says 12–14. The Monte Carlo now checks the spreads as well as the means.
+- W5 P2: phase variants (+i gives +√(mħω); a real coefficient gives 0) are now actually computed in `verify.py`. Every remaining "checked numerically" claim maps to a PASS line.
+- W3 P1 / W4 P2(d): replaced "normalisable ⇒ vanishes at ∞", which is false. The operator domains are now stated (ψ, ψ′ ∈ L² for p̂; ψ, ψ′, ψ″ ∈ L² for Ĥ), with a proof that the boundary terms vanish on them.
+- Essay: [10] is now identified as the ⁴⁰Ca⁺ optical-qubit result. [11] says that passing the threshold is necessary for fault tolerance but is not a fault-tolerant computer. The timeline now reads: spin postulated in 1925, splitting first attributed to spin in 1927 (Fraser), per [3].

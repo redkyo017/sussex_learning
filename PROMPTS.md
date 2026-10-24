@@ -83,3 +83,31 @@ Ask me only what would change the deliverable: one round, with defaults. Then pr
 Module 3's foundations request (21 Sep 2026) and Assessment 1 request (26 Sep 2026) are kept in
 `module_3_foundations_of_quantum_mechanics/internal_resources/prompt.md` and
 `module_3_foundations_of_quantum_mechanics/prompt.md`. Both are superseded by the templates above.
+
+
+In [MODULE 3] at [/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics] I have
+[Assessment 2 - portfolio, final], described in [/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics/assignment_2]. Help me solve it precisely and comprehensively.
+
+Instructor material: [hints and model answers from week 1 to week 7 | the assignment
+description in: '/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics/assignment_2/description.md' | worksheet templates in '/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics/assignment_2/QT01_POF_student_template.pdf' or you can refer to my exported version in '/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics/assignment_2/Assessment_2_Portfolio.md'| all material for the essay of week 6 is in '/Users/hunghd/git_clone/sussex_learning/module_3_foundations_of_quantum_mechanics/week_6']. [Anything else: word limit, format, what I've
+already drafted.]
+
+Rules for you:
+- Use the solving-sussex-assignments skill.
+- Diff every copy of the questions; instructor-authored files beat Canvas markdown exports.
+  Compute every reading of any discrepancy - never judge by inspection.
+- Candidate number 672128, never my name. Every answer ends with a closing sentence.
+- Verify every result by a method that is not the same algebra, and read every rendered page.
+- [PDF upload with pointer lines | answer in the Canvas boxes] unless you argue otherwise.
+- Tell me plainly what only I can do before submitting.
+Last time, our assigment 1 got 100/100, good job, keep the pace.
+Ask me only what would change the deliverable: one round, with defaults. Then proceed.
+
+- "13–14" to "12–14" in W4 P1.
+- Check the W5 P2 labelling, then verify or soften items 1–8 above.
+- check any "numerically confirmed" claims you didn't run, if there's any, consider remove it
+check the Scientific accuracy of the following
+- Week 3: Correct the statement that normalisability alone guarantees the wavefunction vanishes at infinity. Specify the operator domain and boundary conditions.
+- Essay – Reference [10]: Identify the 99.991% result as optical-qubit readout in calcium-40 ions
+- Essay – Reference [11]: Clarify that exceeding a gate-fidelity threshold is not equivalent to demonstrating a fully fault-tolerant quantum computer
+- Essay – historical background: Correct the electron-spin historical timeline.

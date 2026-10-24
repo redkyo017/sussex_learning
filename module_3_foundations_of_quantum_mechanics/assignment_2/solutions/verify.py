@@ -128,9 +128,15 @@ for i, (p, n) in enumerate(zip([1 / 3, 4 / 9, 2 / 9], [270, 360, 180]), 1):
     ok(f"P(phi_{i})", abs(c[i - 1]) ** 2, p, 1e-12)
     ok(f"N(phi_{i}) of 810", 810 * abs(c[i - 1]) ** 2, n, 1e-9)
 # Monte Carlo: 810 systems repeatedly; average counts approach the expectation
-counts = rng.multinomial(810, np.abs(c) ** 2, size=20_000).mean(axis=0)
+runs = rng.multinomial(810, np.abs(c) ** 2, size=20_000)
+counts, spread = runs.mean(axis=0), runs.std(axis=0)
 check(f"Monte Carlo mean counts {np.round(counts, 1)} ~ (270, 360, 180)",
       np.allclose(counts, [270, 360, 180], atol=1.0))
+sd = np.sqrt(810 * np.abs(c) ** 2 * (1 - np.abs(c) ** 2))
+check(f"binomial spreads {np.round(sd, 2)} = (13.42, 14.14, 11.83), i.e. 12-14",
+      np.allclose(sd, [13.42, 14.14, 11.83], atol=0.01))
+check(f"Monte Carlo spreads {np.round(spread, 2)} match binomial within 2%",
+      np.allclose(spread, sd, rtol=0.02))
 
 # ----------------------------------------------------------------------------
 print("\n== Week 4, Problem 2: Hermitian algebra on random matrices ==")
@@ -180,6 +186,10 @@ for t in [0.5, 2.0]:
     pt = expm(-1j * Hm * t) @ psi2
     ok(f"P2 <p>(t={t}) = -cos t", np.vdot(pt, P @ pt), -math.cos(t), 1e-9)
     ok(f"P2 <x>(t={t}) = -sin t", np.vdot(pt, X @ pt), -math.sin(t), 1e-9)
+for coef, want, label in [(+1j, +1.0, "+i flips the sign"), (1.0, 0.0, "real coefficient gives 0")]:
+    v = np.zeros(Nmax, complex)
+    v[1], v[2] = 1 / math.sqrt(2), coef / math.sqrt(2)
+    ok(f"P2 variant: {label}", np.vdot(v, P @ v), want, 1e-9)
 alt = np.zeros(Nmax, complex)
 alt[0], alt[1] = 1 / math.sqrt(2), -1j / math.sqrt(2)
 ok("P2 alternative reading (n=0,1): <p> = -sqrt(m hbar omega/2)", np.vdot(alt, P @ alt), -1 / math.sqrt(2), 1e-9)

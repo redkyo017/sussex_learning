@@ -24,7 +24,7 @@ so $(\hat Q\hat R)^\dagger=\hat R\hat Q$, i.e.\ the adjoint of a product reverse
 
 \emph{Method 1: from (a) and (c).} Write $\hat H=\frac{1}{2m}\hat p^2+V(x)$, since $\hat p^2=(\frac{\hbar}{i})^2\frac{\d^2}{\d x^2}=-\hbar^2\frac{\d^2}{\d x^2}$. $\hat p$ is Hermitian (Week 3, Problem 1) and commutes with itself, so $\hat p^2$ is Hermitian by (c); multiplying by the real number $\frac{1}{2m}$ keeps it Hermitian by (b). The potential is multiplication by a real function, Hermitian by the same argument as for $\hat x$. Their sum is Hermitian by (a).
 
-\emph{Method 2: directly, by integrating by parts twice.} For the kinetic term, with $f,g$ and their derivatives vanishing at $\pm\infty$,
+\emph{Method 2: directly, by integrating by parts twice.} Take $f,g$ in the domain of $\hat H$: square-integrable with square-integrable first and second derivatives (and $Vf,Vg$ square-integrable). By the argument given in Week~3, Problem~1, the products $f^*g'$ and $f^{*\prime}g$ are then integrable with integrable derivatives, so both tend to $0$ at $\pm\infty$ and the boundary terms below vanish. For the kinetic term,
 \begin{align*}
 \int f^*\,\frac{\d^2g}{\d x^2}\,\d x
 &=\Big[f^*\frac{\d g}{\d x}\Big]_{-\infty}^{\infty}-\int\frac{\d f^*}{\d x}\frac{\d g}{\d x}\,\d x\\

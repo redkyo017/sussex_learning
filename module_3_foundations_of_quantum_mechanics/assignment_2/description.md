@@ -1,6 +1,6 @@
 # Assessment 2 [Portfolio (POF)]
 
-**Course:** [D1QT01: Foundations of Quantum Technology](https://canvas.sussex.ac.uk/courses/41954)  
+**Course:** [D1QT01: Foundations of Quantum Mechanics](https://canvas.sussex.ac.uk/courses/41954)  
 **Due:** Monday, 26 October 2026 at 17:00 (10:00 UK time)  
 **Weight:** 70% of your overall assessment grade (100 Points Possible)  
 

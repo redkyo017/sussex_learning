@@ -1,7 +1,7 @@
 \begin{solutionbox}
 \textbf{Given.} $\hat x=x$ (multiplication by $x$) and $\hat p=\frac{\hbar}{i}\frac{\partial}{\partial x}$, acting on wave functions in one dimension, with $\braket{f|g}=\int_{-\infty}^{\infty}f^*(x)\,g(x)\,\d x$. \textbf{Goal.} Show $\braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi}$ and $\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}$ for all physically admissible $\phi,\psi$.
 
-\textbf{Assumption.} $\phi$ and $\psi$ are square-integrable (normalisable) states, so $\phi,\psi\to0$ as $|x|\to\infty$; this is the condition every physical state satisfies, and it is what makes the boundary terms below vanish.
+\textbf{Domain and boundary conditions.} Normalisability alone does \emph{not} force a function to vanish at infinity (a square-integrable function can have ever narrower spikes as $|x|\to\infty$), so each identity is stated on the operator's natural domain. For $\hat x$: $\phi,\psi$ square-integrable with $x\phi,\,x\psi$ also square-integrable, so both sides are finite. For $\hat p$: $\phi,\psi$ square-integrable and differentiable with square-integrable derivatives $\phi',\psi'$. For such functions the boundary term vanishes: $\phi^*\psi$ is integrable, and its derivative $\phi^{*\prime}\psi+\phi^*\psi'$ is integrable by the Cauchy--Schwarz inequality, so $\phi^*\psi$ has limits at $\pm\infty$, and an integrable function with a limit must have limit $0$. Hence $\big[\phi^*\psi\big]_{-\infty}^{\infty}=0$. Bound states and localised wave packets lie in this domain.
 
 \textbf{Position operator.} Because $x$ is a real number at every point, $x^*=x$, so
 \[
@@ -15,7 +15,7 @@ Hence $\hat x$ is Hermitian. The same one-line argument applies to multiplicatio
 &=\int_{-\infty}^{\infty}\phi^*\,\frac{\hbar}{i}\frac{\partial\psi}{\partial x}\,\d x
 =\frac{\hbar}{i}\Big[\phi^*\psi\Big]_{-\infty}^{\infty}-\frac{\hbar}{i}\int_{-\infty}^{\infty}\frac{\partial\phi^*}{\partial x}\,\psi\,\d x .
 \end{align*}
-The boundary term is zero because both functions vanish at $\pm\infty$. For the remaining term, note that $\frac{\hbar}{i}=-i\hbar$, so $-\frac{\hbar}{i}=i\hbar=\big(\frac{\hbar}{i}\big)^*$, and $\frac{\partial\phi^*}{\partial x}=\big(\frac{\partial\phi}{\partial x}\big)^*$. Therefore
+The boundary term is zero for $\phi,\psi$ in the domain of $\hat p$, as shown above. For the remaining term, note that $\frac{\hbar}{i}=-i\hbar$, so $-\frac{\hbar}{i}=i\hbar=\big(\frac{\hbar}{i}\big)^*$, and $\frac{\partial\phi^*}{\partial x}=\big(\frac{\partial\phi}{\partial x}\big)^*$. Therefore
 \[
 \braket{\phi|\hat p\psi}=\int_{-\infty}^{\infty}\Big(\frac{\hbar}{i}\frac{\partial\phi}{\partial x}\Big)^*\psi\,\d x=\braket{\hat p\phi|\psi}.
 \]
@@ -27,11 +27,11 @@ Hence $\hat p$ is Hermitian.
 \begin{answerbox}
 \[
 \braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi},\qquad
-\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}\quad\text{for all normalisable }\phi,\psi .
+\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}\quad\text{for all }\phi,\psi\text{ in the respective domains.}
 \]
 Therefore, both $\hat x$ and $\hat p$ are Hermitian: $\hat x$ because $x$ is real, and $\hat p$ because the minus sign from integrating by parts (with vanishing boundary terms) is cancelled by the complex conjugate of the factor $\hbar/i$.
 \end{answerbox}
 
 \begin{insightbox}
-Hermiticity is what makes $\hat x$ and $\hat p$ legitimate observables: it guarantees real expectation values ($\braket{\psi|\hat p\psi}=\braket{\hat p\psi|\psi}=\braket{\psi|\hat p\psi}^*$) and real eigenvalues, as any measured position or momentum must be. The proof also shows that Hermiticity of $\hat p$ depends on the space of states, through the boundary term: it is the normalisability of physical wave functions that makes momentum an observable.
+Hermiticity is what makes $\hat x$ and $\hat p$ legitimate observables: it guarantees real expectation values ($\braket{\psi|\hat p\psi}=\braket{\hat p\psi|\psi}=\braket{\psi|\hat p\psi}^*$) and real eigenvalues, as any measured position or momentum must be. The proof also shows that Hermiticity of $\hat p$ depends on the space of states through the boundary term: it holds for normalisable states with normalisable derivatives (where $[\phi^*\psi]_{-\infty}^{\infty}=0$), not for arbitrary functions, which is why an operator is only fully specified together with its domain.
 \end{insightbox}
