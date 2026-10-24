@@ -1,0 +1,37 @@
+\begin{solutionbox}
+\textbf{Given.} $\hat x=x$ (multiplication by $x$) and $\hat p=\frac{\hbar}{i}\frac{\partial}{\partial x}$, acting on wave functions in one dimension, with $\braket{f|g}=\int_{-\infty}^{\infty}f^*(x)\,g(x)\,\d x$. \textbf{Goal.} Show $\braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi}$ and $\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}$ for all physically admissible $\phi,\psi$.
+
+\textbf{Assumption.} $\phi$ and $\psi$ are square-integrable (normalisable) states, so $\phi,\psi\to0$ as $|x|\to\infty$; this is the condition every physical state satisfies, and it is what makes the boundary terms below vanish.
+
+\textbf{Position operator.} Because $x$ is a real number at every point, $x^*=x$, so
+\[
+\braket{\phi|\hat x\psi}=\int\phi^*(x)\,x\,\psi(x)\,\d x=\int\big(x\,\phi(x)\big)^*\psi(x)\,\d x=\braket{\hat x\phi|\psi}.
+\]
+Hence $\hat x$ is Hermitian. The same one-line argument applies to multiplication by any real function, e.g.\ a potential $V(x)$.
+
+\textbf{Momentum operator.} Write the left-hand side and integrate by parts, with $u=\phi^*$ and $\d v=\frac{\partial\psi}{\partial x}\d x$:
+\begin{align*}
+\braket{\phi|\hat p\psi}
+&=\int_{-\infty}^{\infty}\phi^*\,\frac{\hbar}{i}\frac{\partial\psi}{\partial x}\,\d x
+=\frac{\hbar}{i}\Big[\phi^*\psi\Big]_{-\infty}^{\infty}-\frac{\hbar}{i}\int_{-\infty}^{\infty}\frac{\partial\phi^*}{\partial x}\,\psi\,\d x .
+\end{align*}
+The boundary term is zero because both functions vanish at $\pm\infty$. For the remaining term, note that $\frac{\hbar}{i}=-i\hbar$, so $-\frac{\hbar}{i}=i\hbar=\big(\frac{\hbar}{i}\big)^*$, and $\frac{\partial\phi^*}{\partial x}=\big(\frac{\partial\phi}{\partial x}\big)^*$. Therefore
+\[
+\braket{\phi|\hat p\psi}=\int_{-\infty}^{\infty}\Big(\frac{\hbar}{i}\frac{\partial\phi}{\partial x}\Big)^*\psi\,\d x=\braket{\hat p\phi|\psi}.
+\]
+Hence $\hat p$ is Hermitian.
+
+\textbf{Why the factor $i$ matters (check).} Integration by parts alone produced a \emph{minus} sign: the bare derivative satisfies $\braket{\phi|\partial_x\psi}=-\braket{\partial_x\phi|\psi}$, i.e.\ $\partial_x$ is anti-Hermitian. The complex conjugation of $1/i$ supplies a second minus sign that cancels it, which is exactly why momentum carries a factor of $i$. Both identities, and the anti-Hermiticity of $\partial_x$ on its own, were confirmed numerically by quadrature with finite-difference derivatives on two arbitrary complex, normalisable test functions.
+\end{solutionbox}
+
+\begin{answerbox}
+\[
+\braket{\phi|\hat x\psi}=\braket{\hat x\phi|\psi},\qquad
+\braket{\phi|\hat p\psi}=\braket{\hat p\phi|\psi}\quad\text{for all normalisable }\phi,\psi .
+\]
+Therefore, both $\hat x$ and $\hat p$ are Hermitian: $\hat x$ because $x$ is real, and $\hat p$ because the minus sign from integrating by parts (with vanishing boundary terms) is cancelled by the complex conjugate of the factor $\hbar/i$.
+\end{answerbox}
+
+\begin{insightbox}
+Hermiticity is what makes $\hat x$ and $\hat p$ legitimate observables: it guarantees real expectation values ($\braket{\psi|\hat p\psi}=\braket{\hat p\psi|\psi}=\braket{\psi|\hat p\psi}^*$) and real eigenvalues, as any measured position or momentum must be. The proof also shows that Hermiticity of $\hat p$ depends on the space of states, through the boundary term: it is the normalisability of physical wave functions that makes momentum an observable.
+\end{insightbox}

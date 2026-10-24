@@ -1,0 +1,38 @@
+\begin{solutionbox}
+\textbf{Given.} $\ket{A}\leftrightarrow(\alpha_1,\alpha_2,\alpha_3)^{T}$, $\ket{B}\leftrightarrow(\beta_1,\beta_2,\beta_3)^{T}$ with complex components, and $\braket{B|A}=\sum_{i=1}^{3}\beta_i^*\alpha_i$. \textbf{Goal.} Verify the three inner-product axioms directly from this component formula, using only the arithmetic of complex numbers: $(z_1z_2)^*=z_1^*z_2^*$, $(z_1+z_2)^*=z_1^*+z_2^*$, $(z^*)^*=z$ and $z^*z=|z|^2\ge0$.
+
+\textbf{1. Conjugate symmetry,} $\braket{B|A}=\braket{A|B}^*$. From the definition with the roles swapped, $\braket{A|B}=\sum_i\alpha_i^*\beta_i$. Taking the complex conjugate term by term,
+\[
+\braket{A|B}^*=\Big(\sum_i\alpha_i^*\beta_i\Big)^*=\sum_i(\alpha_i^*)^*\beta_i^*=\sum_i\beta_i^*\alpha_i=\braket{B|A}.
+\]
+
+\textbf{2. Linearity in the second argument.} Let $\ket{A}=c_1\ket{A_1}+c_2\ket{A_2}$ with $c_1,c_2\in\mathbb{C}$; its components are $\alpha_i=c_1\alpha_i^{(1)}+c_2\alpha_i^{(2)}$, because adding kets and multiplying by scalars act component by component on column vectors. Then
+\[
+\braket{B|A}=\sum_i\beta_i^*\big(c_1\alpha_i^{(1)}+c_2\alpha_i^{(2)}\big)
+=c_1\sum_i\beta_i^*\alpha_i^{(1)}+c_2\sum_i\beta_i^*\alpha_i^{(2)}
+=c_1\braket{B|A_1}+c_2\braket{B|A_2},
+\]
+using only the distributive law and the fact that the $c$'s are common to every term.
+
+\textbf{3. Positive-definiteness.} Setting $\ket{B}=\ket{A}$,
+\[
+\braket{A|A}=\sum_i\alpha_i^*\alpha_i=|\alpha_1|^2+|\alpha_2|^2+|\alpha_3|^2 .
+\]
+Each term is a real, non-negative number, so $\braket{A|A}$ is real and $\braket{A|A}\ge0$. A sum of non-negative terms vanishes only if every term vanishes, so $\braket{A|A}=0\iff\alpha_1=\alpha_2=\alpha_3=0\iff\ket{A}=\mathbf 0$.
+
+\textbf{Consequence (check).} Combining 1 and 2 gives \emph{antilinearity in the first argument}: for $\ket{B}=d_1\ket{B_1}+d_2\ket{B_2}$, $\braket{B|A}=\braket{A|B}^*=(d_1\braket{A|B_1}+d_2\braket{A|B_2})^*=d_1^*\braket{B_1|A}+d_2^*\braket{B_2|A}$, which is exactly what the explicit $\beta_i^*$ in the definition produces. This consistency confirms that the complex conjugate on the bra side is essential: without it, $\braket{A|A}=\sum_i\alpha_i^2$ could be negative or complex (e.g.\ $\alpha=(i,0,0)$ gives $-1$). All three properties were also checked numerically on 1000 random complex vectors.
+\end{solutionbox}
+
+\begin{answerbox}
+For all $\ket{A},\ket{B}\in\mathbb{C}^3$ and $c_1,c_2\in\mathbb{C}$:
+\begin{gather*}
+\braket{B|A}=\braket{A|B}^*,\qquad
+\braket{B|c_1A_1+c_2A_2}=c_1\braket{B|A_1}+c_2\braket{B|A_2},\\
+\braket{A|A}=\textstyle\sum_i|\alpha_i|^2\ge0\quad(=0\iff\ket{A}=0).
+\end{gather*}
+Therefore, the component rule $\braket{B|A}=\sum_i\beta_i^*\alpha_i$ satisfies conjugate symmetry, linearity in the second argument and positive-definiteness, so it is a genuine inner product on $\mathbb{C}^3$.
+\end{answerbox}
+
+\begin{insightbox}
+Positive-definiteness is what lets $\braket{A|A}$ act as a squared length, and hence what makes normalisation $\braket{\psi|\psi}=1$ and the Born-rule probabilities $|\braket{\phi_n|\psi}|^2$ meaningful. The complex conjugation that distinguishes this from an ordinary dot product is the price of working with complex amplitudes: it is exactly what guarantees that ``lengths'' and probabilities come out real and non-negative.
+\end{insightbox}

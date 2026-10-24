@@ -1,0 +1,39 @@
+\begin{solutionbox}
+\textbf{Given.} $\ket{\psi}=\frac{1}{\sqrt2}\big(\ket{\psi_1}-i\ket{\psi_2}\big)$, where $\ket{\psi_n}$ are the number (energy) eigenstates of the oscillator, labelled as in the Week 5 notes, $n=0,1,2,\dots$ with $\ket{\psi_0}$ the ground state. It is normalised: $\frac12(1+|{-i}|^2)=1$. \textbf{Goal.} $\langle\hat p\rangle=\braket{\psi|\hat p|\psi}$.
+
+\textbf{Principle.} Express $\hat p$ through the ladder operators. Inverting $\hat a=\sqrt{\frac{m\omega}{2\hbar}}\big(\hat x+\frac{i}{m\omega}\hat p\big)$ and its adjoint gives
+\[
+\hat p=i\sqrt{\frac{m\hbar\omega}{2}}\,\big(\hat a^\dagger-\hat a\big),
+\]
+with $\hat a\ket{\psi_n}=\sqrt n\ket{\psi_{n-1}}$ and $\hat a^\dagger\ket{\psi_n}=\sqrt{n+1}\ket{\psi_{n+1}}$. Since $\hat p$ changes $n$ by $\pm1$, its diagonal elements $\braket{\psi_n|\hat p|\psi_n}$ vanish and only the cross terms between $n=1$ and $n=2$ survive.
+
+\textbf{Matrix elements.} Using orthonormality,
+\begin{align*}
+\braket{\psi_1|\hat p|\psi_2}&=i\sqrt{\tfrac{m\hbar\omega}{2}}\big(\braket{\psi_1|\hat a^\dagger|\psi_2}-\braket{\psi_1|\hat a|\psi_2}\big)=i\sqrt{\tfrac{m\hbar\omega}{2}}\,(0-\sqrt2)=-i\sqrt{m\hbar\omega},\\
+\braket{\psi_2|\hat p|\psi_1}&=i\sqrt{\tfrac{m\hbar\omega}{2}}\,(\sqrt2-0)=+i\sqrt{m\hbar\omega}=\braket{\psi_1|\hat p|\psi_2}^*,
+\end{align*}
+the last equality being the Hermiticity of $\hat p$ (Week 3), which serves as a check.
+
+\textbf{Expectation value.} The bra is $\bra{\psi}=\frac{1}{\sqrt2}\big(\bra{\psi_1}+i\bra{\psi_2}\big)$; note the sign change of the $i$ on conjugation. Then
+\begin{align*}
+\langle\hat p\rangle
+&=\tfrac12\Big[\braket{\psi_1|\hat p|\psi_1}+(-i)\braket{\psi_1|\hat p|\psi_2}+(i)\braket{\psi_2|\hat p|\psi_1}+(i)(-i)\braket{\psi_2|\hat p|\psi_2}\Big]\\
+&=\tfrac12\Big[0+(-i)(-i\sqrt{m\hbar\omega})+(i)(i\sqrt{m\hbar\omega})+0\Big]
+=\tfrac12\big(-\sqrt{m\hbar\omega}-\sqrt{m\hbar\omega}\big)=-\sqrt{m\hbar\omega}.
+\end{align*}
+
+\textbf{Time dependence (extension).} If the state is prepared at $t=0$ and left to evolve, each component acquires $e^{-iE_nt/\hbar}$ and the cross terms pick up $e^{\mp i\omega t}$; repeating the calculation gives $\langle\hat p\rangle(t)=-\sqrt{m\hbar\omega}\cos\omega t$ and, in the same way, $\langle\hat x\rangle(t)=-\sqrt{\hbar/(m\omega)}\sin\omega t$. These satisfy Ehrenfest's theorem, $m\,\frac{\d\langle x\rangle}{\d t}=-\sqrt{m\hbar\omega}\cos\omega t=\langle p\rangle$, an independent consistency check.
+
+\textbf{Checks.} (i) $\langle p\rangle$ is real. (ii) $\sqrt{m\hbar\omega}$ has units of $\sqrt{\mathrm{kg\cdot J\,s\cdot s^{-1}}}=\mathrm{kg\,m\,s^{-1}}$, a momentum. (iii) Independently of the ladder algebra, the position-space integral $\int\psi^*(-i\hbar\,\partial_x)\psi\,\d x$ over explicit Hermite functions gives $-1$ in units $\hbar=m=\omega=1$, and truncated-matrix time evolution reproduces $-\cos\omega t$. (iv) The relative phase matters: with $+i$ instead of $-i$ the answer flips sign, and with a real relative coefficient it vanishes at $t=0$.
+\end{solutionbox}
+
+\begin{answerbox}
+\[
+\langle\hat p\rangle=\braket{\psi|\hat p|\psi}=-\sqrt{m\hbar\omega}\qquad\big(\text{and }\langle\hat p\rangle(t)=-\sqrt{m\hbar\omega}\cos\omega t\text{ if the state then evolves}\big).
+\]
+Therefore, the expectation value of the momentum in the state $\frac{1}{\sqrt2}(\ket{\psi_1}-i\ket{\psi_2})$ is $-\sqrt{m\hbar\omega}$: non-zero, even though it vanishes in each number state separately, because $\hat p$ couples the neighbouring levels $n=1$ and $n=2$.
+\end{answerbox}
+
+\begin{insightbox}
+Every number state has $\langle p\rangle=0$: it is stationary and goes nowhere. A non-zero mean momentum appears only through interference between adjacent levels, and its value is fixed by their relative phase. Here the factor $-i$ is a quarter-period phase offset that puts the wave packet at the centre of the well, moving in the $-x$ direction at its maximum speed, which is exactly the classical picture of an oscillator passing through equilibrium.
+\end{insightbox}

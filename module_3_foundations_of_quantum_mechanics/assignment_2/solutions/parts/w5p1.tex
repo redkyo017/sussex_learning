@@ -1,0 +1,60 @@
+\begin{solutionbox}
+\textbf{Given.} $\ket{\psi(x,0)}=c_0\ket{\phi_0}+c_1\ket{\phi_1}+c_2\ket{\phi_2}$ with $c_0=\frac{5}{\sqrt{50}}$, $c_1=\frac{4}{\sqrt{50}}$, $c_2=\frac{3}{\sqrt{50}}$; the $\ket{\phi_n}$ are the orthonormal energy eigenstates of the harmonic oscillator, $\hat H\ket{\phi_n}=E_n\ket{\phi_n}$ with $E_n=\hbar\omega(n+\tfrac12)$.
+
+\textbf{Normalisation first.} $\sum_n|c_n|^2=\frac{25+16+9}{50}=1$, so the state is normalised and the Born-rule probabilities are simply $P_n=|c_n|^2$:
+\[
+P_0=\tfrac{25}{50}=\tfrac12,\qquad P_1=\tfrac{16}{50}=\tfrac{8}{25},\qquad P_2=\tfrac{9}{50}.
+\]
+
+\textbf{(a) Average energy.} Because the state is expanded in the eigenbasis of $\hat H$, a measurement of energy returns $E_n$ with probability $P_n$, so
+\begin{align*}
+\langle E\rangle=\braket{\psi|\hat H|\psi}=\sum_nP_nE_n
+&=\frac{\hbar\omega}{50}\Big(25\cdot\tfrac12+16\cdot\tfrac32+9\cdot\tfrac52\Big)\\
+&=\frac{\hbar\omega}{50}\,(12.5+24+22.5)=\frac{59}{50}\,\hbar\omega=1.18\,\hbar\omega .
+\end{align*}
+\emph{Check:} $1.18\hbar\omega$ lies between the smallest and largest possible outcomes, $E_0=0.5\hbar\omega$ and $E_2=2.5\hbar\omega$, and sits nearer $E_0$ because half the weight is in the ground state.
+
+\textbf{(b) Time evolution.} The Hamiltonian is time independent, so $\ket{\psi(t)}=\hat U(t)\ket{\psi(0)}$ with $\hat U=e^{-i\hat Ht/\hbar}$. $\hat U$ is linear, and by the given eigenvalue equation each eigenstate only acquires a phase $e^{-iE_nt/\hbar}=e^{-i(n+\frac12)\omega t}$:
+\begin{align*}
+\ket{\psi(x,t)}
+&=\frac{5}{\sqrt{50}}e^{-i\omega t/2}\ket{\phi_0}+\frac{4}{\sqrt{50}}e^{-3i\omega t/2}\ket{\phi_1}+\frac{3}{\sqrt{50}}e^{-5i\omega t/2}\ket{\phi_2}\\
+&=\frac{e^{-i\omega t/2}}{\sqrt{50}}\Big(5\ket{\phi_0}+4e^{-i\omega t}\ket{\phi_1}+3e^{-2i\omega t}\ket{\phi_2}\Big).
+\end{align*}
+The coefficients are now $c_n(t)=c_ne^{-iE_nt/\hbar}$, and since $|e^{-iE_nt/\hbar}|=1$, $|c_n(t)|^2=|c_n|^2$. Hence
+\[
+\langle E\rangle(t)=\sum_n|c_n(t)|^2E_n=\sum_n|c_n|^2E_n=\frac{59}{50}\hbar\omega,
+\]
+identical to (a): the average energy is constant in time, as is every energy probability $P_n$.
+
+\textbf{(c) Expectation value of position.} Using the hint, $\hat x=\sqrt{\frac{\hbar}{2m\omega}}(\hat a^\dagger+\hat a)$, with $\hat a\ket{\phi_n}=\sqrt n\ket{\phi_{n-1}}$ and $\hat a^\dagger\ket{\phi_n}=\sqrt{n+1}\ket{\phi_{n+1}}$. Because $\hat a$ lowers $n$ by one, $\braket{\phi_m|\hat a|\phi_n}=\sqrt n\,\delta_{m,n-1}$, so only neighbouring levels contribute:
+\[
+\braket{\psi(t)|\hat a|\psi(t)}=\sum_n c_{n-1}^*(t)\,c_n(t)\sqrt n
+=c_0^*(t)c_1(t)\sqrt1+c_1^*(t)c_2(t)\sqrt2 .
+\]
+Each product of neighbouring coefficients carries the phase $e^{+iE_{n-1}t/\hbar}e^{-iE_nt/\hbar}=e^{-i\omega t}$ (the overall phase $e^{-i\omega t/2}$ cancels), so
+\[
+\braket{\hat a}=\frac{e^{-i\omega t}}{50}\big(5\cdot4+4\cdot3\sqrt2\big)=\frac{20+12\sqrt2}{50}\,e^{-i\omega t},
+\qquad
+\braket{\hat a^\dagger}=\braket{\hat a}^*=\frac{20+12\sqrt2}{50}\,e^{+i\omega t}.
+\]
+Adding, $e^{-i\omega t}+e^{i\omega t}=2\cos\omega t$:
+\begin{align*}
+\braket{\psi(x,t)|\hat x|\psi(x,t)}&=\sqrt{\frac{\hbar}{2m\omega}}\cdot\frac{2(20+12\sqrt2)}{50}\cos\omega t\\
+&=\frac{4(5+3\sqrt2)}{25}\sqrt{\frac{\hbar}{2m\omega}}\,\cos\omega t\approx1.48\sqrt{\frac{\hbar}{2m\omega}}\cos\omega t .
+\end{align*}
+
+\textbf{Checks.} (i) $\langle x\rangle$ is real, as it must be for a Hermitian operator. (ii) Its amplitude has units of $\sqrt{\hbar/(m\omega)}$, a length. (iii) It oscillates at exactly the classical frequency $\omega$, because only adjacent levels (energy gap $\hbar\omega$) are coupled by $\hat x$. (iv) Independently, the ladder-operator matrices truncated at 40 levels and evolved with a numerical matrix exponential reproduce $\langle E\rangle=1.18$ at four times and $\langle x\rangle(t)$ to $10^{-9}$, and at $t=0$ the position-space integral $\int x|\psi|^2\d x$ over explicit Hermite functions gives the same amplitude.
+\end{solutionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle\langle E\rangle=\frac{59}{50}\hbar\omega=1.18\,\hbar\omega$.
+\item $\displaystyle\ket{\psi(x,t)}=\frac{1}{\sqrt{50}}\Big(5e^{-i\omega t/2}\ket{\phi_0}+4e^{-3i\omega t/2}\ket{\phi_1}+3e^{-5i\omega t/2}\ket{\phi_2}\Big)$, with $\displaystyle\langle E\rangle(t)=\frac{59}{50}\hbar\omega$, the same as in (a).
+\item $\displaystyle\langle\hat x\rangle(t)=\frac{4(5+3\sqrt2)}{25}\sqrt{\frac{\hbar}{2m\omega}}\cos\omega t\approx1.48\sqrt{\frac{\hbar}{2m\omega}}\cos\omega t$.
+\end{enumerate}
+Therefore, the average energy is $\frac{59}{50}\hbar\omega$ and stays constant in time, while the mean position oscillates as $\tfrac{4}{25}(5+3\sqrt2)\sqrt{\hbar/2m\omega}\,\cos\omega t$ at the classical angular frequency $\omega$.
+\end{answerbox}
+
+\begin{insightbox}
+Energy is conserved because each energy eigenstate only picks up a phase, so the energy probabilities never change. Position is different: $\langle x\rangle$ depends on the \emph{relative} phases between neighbouring levels, which rotate at the rate $(E_{n+1}-E_n)/\hbar=\omega$. A superposition of energy eigenstates is therefore a genuinely moving wave packet whose centre swings back and forth like a classical oscillator (Ehrenfest's theorem), whereas a single eigenstate is stationary with $\langle x\rangle=0$.
+\end{insightbox}

@@ -1,0 +1,115 @@
+% ======================================================
+% ======================================================
+%                      Essay (Week 6)
+% ======================================================
+% ======================================================
+\section{Essay: The Stern--Gerlach Experiment and Its Legacy in Quantum Technologies}
+
+% ESSAY-BODY-BEGIN
+\subsection{Introduction}
+
+In 1922 Otto Stern and Walther Gerlach sent a beam of silver atoms through an inhomogeneous magnetic field and found that it split into two distinct traces, rather than the continuous smear expected from classical physics~\cite{gerlach1922,bauer2023}. It was the first direct evidence of space quantisation, later understood as the quantisation of electron spin~\cite{friedrich2003,schmidt2016}. A century on, the experiment's central idea, that a two-level spin can be prepared, manipulated and read out as one of two discrete outcomes, underpins much of quantum technology. This essay first summarises what the experiment established, then examines its descendants in quantum computing, sensing and communication, and finally assesses critically the challenges of scalability, noise and control that determine how far these applications can go.
+
+\subsection{What the experiment established}
+
+A magnetic moment in a field gradient experiences a force $F_z=\mu_z\,\partial B_z/\partial z$, so randomly oriented classical moments should produce a continuous band. Gerlach's glass plate instead showed two bands and no undeflected atoms~\cite{bauer2023}. The measurement was delicate: a field of about $0.1\,\mathrm{T}$ with a gradient of about $10\,\mathrm{T\,cm^{-1}}$ separated the beams by only $0.2\,\mathrm{mm}$, so a misalignment of $0.01\,\mathrm{mm}$ could spoil a run~\cite{friedrich2003}. Ironically, the agreement with Bohr's orbital model was a coincidence: the ground state of silver has no orbital angular momentum, and the splitting comes from the spin of its outer electron, which was not recognised until 1927~\cite{friedrich2003}. Silver was a fortunate choice: 46 of its 47 electrons form a closed, spherically symmetric core, so the atom behaves magnetically like a heavy electron~\cite{lecture6}.
+
+Conceptually, the experiment is the textbook paradigm of quantum measurement~\cite{sakurai2020}. In sequential arrangements, atoms selected as $S_z=+$ stay $S_z=+$ when $S_z$ is measured again, yet split equally when $S_x$ is measured, and a final $S_z$ measurement splits them once more~\cite{lecture6,sakurai2020}. Measurement therefore prepares a state, and incompatible spin components cannot be known together. A two-level system, a force that maps spin onto position, and projective two-outcome readout are exactly the ingredients of a qubit.
+
+\subsection{Applications in quantum technologies}
+
+\textbf{Quantum computing.} Loss and DiVincenzo proposed encoding qubits in the spins of single electrons confined in quantum dots, with gates controlled electrically~\cite{loss1998}. Spin is attractive because it is a natural two-level system that is insensitive to electric fields, giving long coherence times~\cite{burkard2023}. Readout is a Stern--Gerlach measurement in spirit, though not in form: rather than deflecting an electron, spin-to-charge conversion lets a nearby charge sensor register ``parallel'' or ``antiparallel'' in a single shot~\cite{elzerman2004}. Trapped ions apply the same principle optically, where state-dependent fluorescence distinguishes the two qubit states with $99.991\%$ fidelity~\cite{myerson2008}. Silicon spin qubits have now crossed the surface-code error threshold, with all gate fidelities above $99.5\%$~\cite{xue2022}, and a six-qubit silicon processor is initialised by measurement with real-time feedback~\cite{philips2022}: projective, Stern--Gerlach-type readout used as a resource.
+
+\textbf{Quantum sensing.} Quantum sensing turns the fragility of quantum states into a strength, since a spin's precession records the field it experiences~\cite{degen2017}. The nitrogen-vacancy (NV) centre in diamond is the leading example. Its electron spin can be initialised and read out optically at room temperature, enabling magnetic imaging with nanometre resolution and nanotesla sensitivity~\cite{rondin2014}. In isotopically purified diamond, a room-temperature coherence time of $1.8\,\mathrm{ms}$ gave a sensitivity of $4\,\mathrm{nT\,Hz^{-1/2}}$~\cite{balasubramanian2009}. Stern--Gerlach physics also returns literally in matter-wave interferometry. Using precise atom-chip fields, Margalit \emph{et al.} split atoms with spin-dependent forces and recombined them in a complete Stern--Gerlach interferometer~\cite{margalit2021}. A related design accumulates a phase scaling with the cube of the interrogation time and uses no light, making it a candidate probe at very short distances from surfaces~\cite{amit2019}.
+
+\textbf{Quantum communication.} In photonic quantum communication, polarisation plays the role of spin and a polarising beam splitter the role of the Stern--Gerlach magnet~\cite{sakurai2020}. The connection is direct in networks built from solid-state spin memories. Hensen \emph{et al.} entangled NV electron spins $1.3\,\mathrm{km}$ apart and, because the spin readout was efficient, closed the detection loophole, violating Bell's inequality with $S=2.42\pm0.20$~\cite{hensen2015}. Such tests exploit the singlet correlations $\langle\sigma_a\tau_b\rangle=-\hat{\mathbf a}\cdot\hat{\mathbf b}$, which vanish for perpendicular axes (Week 7, Problem 1) and are perfect for parallel ones. Spins and photons are complementary here: photons carry entanglement between nodes, while spins store it locally and allow it to be read out on demand. A three-node NV network, each node holding a memory qubit, has since distributed and swapped entanglement~\cite{pompili2021}, an early stage on the roadmap to a quantum internet~\cite{wehner2018}.
+
+\subsection{Challenges and opportunities}
+
+Table~\ref{tab:sg} summarises how the same strengths carry different limitations in each use.
+
+\begin{table}[H]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.37\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}@{}}
+\hline
+\textbf{Use} & \textbf{Strength} & \textbf{Main limitation}\\
+\hline
+Computing & Readout above $99.99\%$ (ions)~\cite{myerson2008}; gates above $99.5\%$ (silicon)~\cite{xue2022} & Qubit count conflicts with fidelity~\cite{philips2022}\\
+Sensing & Nanoscale imaging; ms coherence at room temperature~\cite{rondin2014,balasubramanian2009} & Ensembles far from theoretical limits~\cite{barry2020}\\
+Communication & Loophole-free entanglement over $1.3\,\mathrm{km}$~\cite{hensen2015} & Few trials, few nodes~\cite{hensen2015,pompili2021}\\
+\hline
+\end{tabular}
+\caption{Strengths and limitations of spin-based technologies descended from the Stern--Gerlach experiment.}
+\label{tab:sg}
+\end{table}
+
+\textbf{Control: measuring is easier than undoing a measurement.} Stern--Gerlach separation is an excellent measurement but a poor coherent operation. Recombining the two beams to recover the original spin state requires the field inhomogeneity to be controlled to about one part in $10^5$~\cite{englert1988}, and a full-loop interferometer was long regarded as nearly impossible~\cite{margalit2021}. Even the successful atom-chip version loses coherence as the splitting grows~\cite{margalit2021}. Practical devices therefore usually replace literal deflection with state-dependent readout that is equivalent in outcome.
+
+\textbf{Noise: sensitivity cuts both ways.} Spins are sensitive by design, and therefore to unwanted fields as well. NV coherence improved dramatically only when the nuclear-spin bath was removed by isotopic engineering~\cite{balasubramanian2009}, and ensemble magnetometers remain orders of magnitude from their theoretical limits, held back by dephasing and imperfect readout~\cite{barry2020}. Readout quality varies widely: the first single-shot electron-spin measurement achieved about $65\%$ visibility~\cite{elzerman2004}, against $99.99\%$ for ions~\cite{myerson2008}. ``Stern--Gerlach-type measurement'' is thus not one solved technology but a family whose performance depends on the platform.
+
+\textbf{Scalability.} High qubit counts and high fidelity typically conflict~\cite{philips2022}. Silicon promises compatibility with semiconductor manufacturing~\cite{burkard2023,xue2022}, while trapped ions demonstrate every requirement for universal computation but face scale-up and control-error challenges~\cite{bruzewicz2019}. Networks face the same gap: the 2015 Bell test rested on only 245 trials~\cite{hensen2015}, and three nodes are far from a network. Nor can every particle simply be passed through a magnet: Bohr and Pauli argued that free electrons could not show the effect, and although later analyses found no fundamental prohibition~\cite{garraway2002,batelaan1997}, electron spin is in practice read indirectly.
+
+\textbf{Opportunities.} Atom chips produce cold atomic clouds at several per second in a compact package~\cite{keil2016}, a route towards portable Stern--Gerlach interferometers. Most ambitiously, Stern--Gerlach interferometers with micron-sized masses carrying embedded spins have been proposed to test whether gravity can entangle matter~\cite{bose2017}.
+
+\subsection{Conclusion}
+
+The Stern--Gerlach experiment did more than reveal spin: it introduced the operations of state preparation, state-dependent force and projective two-outcome readout on which spin-based technologies rely. Its descendants already achieve readout and gate fidelities at fault-tolerance thresholds, nanoscale magnetic imaging and loophole-free entanglement over kilometres. Their limitations are the experiment's own: keeping a split spin coherent demands exquisite field control, sensitivity cuts both ways, and scaling from a handful of qubits or nodes to useful systems remains unsolved. The most promising direction is the one Stern and Gerlach began, ever finer control of fields at the scale of single atoms, now pursued on chips rather than with a hand-shaped magnet.
+% ESSAY-BODY-END
+
+\begin{thebibliography}{99}
+\small
+\bibitem{gerlach1922} W. Gerlach and O. Stern, Der experimentelle Nachweis der Richtungsquantelung im Magnetfeld, Z. Phys. \textbf{9}, 349 (1922). doi:10.1007/BF01326983
+
+\bibitem{bauer2023} M. Bauer, The Stern--Gerlach experiment: Translation of ``Der experimentelle Nachweis der Richtungsquantelung im Magnetfeld'', arXiv:2301.11343 (2023). Available at: \url{https://arxiv.org/abs/2301.11343}
+
+\bibitem{friedrich2003} B. Friedrich and D. Herschbach, Stern and Gerlach: How a bad cigar helped reorient atomic physics, Phys. Today \textbf{56}(12), 53 (2003). doi:10.1063/1.1650229
+
+\bibitem{schmidt2016} H. Schmidt-B\"ocking, L. Schmidt, H. J. L\"udde, W. Trageser, A. Templeton, and T. Sauer, The Stern--Gerlach experiment revisited, Eur. Phys. J. H \textbf{41}, 327 (2016). doi:10.1140/epjh/e2016-70053-2
+
+\bibitem{lecture6} University of Sussex, \emph{D1QT01 Foundations of Quantum Technology, Week 6: Stern--Gerlach experiment}, lecture notes, Secs.~6.2--6.3 (2026).
+
+\bibitem{sakurai2020} J. J. Sakurai and J. Napolitano, \emph{Modern Quantum Mechanics}, 3rd ed. (Cambridge University Press, Cambridge, 2020), Sec.~1.1. doi:10.1017/9781108587280
+
+\bibitem{loss1998} D. Loss and D. P. DiVincenzo, Quantum computation with quantum dots, Phys. Rev. A \textbf{57}, 120 (1998). doi:10.1103/PhysRevA.57.120
+
+\bibitem{burkard2023} G. Burkard, T. D. Ladd, A. Pan, J. M. Nichol, and J. R. Petta, Semiconductor spin qubits, Rev. Mod. Phys. \textbf{95}, 025003 (2023). doi:10.1103/RevModPhys.95.025003
+
+\bibitem{elzerman2004} J. M. Elzerman, R. Hanson, L. H. Willems van Beveren, B. Witkamp, L. M. K. Vandersypen, and L. P. Kouwenhoven, Single-shot read-out of an individual electron spin in a quantum dot, Nature \textbf{430}, 431 (2004). doi:10.1038/nature02693
+
+\bibitem{myerson2008} A. H. Myerson, D. J. Szwer, S. C. Webster, D. T. C. Allcock, M. J. Curtis, G. Imreh, J. A. Sherman, D. N. Stacey, A. M. Steane, and D. M. Lucas, High-fidelity readout of trapped-ion qubits, Phys. Rev. Lett. \textbf{100}, 200502 (2008). doi:10.1103/PhysRevLett.100.200502
+
+\bibitem{xue2022} X. Xue, M. Russ, N. Samkharadze, B. Undseth, A. Sammak, G. Scappucci, and L. M. K. Vandersypen, Quantum logic with spin qubits crossing the surface code threshold, Nature \textbf{601}, 343 (2022). doi:10.1038/s41586-021-04273-w
+
+\bibitem{philips2022} S. G. J. Philips \emph{et al.}, Universal control of a six-qubit quantum processor in silicon, Nature \textbf{609}, 919 (2022). doi:10.1038/s41586-022-05117-x
+
+\bibitem{degen2017} C. L. Degen, F. Reinhard, and P. Cappellaro, Quantum sensing, Rev. Mod. Phys. \textbf{89}, 035002 (2017). doi:10.1103/RevModPhys.89.035002
+
+\bibitem{rondin2014} L. Rondin, J.-P. Tetienne, T. Hingant, J.-F. Roch, P. Maletinsky, and V. Jacques, Magnetometry with nitrogen-vacancy defects in diamond, Rep. Prog. Phys. \textbf{77}, 056503 (2014). doi:10.1088/0034-4885/77/5/056503
+
+\bibitem{balasubramanian2009} G. Balasubramanian \emph{et al.}, Ultralong spin coherence time in isotopically engineered diamond, Nat. Mater. \textbf{8}, 383 (2009). doi:10.1038/nmat2420
+
+\bibitem{margalit2021} Y. Margalit, O. Dobkowski, Z. Zhou, O. Amit, Y. Japha, S. Moukouri, D. Rohrlich, A. Mazumdar, S. Bose, C. Henkel, and R. Folman, Realization of a complete Stern--Gerlach interferometer: Toward a test of quantum gravity, Sci. Adv. \textbf{7}, eabg2879 (2021). doi:10.1126/sciadv.abg2879
+
+\bibitem{amit2019} O. Amit, Y. Margalit, O. Dobkowski, Z. Zhou, Y. Japha, M. Zimmermann, M. A. Efremov, F. A. Narducci, E. M. Rasel, W. P. Schleich, and R. Folman, $T^3$ Stern--Gerlach matter-wave interferometer, Phys. Rev. Lett. \textbf{123}, 083601 (2019). doi:10.1103/PhysRevLett.123.083601
+
+\bibitem{hensen2015} B. Hensen \emph{et al.}, Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres, Nature \textbf{526}, 682 (2015). doi:10.1038/nature15759
+
+\bibitem{pompili2021} M. Pompili, S. L. N. Hermans, S. Baier, H. K. C. Beukers, P. C. Humphreys, R. N. Schouten, R. F. L. Vermeulen, M. J. Tiggelman, L. dos Santos Martins, B. Dirkse, S. Wehner, and R. Hanson, Realization of a multinode quantum network of remote solid-state qubits, Science \textbf{372}, 259 (2021). doi:10.1126/science.abg1919
+
+\bibitem{wehner2018} S. Wehner, D. Elkouss, and R. Hanson, Quantum internet: A vision for the road ahead, Science \textbf{362}, eaam9288 (2018). doi:10.1126/science.aam9288
+
+\bibitem{barry2020} J. F. Barry, J. M. Schloss, E. Bauch, M. J. Turner, C. A. Hart, L. M. Pham, and R. L. Walsworth, Sensitivity optimization for NV-diamond magnetometry, Rev. Mod. Phys. \textbf{92}, 015004 (2020). doi:10.1103/RevModPhys.92.015004
+
+\bibitem{englert1988} B.-G. Englert, J. Schwinger, and M. O. Scully, Is spin coherence like Humpty-Dumpty? I. Simplified treatment, Found. Phys. \textbf{18}, 1045 (1988). doi:10.1007/BF01909939
+
+\bibitem{bruzewicz2019} C. D. Bruzewicz, J. Chiaverini, R. McConnell, and J. M. Sage, Trapped-ion quantum computing: Progress and challenges, Appl. Phys. Rev. \textbf{6}, 021314 (2019). doi:10.1063/1.5088164
+
+\bibitem{garraway2002} B. M. Garraway and S. Stenholm, Does a flying electron spin?, Contemp. Phys. \textbf{43}, 147 (2002). doi:10.1080/00107510110102119
+
+\bibitem{batelaan1997} H. Batelaan, T. J. Gay, and J. J. Schwendiman, Stern--Gerlach effect for electron beams, Phys. Rev. Lett. \textbf{79}, 4517 (1997). doi:10.1103/PhysRevLett.79.4517
+
+\bibitem{keil2016} M. Keil, O. Amit, S. Zhou, D. Groswasser, Y. Japha, and R. Folman, Fifteen years of cold matter on the atom chip: promise, realizations, and prospects, J. Mod. Opt. \textbf{63}, 1840 (2016). doi:10.1080/09500340.2016.1178820
+
+\bibitem{bose2017} S. Bose, A. Mazumdar, G. W. Morley, H. Ulbricht, M. Toro\v{s}, M. Paternostro, A. A. Geraci, P. F. Barker, M. S. Kim, and G. Milburn, Spin entanglement witness for quantum gravity, Phys. Rev. Lett. \textbf{119}, 240401 (2017). doi:10.1103/PhysRevLett.119.240401
+\end{thebibliography}

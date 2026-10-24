@@ -1,0 +1,61 @@
+\begin{solutionbox}
+\textbf{Given.} A real, piecewise-linear wave function that rises from $0$ at $x=0$ to $A$ at $x=a$, falls back to $0$ at $x=b$, and vanishes elsewhere; $A,a,b>0$ with $b>a$. \textbf{Goal.} Fix $A$, locate the most probable position, find $P(x<a)$ and $\langle x\rangle$.
+
+\textbf{Principle.} By the Born rule, $|\psi(x,0)|^2\,\d x$ is the probability of finding the particle in $[x,x+\d x]$. The total probability must be one, which fixes $A$; probabilities over a region and the mean position are then integrals of $|\psi|^2$ over that region. Because $\psi$ is real, $|\psi|^2=\psi^2$.
+
+\textbf{(a) Normalisation.} Only $0\le x\le b$ contributes:
+\begin{align*}
+1=\int_{-\infty}^{\infty}|\psi|^2\,\d x
+&=\frac{|A|^2}{a^2}\int_0^a x^2\,\d x+\frac{|A|^2}{(b-a)^2}\int_a^b (b-x)^2\,\d x\\
+&=\frac{|A|^2}{a^2}\cdot\frac{a^3}{3}+\frac{|A|^2}{(b-a)^2}\cdot\frac{(b-a)^3}{3}
+=|A|^2\left(\frac{a}{3}+\frac{b-a}{3}\right)=\frac{|A|^2\,b}{3}.
+\end{align*}
+(The second integral uses $u=b-x$, so $\int_a^b(b-x)^2\d x=\int_0^{b-a}u^2\d u$.) Choosing the overall phase so that $A$ is real and positive, $A=\sqrt{3/b}$.
+
+\textbf{(b) Sketch.} $\psi$ is a triangle: zero outside $[0,b]$, a straight rise of slope $A/a$ to the apex $A$ at $x=a$, then a straight fall of slope $-A/(b-a)$ back to zero at $x=b$ (Figure~\ref{fig:tri}). It is continuous everywhere but has kinks at $x=0,a,b$.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\linewidth]{psi_triangle}
+\caption{$\psi(x,0)$ for the illustrative choice $b=2.6\,a$. The apex at $x=a$ has height $A=\sqrt{3/b}$.}
+\label{fig:tri}
+\end{figure}
+
+\textbf{(c) Most probable position.} $|\psi|^2$ increases monotonically on $[0,a]$ (as $x^2$) and decreases monotonically on $[a,b]$ (as $(b-x)^2$), so its maximum is at the apex, $x=a$.
+
+\textbf{(d) Probability to the left of $a$.}
+\[
+P(x<a)=\int_0^a|\psi|^2\,\d x=\frac{|A|^2}{a^2}\cdot\frac{a^3}{3}=\frac{3}{b}\cdot\frac{a}{3}=\frac{a}{b}.
+\]
+\emph{Limiting cases.} For $b\to 2a$: $P=\tfrac12$. The triangle is then symmetric about $x=a$, so the particle is equally likely to be found on either side, as it must be. For $b\to a$: $P\to 1$. The falling edge becomes vertical, the region $a<x<b$ shrinks to zero width and carries no probability, so the particle is certainly to the left of $a$. (At exactly $b=a$ the second line of $\psi$ is $0/0$ and undefined, so this case is understood as the limit $b\to a^+$; both wordings of the question give the same two checks.)
+
+\textbf{(e) Expectation value of $x$.}
+\[
+\langle x\rangle=\int x|\psi|^2\,\d x
+=\frac{|A|^2}{a^2}\int_0^a x^3\,\d x+\frac{|A|^2}{(b-a)^2}\int_a^b x(b-x)^2\,\d x .
+\]
+The first integral is $a^4/4$. In the second put $u=b-x$, $x=b-u$:
+\[
+\int_0^{b-a}(b-u)u^2\,\d u=\frac{b(b-a)^3}{3}-\frac{(b-a)^4}{4}.
+\]
+Hence, with $|A|^2=3/b$,
+\begin{align*}
+\langle x\rangle
+&=\frac{3}{b}\left[\frac{a^2}{4}+\frac{b(b-a)}{3}-\frac{(b-a)^2}{4}\right]
+=\frac{3}{b}\left[\frac{(2a-b)\,b}{4}+\frac{b(b-a)}{3}\right]\\
+&=\frac{3(2a-b)}{4}+(b-a)=\frac{2a+b}{4},
+\end{align*}
+where $a^2-(b-a)^2=(2a-b)b$ was used.
+
+\textbf{Checks.} Dimensions: $|A|^2=3/b$ has units of inverse length, as a 1D probability density requires; $P=a/b$ is dimensionless; $\langle x\rangle$ is a length. Range: $0<a/b<1$ is a valid probability for every $b>a$, and $0<\tfrac{2a+b}{4}<b$ (the second inequality is $2a<3b$), so the mean lies inside the region where $\psi\neq0$; it tends to $3a/4$ as $b\to a$ and equals $a$ for $b=2a$. Symmetry: for $b=2a$ the mean sits exactly at the apex $x=a$, consistent with (d). All four results were also confirmed by numerical quadrature for three different $(a,b)$ pairs.
+\end{solutionbox}
+
+\begin{answerbox}
+\[
+A=\sqrt{\frac{3}{b}},\qquad x_{\text{most probable}}=a,\qquad P(x<a)=\frac{a}{b},\qquad \langle x\rangle=\frac{2a+b}{4}.
+\]
+Therefore, the normalised state has $A=\sqrt{3/b}$, the particle is most likely to be found at the apex $x=a$, the probability of finding it to the left of $a$ is $a/b$ (which correctly gives $\tfrac12$ for $b=2a$ and $1$ for $b\to a$), and its mean position is $\langle x\rangle=(2a+b)/4$.
+\end{answerbox}
+
+\begin{insightbox}
+The most probable position ($x=a$) and the mean position ($(2a+b)/4$) are different whenever the triangle is lopsided: for $b>2a$ the long tail to the right pulls the mean beyond the peak, just as a skewed classical distribution has mean $\neq$ mode. Only for the symmetric case $b=2a$ do they coincide. This is why ``where is the particle?'' has no single answer in quantum mechanics: the state specifies a whole distribution, and different questions (most likely value, average over many measurements) pick out different features of it.
+\end{insightbox}

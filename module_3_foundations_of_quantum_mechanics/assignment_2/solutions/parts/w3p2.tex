@@ -1,0 +1,33 @@
+\begin{solutionbox}
+\textbf{Given.} Hydrogen ground state $\psi(r)=N e^{-r/a_0}$; a small region of volume $\delta V=1.0\,\mathrm{pm}^3$ centred (i) at the nucleus, $r=0$, and (ii) at $r=a_0$. \textbf{Goal.} The ratio of the probabilities of finding the electron in the two regions.
+
+\textbf{Principle.} By the Born rule in three dimensions, $|\psi(\mathbf r)|^2$ is a probability \emph{per unit volume}. The problem states that the region is so small that $\psi$ hardly varies across it, so the probability is the density at its centre times its volume:
+\[
+P\approx|\psi(\mathbf r)|^2\,\delta V .
+\]
+
+\textbf{Relative probability.} The normalisation constant $N$ and the common volume $\delta V$ cancel in the ratio, so $N$ is not needed:
+\[
+\frac{P(r=0)}{P(r=a_0)}=\frac{|N|^2e^{0}\,\delta V}{|N|^2e^{-2a_0/a_0}\,\delta V}=e^{2}\approx7.39 .
+\]
+
+\textbf{Absolute values (for scale).} Normalising, $\int_0^\infty|N|^2e^{-2r/a_0}\,4\pi r^2\,\d r=|N|^2\pi a_0^3=1$, so $|N|^2=1/(\pi a_0^3)$. With $a_0=52.9\,\mathrm{pm}$, $a_0^3=1.481\times10^{5}\,\mathrm{pm}^3$ and
+\begin{align*}
+P(r=0)&=\frac{\delta V}{\pi a_0^3}=\frac{1.0}{\pi\times1.481\times10^{5}}=2.15\times10^{-6},\\
+P(r=a_0)&=P(r=0)\,e^{-2}=2.91\times10^{-7}.
+\end{align*}
+
+\textbf{Checks.} Both probabilities are dimensionless and far below 1, as they should be for a region of volume $\sim10^{-5}$ of the atom's $\sim a_0^3$. The ratio $2.15\times10^{-6}/2.91\times10^{-7}=7.39$ reproduces $e^2$. Testing the stated approximation numerically, averaging $|\psi|^2$ over an actual $1\,\mathrm{pm}$ cube gives a ratio of $7.26$, within $2\%$ of $e^2$: the approximation is good, and slightly generous at the nucleus because $e^{-r/a_0}$ has a cusp there.
+\end{solutionbox}
+
+\begin{answerbox}
+\begin{gather*}
+\frac{P(\text{nucleus})}{P(r=a_0)}=e^{2}\approx7.4,\\
+P(\text{nucleus})\approx2.2\times10^{-6},\qquad P(r=a_0)\approx2.9\times10^{-7}\qquad(\delta V=1.0\,\mathrm{pm}^3).
+\end{gather*}
+Therefore, the electron is $e^2\approx7.4$ times more likely to be found in a $1\,\mathrm{pm}^3$ region at the nucleus than in an identical region a distance $a_0$ away, with absolute probabilities of about $2.2\times10^{-6}$ and $2.9\times10^{-7}$ respectively.
+\end{answerbox}
+
+\begin{insightbox}
+This does not contradict the familiar statement that the electron is ``most likely found at $r=a_0$''. That statement concerns the \emph{radial} probability $P(r)\,\d r=4\pi r^2|\psi|^2\,\d r$, the probability of lying in a thin \emph{shell} of radius $r$; the shell's volume $4\pi r^2\d r$ grows from zero, and the product peaks at $r=a_0$. Per unit volume, by contrast, the density is greatest at the nucleus. The distinction between a probability density and the probability of a region is essential whenever results are quoted in three dimensions.
+\end{insightbox}

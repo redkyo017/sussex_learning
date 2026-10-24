@@ -1,0 +1,54 @@
+\begin{solutionbox}
+\textbf{Definition used throughout.} An operator $\hat Q$ is Hermitian if $\braket{f|\hat Qg}=\braket{\hat Qf|g}$ for all admissible states $f,g$; equivalently $\hat Q^\dagger=\hat Q$, where the adjoint is defined by $\braket{f|\hat Qg}=\braket{\hat Q^\dagger f|g}$. The only other property needed is that the inner product is linear in its second argument and antilinear in its first: $\braket{\alpha f|g}=\alpha^*\braket{f|g}$ (Week 2, Problem 2).
+
+\textbf{(a) Sum.} Let $\hat Q,\hat R$ be Hermitian. Using linearity, then the Hermiticity of each operator, then linearity again:
+\[
+\braket{f|(\hat Q+\hat R)g}=\braket{f|\hat Qg}+\braket{f|\hat Rg}=\braket{\hat Qf|g}+\braket{\hat Rf|g}=\braket{(\hat Q+\hat R)f|g}.
+\]
+So $\hat Q+\hat R$ is Hermitian.
+
+\textbf{(b) Scalar multiple.} For Hermitian $\hat Q$ and $\alpha\in\mathbb C$,
+\[
+\braket{f|\alpha\hat Qg}=\alpha\braket{f|\hat Qg}=\alpha\braket{\hat Qf|g},\qquad
+\braket{\alpha\hat Qf|g}=\alpha^*\braket{\hat Qf|g}.
+\]
+These agree for all $f,g$ if and only if $(\alpha-\alpha^*)\braket{\hat Qf|g}=0$ for all $f,g$. For any non-zero $\hat Q$ some $\braket{\hat Qf|g}\neq0$, so the condition is $\alpha=\alpha^*$: \emph{$\alpha\hat Q$ is Hermitian if and only if $\alpha$ is real.} (If $\alpha$ is purely imaginary, $\alpha\hat Q$ is anti-Hermitian; e.g.\ $\partial_x=\frac{i}{\hbar}\hat p$, as seen in Week 3.)
+
+\textbf{(c) Product.} Move each operator across in turn:
+\[
+\braket{f|\hat Q\hat Rg}=\braket{\hat Qf|\hat Rg}=\braket{\hat R\hat Qf|g},
+\]
+so $(\hat Q\hat R)^\dagger=\hat R\hat Q$, i.e.\ the adjoint of a product reverses the order. Hence $\hat Q\hat R$ is Hermitian if and only if $\hat R\hat Q=\hat Q\hat R$, that is, \emph{if and only if the two operators commute}, $[\hat Q,\hat R]=0$. For example, $\hat x\hat p$ is not Hermitian, because $[\hat x,\hat p]=i\hbar\neq0$; but $\hat p^2=\hat p\hat p$ is, because every operator commutes with itself.
+
+\textbf{(d) Hamiltonian.} Two independent arguments.
+
+\emph{Method 1: from (a) and (c).} Write $\hat H=\frac{1}{2m}\hat p^2+V(x)$, since $\hat p^2=(\frac{\hbar}{i})^2\frac{\d^2}{\d x^2}=-\hbar^2\frac{\d^2}{\d x^2}$. $\hat p$ is Hermitian (Week 3, Problem 1) and commutes with itself, so $\hat p^2$ is Hermitian by (c); multiplying by the real number $\frac{1}{2m}$ keeps it Hermitian by (b). The potential is multiplication by a real function, Hermitian by the same argument as for $\hat x$. Their sum is Hermitian by (a).
+
+\emph{Method 2: directly, by integrating by parts twice.} For the kinetic term, with $f,g$ and their derivatives vanishing at $\pm\infty$,
+\begin{align*}
+\int f^*\,\frac{\d^2g}{\d x^2}\,\d x
+&=\Big[f^*\frac{\d g}{\d x}\Big]_{-\infty}^{\infty}-\int\frac{\d f^*}{\d x}\frac{\d g}{\d x}\,\d x\\
+&=-\Big[\frac{\d f^*}{\d x}g\Big]_{-\infty}^{\infty}+\int\frac{\d^2f^*}{\d x^2}\,g\,\d x
+=\int\Big(\frac{\d^2f}{\d x^2}\Big)^*g\,\d x .
+\end{align*}
+The two minus signs cancel, so $\frac{\d^2}{\d x^2}$ is Hermitian by itself (no factor of $i$ is required, unlike the first derivative), and the real constant $-\frac{\hbar^2}{2m}$ preserves this. For the potential, $\int f^*Vg\,\d x=\int(Vf)^*g\,\d x$ because $V^*=V$. Adding the two,
+\[
+\braket{f|\hat Hg}=\int f^*\Big(-\frac{\hbar^2}{2m}\frac{\d^2g}{\d x^2}+Vg\Big)\d x=\int\Big(-\frac{\hbar^2}{2m}\frac{\d^2f}{\d x^2}+Vf\Big)^*g\,\d x=\braket{\hat Hf|g}.
+\]
+
+\textbf{Checks.} With random $4\times4$ Hermitian matrices: $\hat Q+\hat R$ and $2.7\hat Q$ are Hermitian, $(2.7+0.5i)\hat Q$ is not; $\hat Q\hat R$ is not Hermitian for generic matrices but is when $\hat Q,\hat R$ share eigenvectors (so commute), and $(\hat Q\hat R)^\dagger=\hat R\hat Q$ holds. For (d), $\braket{f|\hat Hg}=\braket{\hat Hf|g}$ was confirmed by quadrature with finite-difference derivatives for an anharmonic real potential, and fails, as it should, when an imaginary constant is added to $V$.
+\end{solutionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=(\alph*)]
+\item $(\hat Q+\hat R)^\dagger=\hat Q+\hat R$: the sum of Hermitian operators is Hermitian.
+\item $(\alpha\hat Q)^\dagger=\alpha^*\hat Q$: $\alpha\hat Q$ is Hermitian if and only if $\alpha\in\mathbb R$.
+\item $(\hat Q\hat R)^\dagger=\hat R\hat Q$: the product is Hermitian if and only if $[\hat Q,\hat R]=0$.
+\item $\hat H=-\frac{\hbar^2}{2m}\frac{\d^2}{\d x^2}+V(x)$ is Hermitian for any real potential $V(x)$.
+\end{enumerate}
+Therefore, Hermiticity is preserved under addition and under multiplication by real numbers, survives a product only when the factors commute, and as a result the Hamiltonian, built from $\hat p^2$ and a real $V(x)$, is Hermitian.
+\end{answerbox}
+
+\begin{insightbox}
+Part (d) is why energy is an observable with real eigenvalues, and why the time-evolution operator $e^{-i\hat Ht/\hbar}$ is unitary and conserves probability. Part (c) shows that non-commuting observables such as $\hat x$ and $\hat p$, the same pairs that obey an uncertainty relation, cannot simply be multiplied into a new observable; the symmetrised product $\frac12(\hat x\hat p+\hat p\hat x)$ is Hermitian and is used instead. The condition $V^*=V$ also has physical meaning: a complex potential describes absorption or loss, which does not conserve probability.
+\end{insightbox}
