@@ -121,17 +121,6 @@ The [University’s Skills Hub](http://www.sussex.ac.uk/skillshub/?id=1) ![](htt
 
 Plagiarism, collusion, personation and cheating in exams are all forms of academic misconduct, which the university takes very seriously. Every year, some students commit academic misconduct unintentionally because they did not know what was expected of them. The consequences for committing academic misconduct can be severe, so it’s important you familiarise yourself with what it is and how to avoid it. The University’s regulations on academic misconduct are published in Section 2.9 of [the Examination and Assessment Regulations Handbook](http://www.sussex.ac.uk/adqe/standards/examsandassessment) ![](https://canvas.sussex.ac.uk/courses/42093/files/6842277/preview?location=course_syllabus_42093).
 
-### **Use of generative AI**
-
-**Generative AI tools must not be used to generate any materials or content for assessments in this module.** In this module, you must not use generative artificial intelligence (AI) to generate any materials or content for your assessment submissions.
-
-Note that:
-
--   [The baseline position at the University of SussexLinks to an external site.](https://sussexstudent.com/support/academic-misconduct) is that the use of generative AI material in assessment submissions is prohibited, unless explicitly permitted by the module convenor.
--   Students registered with the Disability Advice team and in receipt of reasonable adjustments are still permitted to use other assistive technology as required.
--   See Skills Hub guidance relating to [AI and academic integrity](https://www.sussex.ac.uk/skills-hub/writing-and-assessments/ai).
--   If in any doubt about what is permissible, students should check with the module convenor.
-
 ### **Marking and feedback**
 
 Following your assessment submissions, feedback will be provided to enable you to reflect on your own performance and how you can improve in the future.

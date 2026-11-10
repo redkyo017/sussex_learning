@@ -1,0 +1,51 @@
+# Named cases the lectures use. Practice exercises and model paragraphs must not use them as their case.
+# Companions may name them in sections 2-4 when decoding the lecture; the check is scoped accordingly (see spec).
+# Case-insensitive substring match, so avoid short common words.
+Equifax
+Stray et al
+NIST-F2
+CUBRIC
+Brookes
+Wellcome
+QZabre
+MagSLAM
+Bason
+Kominis
+Tierney
+Nemitz
+FG5
+Peters et al
+Kasevich
+Sugarbaker
+Muquans
+AOSense
+GOCE
+Micius
+Toshiba
+Danske
+OPENQKD
+Anthem
+WannaCry
+EPB
+Chattanooga
+Koganei
+Otemachi
+EuroQCI
+Greiner
+Hadzibabic
+Sunami
+Friedenauer
+Islam et al
+Porras
+Volkswagen
+D-Wave
+Goldman Sachs
+CSAC
+Deep Space Atomic Clock
+GETMAG
+ColdQuanta
+IBM 100x100
+Nottingham
+Boto
+Innsbruck
+Swiss bank
