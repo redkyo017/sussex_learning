@@ -1,0 +1,189 @@
+# Assessment 1 [Problem Set (PRB)]
+
+**Started:** 16 Nov at 21:13
+
+## Quiz instructions
+
+### Overview:
+Due on Thursday of Week 4 at 17:00 UK time, worth 30 per cent of your overall module grade. This assessment is a problem set that contains some calculations.
+
+Please note that this assessment *does* have a 24-hour lateness period. [You can find out more information about lateness periods on the Syllabus page](https://canvas.sussex.ac.uk/courses/42093/assignments/syllabus).
+
+The reasonable adjustment provided for this assessment is a deadline extension. If you are eligible for reasonable adjustments, please check your module calendar for the correct due date.
+
+### Learning outcomes:
+The learning outcomes of this assessment are:
+1. Demonstrate systematic understanding of key capabilities of various quantum technologies from an application point of view.
+2. Demonstrate critical awareness of current development stage and maturity of quantum solutions in various fields.
+
+### Purpose:
+The purpose of this assessment is to evaluate your understanding of the content of Weeks 1–3 and your ability to quantitatively apply your knowledge in basic terms. You will be required to:
+1. explain some basic operating principles and features of the quantum technologies discussed in Weeks 1–3
+2. undertake some basic computations in example applications.
+
+### Details:
+For this problem set, you will have to answer 11 questions. You must also include all your workings to show how you obtained your solutions. If you answer all the questions correctly, you will obtain 100 marks. The allocation of marks is shown by the questions.  
+
+You can:
+- use the LaTeX editor within Canvas to add your solutions directly into your Assessment 1 Problem Set quiz questions, or
+- use an alternative LaTeX editor or other word processor to create a pdf that can be uploaded in the final question.
+
+For more information, please [see: How do I use the Math Editor in the Rich Content Editor as a student?](https://community.instructure.com/en/kb/articles/662928)
+
+You are permitted to use your notes and the internet to look up definitions and formulae. Because of this, greater emphasis will be placed in marking schemes on justifying and explaining the use of any such formulae. You can also [use the resources on the Quantum technology resources page in the SOSSS](https://canvas.sussex.ac.uk/courses/10962/pages/quantum-technology-resources-1).
+
+All of your workings and solutions to problems should be your own work and you should not directly copy these from either the module lecture notes or external sources.
+
+Calculators are permitted.
+
+[Read 'Six steps to problem solving: How to gain marks'](https://canvas.sussex.ac.uk/courses/10962/pages/quantum-technology-resources-1#sect2) on the Quantum Technology Resources page in the SOSSS for guidance on the expected way of working and advice on how to gain marks for this assessment.
+
+### Using Canvas Quizzes for your assessment submission:
+- While completing and submitting a quiz, make sure you only have one instance of the quiz open across all browsers, tabs and devices. Multiple open instances of the quiz could cause the auto-save to overwrite your most recent submission or changes. Any unfinished attempts could be auto submitted at the due date if tabs are still open. This will cause any previous attempts to be overwritten, and your final grade may be affected.
+- Select the Submit button when you finish your assessment. Auto submission can be impacted by the setup and connection of your browser.
+- If you are uploading images or other files as part of your answers, check your storage allowance in Canvas. Please make sure you have enough storage by checking and freeing up space in your files area. For information on how to do that, please see the Canvas guide: [How do I view my user files as a student?](https://community.canvaslms.com/t5/Canvas-Basics-Guide/How-do-I-use-Files/ta-p/617201)
+- If you are working on the Canvas App, make sure you have the latest version.
+
+### Marking rubric
+[Read 'Six steps to problem solving: How to gain marks'](https://canvas.sussex.ac.uk/courses/10962/pages/quantum-technology-resources-1#sect2) on the Quantum Technology Resources page in the SOSSS for guidance on the expected way of working and advice on how to gain marks for this assessment.
+
+---
+
+## Questions
+
+### Question 1 *(10 pts)*
+An optically pumped magnetometer (OPM) is used to measure a small magnetic field. The OPM has a sensitivity of $50\text{fT}/\sqrt{\text{Hz}}$ and a measurement bandwidth of $1\text{ kHz}$. The brain signal being measured has a frequency of $10\text{ Hz}$ and an amplitude of $2\text{ pT}$. Calculate the signal-to-noise ratio (SNR) for this measurement.
+
+---
+
+### Question 2 *(5 pts)*
+*The following information is used for questions 2, 3, 4, and 5.*
+
+Let us assume a neuronal current source in the brain can be modelled as a (circular) loop current $I$. The magnetic field B generated by such a loop of radius $R$ at a distance $z$ (on axis) is given by
+
+$$B(z)=\frac{\mu_0}{2}\frac{R^2 I}{(z^2+R^2)^{3/2}}$$
+
+The radius of these equivalent current loops is small in comparison to the distance from the neurons to the scalp where the closest sensor could reasonably be placed (without invasive measures).
+
+Simplify the above expression for $B$ under the then valid assumption $z\gg R$. How does the field of the neuronal source scale with distance $z$?
+
+---
+
+### Question 3 *(5 pts)*
+*The following information is used for questions 2, 3, 4, and 5.*
+
+Let us assume a neuronal current source in the brain can be modelled as a (circular) loop current $I$. The magnetic field B generated by such a loop of radius $R$ at a distance $z$ (on axis) is given by
+
+$$B(z)=\frac{\mu_0}{2}\frac{R^2 I}{(z^2+R^2)^{3/2}}$$
+
+The radius of these equivalent current loops is small in comparison to the distance from the neurons to the scalp where the closest sensor could reasonably be placed (without invasive measures).
+
+Now consider as an example a neuronal source of this kind that is located in the cortical area of the brain at a depth of $z_0=2\text{ cm}$ underneath the scalp (with its axis oriented orthogonal to the scalp surface). In an effort to detect the field generated by this source, three types of quantum sensors are considered:
+- A nitrogen vacancy (NV) centre right on the scalp surface with a sensitivity of $1~\text{nT}/\sqrt{\text{Hz}}$.
+- An OPM at a distance of $1~\text{cm}$ from the scalp with a sensitivity of $10~\text{fT}/\sqrt{\text{Hz}}$.
+- A superconducting quantum interference device (SQUID) at a distance of $6~\text{cm}$ from the scalp with a sensitivity of $3~\text{fT}/\sqrt{\text{Hz}}$.
+
+Given the scaling you have determined, which one will detect a brain signal with the highest signal to noise ratio?
+
+---
+
+### Question 4 *(12 pts)*
+*The following information is used for questions 2, 3, 4, and 5.*
+
+Let us assume a neuronal current source in the brain can be modelled as a (circular) loop current $I$. The magnetic field $B$ generated by such a loop of radius $R$ at a distance $z$ (on axis) is given by
+
+$$B(z)=\frac{\mu_0}{2}\frac{R^2 I}{(z^2+R^2)^{3/2}}$$
+
+The radius of these equivalent current loops is small in comparison to the distance from the neurons to the scalp where the closest sensor could reasonably be placed (without invasive measures).
+
+For each sensor, what would be minimal current $I$ in the neuronal loop current if we assume $R=1~\text{mm}$? All sensitivities are given for a bandwidth of $100~\text{Hz}$ and the signal frequency is $\nu=10~\text{Hz}$.
+
+---
+
+### Question 5 *(18 pts)*
+*The following information is used for questions 2, 3, 4, and 5.*
+
+Let us assume a neuronal current source in the brain can be modelled as a (circular) loop current $I$. The magnetic field $B$ generated by such a loop of radius $R$ at a distance $z$ (on axis) is given by
+
+$$B(z)=\frac{\mu_0}{2}\frac{R^2 I}{(z^2+R^2)^{3/2}}$$
+
+The radius of these equivalent current loops is small in comparison to the distance from the neurons to the scalp where the closest sensor could reasonably be placed (without invasive measures).
+
+How does the situation change when the depth of the source $z_0$ is changed, for example when it is very close to the surface ($z_0\rightarrow 0$) as might be the case for young children or small animals. Conversely, for deep-brain studies larger depth of the order of $z_0 10~\text{cm}$ will be of interest. Look at this in those limiting cases and by plotting the minimal detectable current for each sensor as a function of $z_0$.
+
+---
+
+### Question 6 *(5 pts)*
+*The following information is used for questions 6, 7, 8.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $\tau = 100~\text{ms}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Calculate the de Broglie wavelength $(\lambda_{\text{db}})$ of the rubidium-87 atoms.
+
+---
+
+### Question 7 *(5 pts)*
+*The following information is used for questions 6, 7, 8.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $\tau = 100~\text{ms}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Suppose the gravitational acceleration in the absence of any perturbations is $g_0 = 9.8~\text{m}/\text{s}^2$. If the interferometer is sensitive to changes in gravitational acceleration at a level of $\Delta g = 1.0 \times 10^{-9} m/s^2$, calculate the corresponding phase shift $(\Delta \varphi)$ in the interferometer.
+
+---
+
+### Question 8 *(5 pts)*
+*The following information is used for questions 6, 7, 8.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $\tau = 100~\text{ms}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Evaluate the sensitivity $(S)$ of the atom interferometer as a gravity sensor, defined as the ratio of the phase shift $(\Delta \varphi)$ to the change in gravitational acceleration $(\Delta g)$. Express the sensitivity in units of radians per unit of gravitational acceleration $(\text{rad}/(\text{m}/\text{s}^{2}))$.
+
+---
+
+### Question 9 *(10 pts)*
+*The following information is used for questions 9, 10, 11.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $\tau = 100~\text{ms}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Using the force of gravitation
+
+$$F=G\frac{m_1 m_2}{r^2}$$
+
+between two masses $m_1$ and $m_2$ at a distance $r$ between them, what is the change of gravitational acceleration an atom experiences due to:
+
+The presence of the moon pulling into or against the direction of the Earth's gravitational acceleration (tidal effects)? The moon is on average about $385,000~\text{km}$ from the Earth and its mass is about $7.3\times 10^{22}~\text{kg}$.
+
+---
+
+### Question 10 *(10 pts)*
+*The following information is used for questions 9, 10, 11.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $\tau = 100~\text{ms}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Using the force of gravitation
+
+$$F=G\frac{m_1 m_2}{r^2}$$
+
+between two masses $m_1$ and $m_2$ at a distance $r$ between them, what is the change of gravitational acceleration an atom experiences due to:
+
+The presence or absence of a person $(70~kg)$ at a distance of $1~\text{m}$. How far away does the person have to be to create a similar effect to that of the moon? How far away can they be and still be detected by the interferometer?
+
+---
+
+### Question 11 *(15 pts)*
+*The following information is used for questions 9, 10, 11.*
+
+An atom interferometer is used as a gravity sensor to measure small changes in gravitational acceleration. The interferometer consists of a Mach-Zehnder configuration, where a cloud of rubidium-87 atoms at a temperature $T = 1\mu\text{K}$ is split into two parts, recombined, and then detected. The wavelength of the atoms is $\lambda = 780~\text{nm}$, the time between interferometer pulses is $T_{\text{pulse}}$ and the separation between the paths in the interferometer is $d=10~\text{mm}$.
+
+Using the force of gravitation
+
+$$F=G\frac{m_1 m_2}{r^2}$$
+
+between two masses $m_1$ and $m_2$ at a distance $r$ between them, what is the change of gravitational acceleration an atom experiences due to:
+
+A (spherical) void in the soil (for example, a tunnel, a sinkhole or a gas reservoir) of a diameter of $1~\text{m}$ at a distance of $3~\text{m}$? Assume the void to have zero mass density and the surrounding soil the Earth's average density of $\rho=5.5~\text{g}/\text{cm}^3$. Given the minimal detectable $\Delta g$, what is the maximal depth of the void as a function of its diameter that is still detectable. Plot the graph of this function.
+
+---
+
+### Question 12 *(0 pts)*
+If you have chosen to use an alternative LaTeX editor or other word processor to write your responses, please upload your pdf here.

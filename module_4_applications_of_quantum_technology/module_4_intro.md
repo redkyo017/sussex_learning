@@ -1,3 +1,5 @@
+# Applications of Quantum Technology
+
 -   [What you will learn and how](#sect1a)
 -   [Module learning outcomes](#sect2)
 -   [Quantum technology resources](#sect2a)
