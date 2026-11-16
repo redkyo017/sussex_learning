@@ -79,6 +79,6 @@ tectonic -X compile QT_PRB_solutions.tex
 - [ ] **Read the PDF end to end and re-voice anything that does not sound like you.** The brief says all workings must be your own work.
 - [ ] **Reproduce these results yourself, with a calculator, without looking at the PDF:** SNR 1.26; B ∝ z⁻³; S·z³ ranking; I_min 0.13 A / 4.3 μA / 24 μA; crossover 9.1 cm; λ_dB 187 nm; Δφ 1.6e-4 rad; S 1.6e5; tide 1.1e-6; person 4.7e-9 / 6.6 cm / 2.2 m; void −2.1e-8 and 13.9·D^1.5. You may be asked to explain any step.
 - [ ] **Look at the live Canvas quiz:** check that Q5 shows "z₀ ∼ 10 cm" and Q7 shows d = 10 mm and λ = 780 nm. If any number differs from `Assessment_1_Problem_Set.md`, tell me before submitting.
-- [ ] **Type the 11 lines from `CANVAS_ANSWERS.md` into the Canvas boxes for Q1–Q11, in a single browser tab.**
+- [ ] **Paste the 11 pointer lines from `CANVAS_ANSWERS.md` into the Canvas boxes for Q1–Q11, in a single browser tab.** These are pointers only; all answers are in the PDF.
 - [ ] **Upload `QT_PRB_solutions.pdf` at Q12, confirm it shows as attached, and press Submit.**
 - [ ] **Do all this by Thu 19 Nov, 17:00 UK.**
